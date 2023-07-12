@@ -115,3 +115,19 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 `npm install -g json-server`
 
 `npm run json-server`
+
+# Ajout des composants products
+
+ng g component products/pages/PageListProducts 
+
+ng g component products/pages/PageAddProduct
+
+ng g component products/pages/PageEditProduct
+
+ng g component products/productForm
+
+
+# Service products
+
+ng g s products/services/products
+
