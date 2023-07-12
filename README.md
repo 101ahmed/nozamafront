@@ -34,7 +34,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 `npm install`
 
-# run npm 
+# run npm
 
 `npm run start`
 
@@ -62,15 +62,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 `ng g module pageNotFound --routing`
 
-## creation  components
+## creation components
 
 `ng g component clients/pages/PageListClients`
 
 `ng g component clients/pages/PageEditClient`
 
 `ng g component clients/pages/PageAddClient`
-
-
 
 `ng g component login/pages/PageSignIn`
 
@@ -80,7 +78,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 `ng g component login/pages/PageForgotPassword`
 
-
 `ng g component orders/pages/PageListOrders`
 
 `ng g component orders/pages/PageAddOrder`
@@ -88,7 +85,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 `ng g component orders/pages/PageEditOrder`
 
 `ng g component page-not-found/pages/PageNotFound`
-
 
 `ng g component ui/components/Ui`
 
@@ -115,3 +111,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 `npm install -g json-server`
 
 `npm run json-server`
+
+# ajout des commandes
+
+ng component products/pages/addproduct + edit + list
+ng g s products/services/products
