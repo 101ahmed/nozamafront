@@ -1,0 +1,25 @@
+image: node:16.19.0
+
+stages:
+  - build
+
+build:
+  stage: build
+  tags:
+    - build
+  artifacts:
+    paths:
+      - dist/nozamafront
+  cache:
+    key: "build-front"
+    paths:
+      - node_modules
+  before_script:
+    - npm install
+  script:
+    - npm run build
+  only:
+    - develop
+    - release
+    - /^feature\/*/
+    - main
