@@ -21,5 +21,3 @@ build:
     - release
     - /^feature\/*/
     - main
-    
-    
