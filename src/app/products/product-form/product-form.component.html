@@ -1,0 +1,40 @@
+<!-- Création du tableau pour le formulaire du produit -->
+<form class="d-flex gap-1 flex-column" [formGroup]="form" (ngSubmit)="submit()">
+    <!-- Case Référence produit -->
+    <input class="form-control" type="text" formControlName="productReference"
+        placeholder="Référence du produit" aria-label="input productReference">
+    <!-- Case Nom du produit -->
+    <input class="form-control" type="text" formControlName="productName"
+        placeholder="Nom du produit" aria-label="input productName">
+    <!-- Case Description du produit  -->
+    <input class="form-control" type="text" formControlName="productDescription"
+        placeholder="Description du produit" aria-label="input productDescription">
+    <!-- Case Quantité du produit en stock -->
+    <input class="form-control" type="text" formControlName="productQuantityStock"
+        placeholder="Quantité du produit en stock" aria-label="input productQuantityStock">
+    <!-- Case Prix du produit -->
+    <input class="form-control" type="text" formControlName="productPrice"
+        placeholder="Prix du produit" aria-label="input productPrice">
+    <!-- Case Catégorie du produit -->
+    <input class="form-control" type="text" formControlName="productCategory"
+        placeholder="Catégorie du produit" aria-label="input productCategory">
+
+        <!-- Annulation de l'ajout à la liste  -->
+        <div class="d-flex flex-row gap-1 justify-content-end">
+            <button type="button" class="btn btn-secondary">
+                (click)="cancelAction()">
+                Annuler l'ajout
+            </button>
+
+        <!-- Confirmation de l'ajout -->
+                    <!-- Désactivé le bouton confirmer si tout n'est pas rempli -->
+            <button class="btn btn-primary"          
+                    [disabled]="isDisabled()"> 
+                {{titleButton}}
+            </button>
+        </div>
+
+    
+</form>
+
+        

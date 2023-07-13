@@ -116,11 +116,18 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 `npm run json-server`
 
+# Ajout des composants products
+
+ng g component products/pages/PageListProducts 
+
+ng g component products/pages/PageAddProduct
+
+ng g component products/pages/PageEditProduct
+
+ng g component products/productForm
 
 
+# Service products
 
-##
-$ git checkout -b mabranche
-
-git push origin mabranche
+ng g s products/services/products
 
