@@ -1,1 +1,17 @@
-<p>page-edit-product works!</p>
+<div class="mt-2 container fluid">
+
+    <h2 class="text-center">Modifier un produit</h2>
+
+    <<ng-container *ngIf="product$ | async as product; else loading">
+        <app-product-form [product]="product" (cancel)="goToProductList()" (validate)="updateProduct($event)">
+        </app-product-form>
+
+    </ng-container>
+</div>
+
+<!-- <ng-template #loading>
+    <div class="alert alert-info" role="alert">
+        <fa-icon [icon]="faSpinner" animation="spin-pulse"></fa-icon>
+        Chargement du produit...
+    </div>
+</ng-template> -->
