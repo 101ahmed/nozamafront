@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 
 import { ProductsRoutingModule } from './products-routing.module';
 import { PageListProductsComponent } from './pages/page-list-products/page-list-products.component';
