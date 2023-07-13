@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "reference": "GEJRR45454",
+      "name": "The Batman",
+      "description": "Un beau film",
+      "quantityStock": 4,
+      "price": 2,
+      "categorie": "DVD"
+    },
+    {
+      "id": 2,
+      "reference": "GEJRR45454",
+      "name": "The frfr",
+      "description": "Un beau film",
+      "quantityStock": 4,
+      "price": 2,
+      "categorie": "DVD"
+    }
+  ]
+}
