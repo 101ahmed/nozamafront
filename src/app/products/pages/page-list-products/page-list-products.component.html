@@ -1,1 +1,65 @@
-<p>page-list-products works!</p>
+
+ <div class="mt-2 container-fluid">
+    <h2 class="text-center">Liste des produits</h2>
+  
+    <div class="mb-2">
+      <button class="btn btn-primary" [routerLink]="['/', 'orders', 'add']">
+        Ajouter un produit
+      </button>
+    </div>
+  
+    <ng-container *ngIf="!isLoading; else loading">
+      <ng-container *ngIf="data | async as products; else loading">
+        <table *ngIf="products.length > 0; else noData"
+               class="table  table-hover table-bordered text-center"
+        >
+          <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">reference</th>
+            <th scope="col">description</th>
+            <th scope="col">quantityStock</th>
+            <th scope="col">price</th>
+            <th scope="col">categorie</th>
+            <th scope="col">Modifier / Supprimer</th>
+        
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let product of products">
+            <th scope="row">{{ product.id }}</th>
+            <td>{{ product.name }}</td>         
+            <td>{{ product.reference }}</td>
+            <td>{{ product.description }}€</td>
+            <td>{{ product.quantityStock }}%</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.categorie }}</td>
+            <td  >
+              <button class="btn btn-primary"
+                      [routerLink]="['/', 'products', 'edit', product.id]">
+                <app-icon-edit></app-icon-edit>
+              </button>
+  
+              <button class="btn btn-danger ms-2"
+                      (click)="delete(product)">
+                <app-icon-delete></app-icon-delete>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </ng-container>
+    </ng-container>
+  </div>
+  
+  <ng-template #noData>
+    <div class="alert alert-danger" role="alert">
+      Aucun produit disponible !
+    </div>
+  </ng-template>
+  <ng-template #loading>
+    <div class="alert alert-info" role="alert">
+      Chargement des données...
+    </div>
+  </ng-template>  

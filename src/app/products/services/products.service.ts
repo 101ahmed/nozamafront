@@ -1,34 +1,35 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
+  private data: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 
   constructor(
-    private http: HttpProduct
+    private http: HttpClient
   ) { }
+  
+  get data$(): Observable<Product[]> {
+    return this.data.asObservable();
+  }
 
-  getProducts(): Observable<Products[]> {
-    return this.http.get<Products[]>(`http://localhost:3000/products`);
+  getProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>('http://localhost:3000/products');
+      // .pipe(
+      //   tap((products) => this.data.next(products)),
+      // );
+  }
+  getProductById(id: number): Observable<Product> {
+    return this.http.get<Product>(`http://localhost:3000/products/${id}`);
   }
   
-  getProductById(id:number): Observable<Products> {
-    return this.http.get<Clients>(`http://localhost:3000/products/${id}`);
+  deleteProduct(product: Product): Observable<void> {
+    return this.http.delete<void>(`http://localhost:3000/products/${product.id}`);
   }
 
-  postProduct(product : Products): Observable<Products> {
-    return this.http.post<Products>(`http://localhost:3000/products`, product);
-  }
 
-  putProduct(product: Products): Observable<Products> {
-    return this.http.put<Products>(`http://localhost:3000/products/${product.id}`), product;
-  }
-
-  deleteProductById(id: number): Observable<Products> {
-    return this.http.delete<Clients>(`http://localhost:3000/products/${id}`);
-  }
 }
-

@@ -20,7 +20,9 @@ import { ProductFormComponent } from './product-form/product-form.component';
   ],
   imports: [
     CommonModule,
-    ProductsRoutingModule
+    ProductsRoutingModule,
+    SharedModule,
+    
   ]
 })
 export class ProductsModule { }
