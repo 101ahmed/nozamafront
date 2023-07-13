@@ -17,19 +17,24 @@ export class ProductsService {
     return this.data.asObservable();
   }
 
-  getProducts(): Observable<Product[]> {
+ 
+  getProduct(): Observable<Product[]> {
     return this.http.get<Product[]>('http://localhost:3000/products');
-      // .pipe(
-      //   tap((products) => this.data.next(products)),
-      // );
   }
+
   getProductById(id: number): Observable<Product> {
     return this.http.get<Product>(`http://localhost:3000/products/${id}`);
   }
-  
-  deleteProduct(product: Product): Observable<void> {
-    return this.http.delete<void>(`http://localhost:3000/products/${product.id}`);
+
+  postProduct(product: Product): Observable<Product> {
+    return this.http.post<Product>('http://localhost:3000/products', product);
   }
 
+  putProduct(product: Product): Observable<Product> {
+    return this.http.put<Product>(`http://localhost:3000/products/${product.id}`, product);
+  }
 
-}
+  deleteProductById(id : number): Observable<Product> {
+   return this.http.delete<Product>(`http://localhost:3000/product/${id}`);
+    }
+  }

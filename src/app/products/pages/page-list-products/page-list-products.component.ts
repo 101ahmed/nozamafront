@@ -35,11 +35,11 @@ export class PageListProductsComponent implements OnInit{
   //     .subscribe(() => this.isloading = false);
   // }
   getData(){
-    this.productsService.getProducts().subscribe((res => {this.data.next(res); this.isLoading=false}))
+    this.productsService.getProduct().subscribe((res => {this.data.next(res); this.isLoading=false}))
   }
 
   delete(product: Product) {
-    this.productsService.deleteProduct(product)
+    this.productsService.deleteProductById(product.id)
       .subscribe(() => {
         this.getData();
       });

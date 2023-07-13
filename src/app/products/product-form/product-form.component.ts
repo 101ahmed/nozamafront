@@ -1,17 +1,17 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { Product } from '../../models/products';
 
+import { Product } from '../models/product';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
 // Voici a quoi va ressembler l'interface a remplir
 interface ProductForm {
 
-  productReference: FormControl<number | null>;
-  productName: FormControl<string | null>;
-  productDescription: FormControl<string | null>;
-  productQuantityStock: FormControl<number | null>;
-  productPrice: FormControl<number | null>;
-  productCategory: FormControl<string | null>;
+  reference: FormControl<string | null>;
+  name: FormControl<string | null>;
+  description: FormControl<string | null>;
+  quantityStock: FormControl<number | null>;
+  price: FormControl<number | null>;
+  category: FormControl<string | null>;
 
 }
 
@@ -23,21 +23,21 @@ interface ProductForm {
 })
 export class ProductFormComponent implements OnInit {
 
-  @Input() product!: Products;
+  @Input() product!: Product;
   @Output() cancel: EventEmitter<void> = new EventEmitter<void>();
-  @Output() validate: EventEmitter<Products> = new EventEmitter<Products>();
+  @Output() validate: EventEmitter<Product> = new EventEmitter<Product>();
 
   titleButton : string = 'Ajouter';
 
   creationOnGoing : boolean = false;
 
   public form = this.fb.group<ProductForm>({
-    productReference this.fb.control<number | null>(null, [Validators.required]),
-    productName this.fb.control<string | null>(null, [Validators.required]),
-    productDescription this.fb.control<string | null>(null, [Validators.required]),
-    productQuantityStock this.fb.control<number | null>(null, [Validators.required]),
-    productPrice this.fb.control<number | null>(null, [Validators.required]),
-    productCategory this.fb.control<string | null>(null, [Validators.required]),
+    reference: this.fb.control<string | null>(null, [Validators.required]),
+    name: this.fb.control<string | null>(null, [Validators.required]),
+    description: this.fb.control<string | null>(null, [Validators.required]),
+    quantityStock: this.fb.control<number | null>(null, [Validators.required]),
+    price: this.fb.control<number | null>(null, [Validators.required]),
+    category: this.fb.control<string | null>(null, [Validators.required]),
 
   })
 
@@ -63,7 +63,7 @@ export class ProductFormComponent implements OnInit {
 
   submit() {
     this.creationOnGoing = true;
-    const product: Products =  {...this.form.value} as Products;
+    const product: Product =  {...this.form.value} as Product;
     this.validate.emit(product);
   }
 
