@@ -19,9 +19,6 @@ export class PageListProductsComponent implements OnInit{
     private productsService: ProductsService
   ) {
 
-
-
-
   }
 
   ngOnInit(): void {
@@ -30,10 +27,6 @@ export class PageListProductsComponent implements OnInit{
 
   }
 
-  // getData() {
-  //   this.productsService.getProducts()
-  //     .subscribe(() => this.isloading = false);
-  // }
   getData(){
     this.productsService.getProduct().subscribe((res => {this.data.next(res); this.isLoading=false}))
   }
@@ -43,7 +36,21 @@ export class PageListProductsComponent implements OnInit{
       .subscribe(() => {
         this.getData();
       });
-  }  
+  }
+  
+  //search products
+  searchText: string = '';
+  onSearchTextEntered(searchValue: string){
+    this.searchText =  searchValue;
+    console.log(this.searchText)
+  }
+
+  //filter products with category
+  productCategory: string = 'All';
+  onFilterCategory(data: string){
+    this.productCategory = data;
+    console.log(this.productCategory);
+  }
 
 }
 

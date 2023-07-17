@@ -7,6 +7,11 @@
         Ajouter un produit
       </button>
     </div>
+
+    <div>
+      <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+      <app-filter (filterRadioSelection)="onFilterCategory($event)"></app-filter>
+    </div>
   
     <ng-container *ngIf="!isLoading; else loading">
       <ng-container *ngIf="data | async as products; else loading">
@@ -17,36 +22,38 @@
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Name</th>
-            <th scope="col">reference</th>
-            <th scope="col">description</th>
-            <th scope="col">quantityStock</th>
-            <th scope="col">price</th>
-            <th scope="col">categorie</th>
+            <th scope="col">Reference</th>
+            <th scope="col">Description</th>
+            <th scope="col">Quantity in Stock</th>
+            <th scope="col">Price</th>
+            <th scope="col">Category</th>
             <th scope="col">Modifier / Supprimer</th>
         
           </tr>
           </thead>
-          <tbody>
-          <tr *ngFor="let product of products">
-            <th scope="row">{{ product.id }}</th>
-            <td>{{ product.name }}</td>         
-            <td>{{ product.reference }}</td>
-            <td>{{ product.description }}€</td>
-            <td>{{ product.quantityStock }}%</td>
-            <td>{{ product.price }}</td>
-            <td>{{ product.categorie }}</td>
-            <td  >
-              <button class="btn btn-primary"
-                      [routerLink]="['/', 'products', 'edit', product.id]">
-                <app-icon-edit></app-icon-edit>
-              </button>
-  
-              <button class="btn btn-danger ms-2"
-                      (click)="delete(product)">
-                <app-icon-delete></app-icon-delete>
-              </button>
-            </td>
-          </tr>
+          <tbody *ngFor="let product of products">
+            <ng-container *ngIf="searchText ===''|| product.name.toLowerCase().includes(searchText)" >
+              <tr *ngIf="productCategory === 'All' || productCategory === product.category">
+                <th scope="row">{{ product.id }}</th>
+                <td>{{ product.name }}</td>         
+                <td>{{ product.reference }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.quantityStock }}</td>
+                <td>{{ product.price }} €</td>
+                <td>{{ product.category }}</td>
+                <td  >
+                  <button class="btn btn-primary"
+                          [routerLink]="['/', 'products', 'edit', product.id]">
+                    <app-icon-edit></app-icon-edit>
+                  </button>
+      
+                  <button class="btn btn-danger ms-2"
+                          (click)="delete(product)">
+                    <app-icon-delete></app-icon-delete>
+                  </button>
+                </td>
+              </tr>
+            </ng-container>
           </tbody>
         </table>
       </ng-container>
