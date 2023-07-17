@@ -1,49 +1,49 @@
 {
   "products": [
     {
-      "reference": "gdsfg",
-      "name": "GTRDTR",
-      "description": "RGTRDGTRDT",
-      "quantityStock": "66898",
-      "price": "8678900",
-      "category": "hclodf",
-      "id": 7
-    },
-    {
-      "reference": "hfgkh",
-      "name": null,
+      "reference": "made in American",
+      "name": "play station 5",
       "description": null,
-      "quantityStock": null,
-      "price": null,
-      "category": null,
+      "quantityStock": 50,
+      "price": 35,
+      "category": "Jeu video",
       "id": 8
     },
     {
-      "reference": "dsqdsqdsqd",
-      "name": null,
+      "reference": "Grammy 2020",
+      "name": "Imagine",
       "description": "sdqsdqsds",
-      "quantityStock": "dqsdqsdqs",
-      "price": "dqsdqsds",
-      "category": "dqsdsqdsq",
+      "quantityStock": 456,
+      "price": 45,
+      "category": "CD",
       "id": 9
     },
     {
-      "reference": "",
-      "name": null,
+      "reference": "Seri 2021",
+      "name": "Start War",
       "description": "",
-      "quantityStock": "",
-      "price": null,
-      "category": null,
+      "quantityStock": 456,
+      "price": 24,
+      "category": "DVD",
       "id": 10
     },
     {
-      "reference": "jgf",
-      "name": "gfkjgfj",
+      "reference": "Best seller 2021",
+      "name": "Big Short",
       "description": "gkjgf",
-      "quantityStock": "7687",
-      "price": "7678",
-      "category": "qd<wd<wd",
+      "quantityStock": 345,
+      "price": 34,
+      "category": "Livre",
       "id": 11
+    },
+    {
+      "reference": "Best seller 1990",
+      "name": "Happy New Year",
+      "description": "Music",
+      "quantityStock": "45",
+      "price": "10",
+      "category": "CD",
+      "id": 12
     }
   ]
 }
