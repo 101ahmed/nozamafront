@@ -34,8 +34,8 @@ export class ProductFormComponent implements OnInit {
     reference: this.fb.control<string | null>(null, [Validators.required]),
     name: this.fb.control<string | null>(null, [Validators.required]),
     description: this.fb.control<string | null>(null, [Validators.required]),
-    quantityStock: this.fb.control<number | null>(null, [Validators.required]),
-    price: this.fb.control<number | null>(null, [Validators.required]),
+    quantityStock: this.fb.control<number | null>(null, [Validators.required, Validators.min(0)]),
+    price: this.fb.control<number | null>(null, [Validators.required, Validators.min(0)]),
     category: this.fb.control<string | null>(null, [Validators.required]),
 
   })
