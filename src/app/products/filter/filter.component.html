@@ -1,15 +1,15 @@
 <div class="filte-container mb-3">
-    <span class="me-2">Filter Category:</span>
+    <span class="me-2">Filtres :</span>
 
     <input type="radio" name="filter" value="All" 
                         [(ngModel)]="selectedRadioValue"
                         (change)="onRadioSelection()">
-    <span class="me-4 ms-1">All</span>
+    <span class="me-4 ms-1">Tous</span>
 
     <input type="radio" name="filter" value="Jeu video" 
                         [(ngModel)]="selectedRadioValue"
                         (change)="onRadioSelection()">
-    <span class="me-4 ms-1">Jeu video</span>
+    <span class="me-4 ms-1">Jeux videos</span>
 
     <input type="radio" name="filter" value="DVD" 
                         [(ngModel)]="selectedRadioValue"
@@ -24,6 +24,6 @@
     <input type="radio" name="filter" value="Livre" 
                         [(ngModel)]="selectedRadioValue"
                         (change)="onRadioSelection()">
-    <span class="me-4 ms-1">Livre</span>
+    <span class="me-4 ms-1">Livres</span>
 </div>
 
