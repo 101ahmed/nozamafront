@@ -1,8 +1,9 @@
 <div class="mt-2 container fluid">
 
-    <h2 class="text-center">Modifier un produit</h2>
 
-    <ng-container *ngIf="product$ | async as product;">
+    <ng-container *ngIf="product$ | async as product">
+        <h2 class="text-center">Modifier un produit {{product.id}}</h2>
+
         <app-product-form [product]="product" (cancel)="goToProductsList()" (validate)="updateProduct($event)">
         </app-product-form>
 

@@ -1,31 +1,40 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "reference": "GEJRR45454",
-            "name": "The Batman",
-            "description": "Un beau film",
-            "quantityStock": 4,
-            "price": 2,
-            "categorie": "DVD"
-        },
-        {
-            "id": 2,
-            "reference": "GEJRR45454",
-            "name": "The frfr",
-            "description": "Un beau film",
-            "quantityStock": 4,
-            "price": 2,
-            "categorie": "DVD"
-        },
-        {
-            "id": 3,
-            "reference": "GEJRR45454",
-            "name": "The frfr",
-            "description": "Un beau film",
-            "quantityStock": 4,
-            "price": 2,
-            "categorie": "DVD"
-        }
-    ]
+  "products": [
+    {
+      "reference": "\"'\"é'",
+      "name": null,
+      "description": null,
+      "quantityStock": null,
+      "price": null,
+      "category": null,
+      "id": 4
+    },
+    {
+      "reference": "",
+      "name": null,
+      "description": null,
+      "quantityStock": null,
+      "price": null,
+      "category": null,
+      "id": 5
+    },
+    {
+      "reference": "",
+      "name": null,
+      "description": null,
+      "quantityStock": null,
+      "price": null,
+      "category": null,
+      "id": 6
+    },
+    {
+      "reference": "gdsfg",
+      "name": null,
+      "description": null,
+      "quantityStock": null,
+      "price": null,
+      "category": null,
+      "id": 7
+    }
+  ]
 }

@@ -7,7 +7,8 @@ import { PageEditProductComponent } from './pages/page-edit-product/page-edit-pr
 const routes: Routes = [
   { path: '', redirectTo: 'list', pathMatch: 'full' },
   { path: 'list', component: PageListProductsComponent },
-
+  { path: 'add', component: PageAddProductComponent },
+  { path: 'edit/:id', component: PageEditProductComponent },
 ];
 
 @NgModule({

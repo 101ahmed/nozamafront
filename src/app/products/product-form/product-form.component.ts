@@ -28,7 +28,6 @@ export class ProductFormComponent implements OnInit {
   @Output() validate: EventEmitter<Product> = new EventEmitter<Product>();
 
   titleButton : string = 'Ajouter';
-
   creationOnGoing : boolean = false;
 
   public form = this.fb.group<ProductForm>({
