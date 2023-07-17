@@ -3,8 +3,8 @@
     {
       "reference": "gdsfg",
       "name": "GTRDTR",
-      "description": "g'e",
-      "quantityStock": "66898",
+      "description": "RGTRDGTRDT",
+      "quantityStock": 12,
       "price": "8678900",
       "category": "hclodf",
       "id": 7
@@ -19,31 +19,40 @@
       "id": 11
     },
     {
-      "reference": "fzefze",
-      "name": "fzefze",
-      "description": "fezfze",
-      "quantityStock": "123456",
-      "price": "8765432",
-      "category": "livres",
+      "reference": "sd",
+      "name": "sd",
+      "description": "sd",
+      "quantityStock": "aze",
+      "price": "12",
+      "category": "azaz",
       "id": 12
     },
     {
-      "reference": "test",
-      "name": "livres",
-      "description": "un livre",
-      "quantityStock": "1",
-      "price": "12",
-      "category": "Livres",
+      "reference": "12",
+      "name": "12",
+      "description": "12",
+      "quantityStock": "aza",
+      "price": "azaz",
+      "category": "1212",
       "id": 13
     },
     {
-      "reference": "derniertest",
-      "name": "derniertest",
-      "description": "derniertest",
-      "quantityStock": "12",
-      "price": "12",
-      "category": "derniertest",
+      "reference": "azez",
+      "name": "azezae",
+      "description": "zaeae",
+      "quantityStock": 2,
+      "price": 2,
+      "category": "zaeaze",
       "id": 14
+    },
+    {
+      "reference": "azeaza",
+      "name": "ezezez",
+      "description": "ezezeze",
+      "quantityStock": 1233,
+      "price": 123442,
+      "category": "zezee",
+      "id": 15
     }
   ]
 }
