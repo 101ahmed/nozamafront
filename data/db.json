@@ -4,37 +4,10 @@
       "reference": "gdsfg",
       "name": "GTRDTR",
       "description": "RGTRDGTRDT",
-      "quantityStock": "66898",
+      "quantityStock": 12,
       "price": "8678900",
       "category": "hclodf",
       "id": 7
-    },
-    {
-      "reference": "hfgkh",
-      "name": null,
-      "description": null,
-      "quantityStock": null,
-      "price": null,
-      "category": null,
-      "id": 8
-    },
-    {
-      "reference": "dsqdsqdsqd",
-      "name": null,
-      "description": "sdqsdqsds",
-      "quantityStock": "dqsdqsdqs",
-      "price": "dqsdqsds",
-      "category": "dqsdsqdsq",
-      "id": 9
-    },
-    {
-      "reference": "",
-      "name": null,
-      "description": "",
-      "quantityStock": "",
-      "price": null,
-      "category": null,
-      "id": 10
     },
     {
       "reference": "jgf",
@@ -44,6 +17,42 @@
       "price": "7678",
       "category": "qd<wd<wd",
       "id": 11
+    },
+    {
+      "reference": "sd",
+      "name": "sd",
+      "description": "sd",
+      "quantityStock": "aze",
+      "price": "12",
+      "category": "azaz",
+      "id": 12
+    },
+    {
+      "reference": "12",
+      "name": "12",
+      "description": "12",
+      "quantityStock": "aza",
+      "price": "azaz",
+      "category": "1212",
+      "id": 13
+    },
+    {
+      "reference": "azez",
+      "name": "azezae",
+      "description": "zaeae",
+      "quantityStock": 2,
+      "price": 2,
+      "category": "zaeaze",
+      "id": 14
+    },
+    {
+      "reference": "azeaza",
+      "name": "ezezez",
+      "description": "ezezeze",
+      "quantityStock": 1233,
+      "price": 123442,
+      "category": "zezee",
+      "id": 15
     }
   ]
 }
