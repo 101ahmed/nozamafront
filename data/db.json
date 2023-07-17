@@ -44,6 +44,15 @@
       "price": "7678",
       "category": "qd<wd<wd",
       "id": 11
+    },
+    {
+      "reference": "Test",
+      "name": "test",
+      "description": "test",
+      "quantityStock": "1",
+      "price": "1",
+      "category": "livre",
+      "id": 12
     }
   ]
 }
