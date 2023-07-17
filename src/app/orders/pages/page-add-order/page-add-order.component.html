@@ -1,1 +1,11 @@
-<p>page-add-order works!</p>
+<div class="mt-2 container-fluid">
+
+    <h2 class="text-center">Ajouter un order</h2>
+
+    <app-order-form
+        (cancel) ="goToOrderList()"
+        (validate) = "createOrder($event)"
+    >
+    </app-order-form>
+</div>
+

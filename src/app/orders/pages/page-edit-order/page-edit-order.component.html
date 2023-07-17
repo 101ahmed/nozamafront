@@ -1,1 +1,22 @@
-<p>page-edit-order works!</p>
+<div class="mt-2 container-fluid">
+    <h2 class="text-center">Modifier un order</h2>
+ 
+    <ng-container *ngIf = "order$ | async as order; else loading">
+     <app-order-form 
+         [order]="order"
+         (cancel)="goToOrdersList()"
+         (validate)="updateOrder($event)"
+     >
+ 
+     </app-order-form>
+ 
+ 
+ 
+    </ng-container>
+ </div>
+ 
+ <ng-template #loading>
+     <div class="alert alert-info" role="alert">
+         Chargement du order ...
+     </div>
+ </ng-template>

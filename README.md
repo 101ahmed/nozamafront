@@ -136,3 +136,7 @@ ng g s products/services/products
 ng g c products/search
 
 ng g c products/filter
+
+# orders
+
+ng g c orders/order-form
