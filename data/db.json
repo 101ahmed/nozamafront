@@ -1,58 +1,49 @@
 {
   "products": [
     {
-      "reference": "gdsfg",
-      "name": "GTRDTR",
-      "description": "RGTRDGTRDT",
-      "quantityStock": 12,
-      "price": "8678900",
-      "category": "hclodf",
-      "id": 7
+      "reference": "made in American",
+      "name": "play station 5",
+      "description": null,
+      "quantityStock": 50,
+      "price": 35,
+      "category": "Jeu video",
+      "id": 8
     },
     {
-      "reference": "jgf",
-      "name": "gfkjgfj",
+      "reference": "Grammy 2020",
+      "name": "Imagine",
+      "description": "sdqsdqsds",
+      "quantityStock": 456,
+      "price": 45,
+      "category": "CD",
+      "id": 9
+    },
+    {
+      "reference": "Seri 2021",
+      "name": "Start War",
+      "description": "",
+      "quantityStock": 456,
+      "price": 24,
+      "category": "DVD",
+      "id": 10
+    },
+    {
+      "reference": "Best seller 2021",
+      "name": "Big Short",
       "description": "gkjgf",
-      "quantityStock": "7687",
-      "price": "7678",
-      "category": "qd<wd<wd",
+      "quantityStock": 345,
+      "price": 34,
+      "category": "Livre",
       "id": 11
     },
     {
-      "reference": "sd",
-      "name": "sd",
-      "description": "sd",
-      "quantityStock": "aze",
-      "price": "12",
-      "category": "azaz",
+      "reference": "Best seller 1990",
+      "name": "Happy New Year",
+      "description": "Music",
+      "quantityStock": "45",
+      "price": "10",
+      "category": "CD",
       "id": 12
-    },
-    {
-      "reference": "12",
-      "name": "12",
-      "description": "12",
-      "quantityStock": "aza",
-      "price": "azaz",
-      "category": "1212",
-      "id": 13
-    },
-    {
-      "reference": "azez",
-      "name": "azezae",
-      "description": "zaeae",
-      "quantityStock": 2,
-      "price": 2,
-      "category": "zaeaze",
-      "id": 14
-    },
-    {
-      "reference": "azeaza",
-      "name": "ezezez",
-      "description": "ezezeze",
-      "quantityStock": 1233,
-      "price": 123442,
-      "category": "zezee",
-      "id": 15
     }
   ]
 }

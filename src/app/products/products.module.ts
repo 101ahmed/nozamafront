@@ -8,7 +8,9 @@ import { PageAddProductComponent } from './pages/page-add-product/page-add-produ
 import { PageEditProductComponent } from './pages/page-edit-product/page-edit-product.component';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { SharedModule } from '../shared/shared.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchComponent } from './search/search.component';
+import { FilterComponent } from './filter/filter.component';
 
 
 
@@ -19,13 +21,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     PageAddProductComponent,
     PageEditProductComponent,
     ProductFormComponent,
+    SearchComponent,
+    FilterComponent,
     
   ],
   imports: [
     CommonModule,
     ProductsRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
     
   ]
 })

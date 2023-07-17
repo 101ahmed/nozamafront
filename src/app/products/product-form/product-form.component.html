@@ -1,23 +1,24 @@
 <form class="d-flex gap-1 flex-column" [formGroup]="form" (ngSubmit)="submit()">
-    <input class="form-control" type="text" formControlName="reference"
-           placeholder="Référence du produit" aria-label="input reference">
-   
-    <input class="form-control" type="text" formControlName="name"
-           placeholder="Nom du produit" aria-label="input name">
   
-    <textarea class="form-control" type="text" formControlName="description"
+      <input class="form-control" type="text" formControlName="name"
+           placeholder="Nom du produit" aria-label="input name">
+
+      <input class="form-control" type="text" formControlName="reference"
+            placeholder="Référence du produit" aria-label="input reference">
+  
+      <textarea class="form-control" type="text" formControlName="description"
            placeholder="Description du produit" aria-label="input description"></textarea>
   
-    <input class="form-control" type="number" formControlName="quantityStock"
+      <input class="form-control" type="text" formControlName="quantityStock"
           placeholder="Quantité en stock" aria-label="input quantityStock">
 
-    <input class="form-control" type="number" formControlName="price"
+      <input class="form-control" type="text" formControlName="price"
           placeholder="Prix du produit" aria-label="input price">
 
-    <input class="form-control" type="text" formControlName="category"
+      <input class="form-control" type="text" formControlName="category"
           placeholder="Catégorie du produit" aria-label="input category">
   
-    <div class="d-flex flex-row gap-1 justify-content-end">
+      <div class="d-flex flex-row gap-1 justify-content-end">
       <button type="button" class="btn btn-secondary"
               (click)="cancelAction()">
         Annuler

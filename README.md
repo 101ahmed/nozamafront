@@ -131,3 +131,8 @@ ng g component products/productForm
 
 ng g s products/services/products
 
+# create function search and filter product
+
+ng g c products/search
+
+ng g c products/filter
