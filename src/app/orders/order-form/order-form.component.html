@@ -1,0 +1,26 @@
+<form class="d-flex gap-1 flex-column" [formGroup]="form"
+                        (ngSubmit)="submit()">
+
+    <input class="form-control " type="text" formControlName="idUser"
+                        placeholder="Id of User" aria-label="input idUser">
+
+    <input class="form-control" type="text" formControlName="status"
+                        placeholder="Status" aria-label="input status">
+
+    <input class="form-control" type="text" formControlName="date"
+                        placeholder="Date" aria-label="input date">
+
+    <input class="form-control" type="text" formControlName="price"
+                    placeholder="Price" aria-label="input price">
+
+    <div class="d-flex flex-row gap-1 justify-content-end">
+            <button type="button" class="btn btn-secondary" 
+                    (click)="cancelAction()">
+                    Annuler
+            </button>
+            <button class="btn btn-primary" 
+                    [disabled]="isDisabled()">
+            {{titleButton}}
+            </button>          
+    </div>
+</form>

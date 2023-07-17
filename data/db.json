@@ -45,5 +45,35 @@
       "category": "CD",
       "id": 12
     }
+  ],
+  "orders": [
+    {
+      "idUser": 2,
+      "status": "Valid",
+      "date": "12/07/2023",
+      "price": 120,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "idUser": 3,
+      "status": "KO",
+      "date": "16/07/2023",
+      "price": 234
+    },
+    {
+      "id": 3,
+      "idUser": 4,
+      "status": "Active",
+      "date": "14/07/2023",
+      "price": 120
+    },
+    {
+      "idUser": "12",
+      "status": "Attend",
+      "date": "20/07",
+      "price": "12",
+      "id": 4
+    }
   ]
 }
