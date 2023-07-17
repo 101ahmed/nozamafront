@@ -16,12 +16,12 @@
           <thead>
           <tr>
             <th scope="col">ID</th>
-            <th scope="col">Name</th>
-            <th scope="col">reference</th>
-            <th scope="col">description</th>
-            <th scope="col">quantityStock</th>
-            <th scope="col">price</th>
-            <th scope="col">categorie</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Référence</th>
+            <th scope="col">Description</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Catégorie</th>
             <th scope="col">Modifier / Supprimer</th>
         
           </tr>
@@ -31,10 +31,10 @@
             <th scope="row">{{ product.id }}</th>
             <td>{{ product.name }}</td>         
             <td>{{ product.reference }}</td>
-            <td>{{ product.description }}€</td>
-            <td>{{ product.quantityStock }}%</td>
-            <td>{{ product.price }}</td>
-            <td>{{ product.categorie }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.quantityStock }}</td>
+            <td>{{ product.price }} €</td>
+            <td>{{ product.category }}</td>
             <td  >
               <button class="btn btn-primary"
                       [routerLink]="['/', 'products', 'edit', product.id]">
