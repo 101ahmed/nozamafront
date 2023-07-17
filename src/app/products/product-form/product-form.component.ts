@@ -53,7 +53,7 @@ export class ProductFormComponent implements OnInit {
   }
 
   isNotValid() {
-    return this.form.pristine || this.form.valid;
+    return this.form.pristine || !this.form.valid;
   }
 
   isDisable() {
