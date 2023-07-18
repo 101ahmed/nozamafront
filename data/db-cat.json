@@ -1,0 +1,14 @@
+{
+  "categories": [
+    {
+      "name": "Livres",
+      "description": "Livres",
+      "id": 1
+    },
+    {
+      "name": "CD",
+      "description": "CD",
+      "id": 2
+    }
+  ]
+}

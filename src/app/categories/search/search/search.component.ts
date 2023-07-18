@@ -5,7 +5,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit{
+export class SearchComponent implements OnInit {
+
   constructor(){}
   ngOnInit(): void {
     
@@ -20,5 +21,4 @@ export class SearchComponent implements OnInit{
   onSearchTextChanged(){
     this.searchTextChanged.emit(this.enteredSearchValue.toLowerCase());
   }
-
 }

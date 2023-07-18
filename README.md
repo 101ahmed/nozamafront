@@ -118,25 +118,37 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Ajout des composants products
 
-ng g component products/pages/PageListProducts 
+`ng g component products/pages/PageListProducts `
 
-ng g component products/pages/PageAddProduct
+`ng g component products/pages/PageAddProduct`
 
-ng g component products/pages/PageEditProduct
+`ng g component products/pages/PageEditProduct`
 
-ng g component products/productForm
+`ng g component products/productForm`
 
 
 # Service products
 
-ng g s products/services/products
+`ng g s products/services/products`
 
 # create function search and filter product
 
-ng g c products/search
+`ng g c products/search`
 
-ng g c products/filter
+`ng g c products/filter`
 
-# orders
+# Create module categories
 
-ng g c orders/order-form
+`ng g module categories --routing`
+
+`ng g component categories/pages/PageListCategories`
+
+`ng g component categories/pages/PageEditCategorie`
+
+`ng g component categories/pages/PageAddCategorie`
+
+`ng g component categories/categoriesForm/categoriesForm`
+
+`ng g s categories/services/categories`
+
+`ng g component categories/search/search`

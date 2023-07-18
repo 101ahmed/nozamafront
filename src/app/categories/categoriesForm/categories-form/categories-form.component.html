@@ -1,0 +1,20 @@
+<form class="d-flex gap-1 flex-column" [formGroup]="form" (ngSubmit)="submit()">
+  
+    <input class="form-control" type="text" formControlName="name"
+         placeholder="Nom de la catégorie" aria-label="input name">
+
+    <textarea class="form-control" type="text" formControlName="description"
+         placeholder="Description de la catégorie" aria-label="input description"></textarea>
+
+    <div class="d-flex flex-row gap-1 justify-content-end">
+    <button type="button" class="btn btn-secondary"
+            (click)="cancelAction()">
+      Annuler
+    </button>
+    <button class="btn btn-primary"
+            [disabled]="isDisable()">
+      {{titleButton}}
+    </button>
+  </div>
+</form>
+
