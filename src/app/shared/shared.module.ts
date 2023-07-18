@@ -23,7 +23,8 @@ import { NgModule } from '@angular/core';
    exports:[
     IconsModule,
     UiModule,
-    HttpClientModule
+    HttpClientModule,
+    
    ]
 })
 export class SharedModule { }

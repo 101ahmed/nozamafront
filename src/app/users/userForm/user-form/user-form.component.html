@@ -1,0 +1,31 @@
+<form class="d-flex gap-1 flex-column" [formGroup]="form" (ngSubmit)="submit()">
+  
+    <input class="form-control" type="text" formControlName="lastname"
+         placeholder="Nom" aria-label="input lastname">
+
+    <input class="form-control" type="text" formControlName="firstname"
+          placeholder="Prénom" aria-label="input firstname">
+
+    <input class="form-control" type="text" formControlName="gender"
+         placeholder="Civilité" aria-label="input gender">
+
+    <input class="form-control" type="text" formControlName="mobile"
+        placeholder="Téléphone" aria-label="input mobile">
+
+    <input class="form-control" type="text" formControlName="mail"
+        placeholder="Email" aria-label="input mail">
+
+    <input class="form-control" type="text" formControlName="birthdate"
+        placeholder="Date de naissance" aria-label="input birthdate">
+
+    <div class="d-flex flex-row gap-1 justify-content-end">
+    <button type="button" class="btn btn-secondary"
+            (click)="cancelAction()">
+      Annuler
+    </button>
+    <button class="btn btn-primary"
+            [disabled]="isDisable()">
+      {{titleButton}}
+    </button>
+  </div>
+</form>
