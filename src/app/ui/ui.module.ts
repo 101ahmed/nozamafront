@@ -11,6 +11,9 @@ import { NgModule } from '@angular/core';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    UiComponent
   ]
 })
 export class UiModule { }
