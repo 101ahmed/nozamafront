@@ -2,6 +2,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { Product } from '../models/product';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { CategoriesService } from 'src/app/categories/services/categories.service';
+import { Categories } from 'src/app/categories/models/categories';
+import { Observable } from 'rxjs';
 
 // Voici a quoi va ressembler l'interface a remplir
 interface ProductForm {
@@ -22,9 +25,9 @@ interface ProductForm {
   styleUrls: ['./product-form.component.scss']
 })
 export class ProductFormComponent implements OnInit {
-
   @Input() product!: Product;
   @Output() cancel: EventEmitter<void> = new EventEmitter<void>();
+  categories$ : Observable<Categories[]> = this.categoriesService.getCategories();
   @Output() validate: EventEmitter<Product> = new EventEmitter<Product>();
 
   titleButton : string = 'Ajouter';
@@ -42,10 +45,12 @@ export class ProductFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private categoriesService : CategoriesService
+    
   
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
       if(this.product) {
         this.titleButton = 'Modifier'
         this.form.patchValue(this.product);

@@ -2,8 +2,8 @@
   "products": [
     {
       "reference": "made in American",
-      "name": "play station 5",
-      "description": null,
+      "name": "playStation 5",
+      "description": "kjk",
       "quantityStock": 50,
       "price": 35,
       "category": "Jeu video",
@@ -35,15 +35,6 @@
       "price": 34,
       "category": "Livre",
       "id": 11
-    },
-    {
-      "reference": "Best seller 1990",
-      "name": "Happy New Year",
-      "description": "Music",
-      "quantityStock": "45",
-      "price": "10",
-      "category": "CD",
-      "id": 12
     }
   ],
   "orders": [
@@ -74,6 +65,23 @@
       "date": "20/07",
       "price": "12",
       "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "name": "Livres",
+      "description": "Livres",
+      "id": 1
+    },
+    {
+      "name": "CD",
+      "description": "CD",
+      "id": 2
+    },
+    {
+      "name": "Jeux vidéos",
+      "description": "Jeux",
+      "id": 3
     }
   ]
 }

@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Categories } from '../../models/categories';
+import { Observable } from 'rxjs';
+import { CategoriesService } from '../../services/categories.service';
 
 
 interface CategoriesForm {
@@ -14,8 +16,6 @@ interface CategoriesForm {
   styleUrls: ['./categories-form.component.scss']
 })
 export class CategoriesFormComponent {
-
-
 
   @Input() category!: Categories;
   @Output() cancel: EventEmitter<void> = new EventEmitter<void>();
