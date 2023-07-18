@@ -1,0 +1,63 @@
+<div class="mt-2 container-fluid">
+    <h2 class="text-center">Liste des catégories</h2>
+  
+    <div class="mb-2">
+      <button class="btn btn-primary" [routerLink]="['/', 'categories', 'add']">
+        Ajouter une catégorie
+      </button>
+    </div>
+
+    <div>
+      <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+      <!-- <app-filter (filterRadioSelection)="onFilterCategory($event)"></app-filter> -->
+    </div>
+  
+    <ng-container *ngIf="!isLoading; else loading">
+      <ng-container *ngIf="data | async as categories; else loading">
+        <table *ngIf="categories.length > 0; else noData"
+               class="table  table-hover table-bordered text-center"
+        >
+          <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Description</th>
+            <th scope="col">Modifier / Supprimer</th>
+        
+          </tr>
+          </thead>
+          <tbody *ngFor="let category of categories">
+            <ng-container *ngIf="searchText ===''|| category.name.toLowerCase().includes(searchText)" >
+              <tr>
+                <th scope="row">{{ category.id }}</th>
+                <td>{{ category.name }}</td>         
+                <td>{{ category.description }}</td>
+                <td  >
+                  <button class="btn btn-primary"
+                          [routerLink]="['/', 'categories', 'edit', category.id]">
+                    <app-icon-edit></app-icon-edit>
+                  </button>
+      
+                  <button class="btn btn-danger ms-2"
+                          (click)="delete(category)">
+                    <app-icon-delete></app-icon-delete>
+                  </button>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </ng-container>
+    </ng-container>
+  </div>
+  
+  <ng-template #noData>
+    <div class="alert alert-danger" role="alert">
+      Aucune catégories disponible !
+    </div>
+  </ng-template>
+  <ng-template #loading>
+    <div class="alert alert-info" role="alert">
+      Chargement des données...
+    </div>
+  </ng-template>  

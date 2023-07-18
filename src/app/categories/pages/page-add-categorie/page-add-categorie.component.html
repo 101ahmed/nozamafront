@@ -1,0 +1,8 @@
+<div class="mt-2 container-fluid">
+
+    <h2 class="text-center">Ajouter une catégorie</h2>
+    <app-categories-form
+      (cancel)="goToCategoriesList()"
+      (validate)="createCategory($event)">
+    </app-categories-form>
+  </div>

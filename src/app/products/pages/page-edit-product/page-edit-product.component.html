@@ -1,0 +1,18 @@
+<div class="mt-2 container fluid">
+
+
+    <ng-container *ngIf="product$ | async as product">
+        <h2 class="text-center">Modifier le produit {{product.id}}</h2>
+
+        <app-product-form [product]="product" (cancel)="goToProductsList()" (validate)="updateProduct($event)">
+        </app-product-form>
+
+    </ng-container>
+</div>
+
+<!-- <ng-template #loading>
+    <div class="alert alert-info" role="alert">
+        <fa-icon [icon]="faSpinner" animation="spin-pulse"></fa-icon>
+        Chargement du produit...
+    </div>
+</ng-template> -->
