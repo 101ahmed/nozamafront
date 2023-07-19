@@ -7,7 +7,8 @@ const routes: Routes = [
   {path: 'categories', loadChildren:() => import('./categories/categories.module').then(m => m.CategoriesModule )},
   {path: 'users', loadChildren:() => import('./users/users.module').then(m => m.UsersModule )},
   {path: 'login', loadChildren:() => import('./login/login.module').then(m => m.LoginModule )},
-  
+  {path:'page-not-found', loadChildren:() => import('./page-not-found/page-not-found.module').then((m) => m.PageNotFoundModule)},
+  {path: '**', redirectTo:'page-not-found',pathMatch:'full'}
 
 ];
 
