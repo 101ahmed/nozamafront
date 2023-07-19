@@ -16,14 +16,14 @@
       <input class="form-control" type="number" formControlName="price"
           placeholder="Prix du produit" aria-label="input price">
 
-          <div class="col">
+      <div class="col">
 
             <select class="form-select" aria-label="Default select example" formControlName="category">
               <option selected>Sélectionnez une catégorie</option>
                 <option [value]="category.name" *ngFor="let category of categories$ |async "> 
                     {{category.name}}
                 </option>
-              </select>
+            </select>
         </div>
   
       <div class="d-flex flex-row gap-1 justify-content-end">

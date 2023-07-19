@@ -1,0 +1,22 @@
+header {
+
+    background-color: var(--app-primary);
+    color: var(--app-light);
+
+}
+
+.bg-secondary {
+    background-color: var(--app-secondary);
+}
+
+main{
+    background-color: var(--app-darklight2);
+    margin-top: 10rem;
+    // height: calc(100vh - 18rem);
+}
+
+footer{
+    
+    background-color: var(--app-primary);
+    color: var(--app-light);
+}
