@@ -1,0 +1,69 @@
+
+<div class="mt-2 container-fluid">
+    <h2 class="text-center">Liste des produits</h2>
+  
+    <div class="mb-2">
+      <button class="btn btn-primary" [routerLink]="['/', 'users', 'add']">
+        Ajouter un utilisateur 
+      </button>
+    </div>
+
+    <ng-container *ngIf="!isLoading; else loading">
+      <ng-container *ngIf="data | async as users; else loading">
+        <table *ngIf="users.length > 0; else noData"
+               class="table  table-hover table-bordered text-center"
+        >
+          <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Civilité</th>
+            <th scope="col">Téléphone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Date de naissance</th>
+            <th scope="col">Enregistré depuis le : </th>
+            <th scope="col">Modifier / Supprimer</th>
+        
+          </tr>
+          </thead>
+          <tbody *ngFor="let user of users">
+           
+              <tr>
+                <th scope="row">{{ user.id }}</th>
+                <td>{{ user.lastname }}</td>         
+                <td>{{ user.firstname }}</td>
+                <td>{{ user.gender }}</td>
+                <td>{{ user.mobile }}</td>
+                <td>{{ user.mail }} €</td>
+                <td>{{ user.birthdate }}</td>
+                <td>{{ user.signInDate }}</td>
+                <td  >
+                  <button class="btn btn-primary"
+                          [routerLink]="['/', 'users', 'edit', user.id]">
+                    <app-icon-edit></app-icon-edit>
+                  </button>
+      
+                  <button class="btn btn-danger ms-2"
+                          (click)="delete(user)">
+                    <app-icon-delete></app-icon-delete>
+                  </button>
+                </td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </ng-container>
+    </ng-container>
+  </div>
+  
+  <ng-template #noData>
+    <div class="alert alert-danger" role="alert">
+      Aucun utilisateur enregistré !
+    </div>
+  </ng-template>
+  <ng-template #loading>
+    <div class="alert alert-info" role="alert">
+      Chargement des données...
+    </div>
+  </ng-template>  

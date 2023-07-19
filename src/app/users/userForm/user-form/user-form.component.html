@@ -1,0 +1,42 @@
+<form class="d-flex gap-1 flex-column" [formGroup]="form" (ngSubmit)="submit()">
+    <label>Nom</label>
+    <input class="form-control" type="text" formControlName="lastname"
+         placeholder="Nom" aria-label="input lastname">
+
+    <label>Prénom</label>
+    <input class="form-control" type="text" formControlName="firstname"
+          placeholder="Prénom" aria-label="input firstname">
+
+
+    <div class="col">
+      <label for="floatingSelect">Civilité</label>
+        <select class="form-select" id="floatingSelect" formControlName="gender" aria-label="Floating label select example">
+          <option value="1">Masculin</option>
+          <option value="2">Féminin</option>
+          <option value="3">Non spécifié</option>
+        </select>
+    </div>
+
+    <label>Téléphone</label>
+    <input class="form-control" type="text" formControlName="mobile"
+        placeholder="Téléphone" aria-label="input mobile">
+
+    <label>Email</label>
+    <input class="form-control" type="text" formControlName="mail"
+        placeholder="Email" aria-label="input mail">
+
+    <label>Date de Naissance</label>
+    <input class="form-control" type="date" formControlName="birthdate"
+        placeholder="Date de naissance" aria-label="input birthdate">
+
+    <div class="d-flex flex-row gap-1 justify-content-end">
+    <button type="button" class="btn btn-secondary"
+            (click)="cancelAction()">
+      Annuler
+    </button>
+    <button class="btn btn-primary"
+            [disabled]="isDisable()">
+      {{titleButton}}
+    </button>
+  </div>
+</form>

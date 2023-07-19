@@ -1,0 +1,38 @@
+
+
+
+<div class="container-fluid">
+    <header class="row">
+      <ng-content select=".tr-header"></ng-content>
+      <div class="ms-3">
+        <span class="m-0 p-0" (click)="toggle()">
+        <ng-container *ngIf= "affiche; else showNav">
+          <ng-content select=".tr-close"></ng-content >
+        </ng-container>
+        <ng-template #showNav>
+          <ng-content select=".tr-show"></ng-content>
+        </ng-template>
+        </span>
+      </div>
+    </header>
+    <main class="row px-2">
+      Main
+    
+      <aside [ngClass]="{'col-4': true, 'd-none': ! affiche}">
+        <nav class="scroller">
+          Navigation
+          <ng-content select=".tr-nav"></ng-content>
+        </nav>
+      </aside>
+      <div class="contents col">
+        Contenu principal
+        <ng-content></ng-content>
+      </div>
+    </main>
+    
+    
+    <footer class="row">
+      <ng-content select=".tr-footer"></ng-content>
+    </footer>
+    </div>
+    

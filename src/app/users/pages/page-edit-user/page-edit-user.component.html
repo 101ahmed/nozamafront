@@ -1,0 +1,11 @@
+<div class="mt-2 container fluid">
+
+
+    <ng-container *ngIf="user$ | async as user">
+        <h2 class="text-center">Modifier le produit {{user.id}}</h2>
+
+        <app-user-form [user]="user" (cancel)="goToUsersList()" (validate)="updateUser($event)">
+        </app-user-form>
+
+    </ng-container>
+</div>

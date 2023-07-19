@@ -12,7 +12,7 @@ import { NgModule } from '@angular/core';
   imports: [
     CommonModule
   ],
-   exports:[
+  exports: [
     UiComponent
   ]
 })

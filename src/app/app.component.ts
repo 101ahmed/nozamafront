@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { VersionService } from './core/services/version.service';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'nozamafront';
+  
 }

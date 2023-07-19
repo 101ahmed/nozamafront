@@ -74,5 +74,16 @@
       "description": "Jeux",
       "id": 3
     }
+  ],
+  "users": [
+    {
+      "lastname": "Menvuça",
+      "firstname": "Gérard",
+      "gender": "1",
+      "mobile": "0243121842",
+      "mail": "Darksasukedu84@wanadoo.fr",
+      "birthdate": "2012-12-12",
+      "id": 1
+    }
   ]
 }
