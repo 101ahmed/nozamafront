@@ -26,15 +26,6 @@
       "price": 24,
       "category": "DVD",
       "id": 10
-    },
-    {
-      "reference": "Best seller 2021",
-      "name": "Big Short",
-      "description": "gkjgf",
-      "quantityStock": 345,
-      "price": 34,
-      "category": "Livre",
-      "id": 11
     }
   ],
   "orders": [
