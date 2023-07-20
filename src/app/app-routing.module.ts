@@ -6,6 +6,7 @@ import { PageForgotPasswordComponent } from './login/pages/page-forgot-password/
 import { PageResetPasswordComponent } from './login/pages/page-reset-password/page-reset-password.component';
 
 const routes: Routes = [
+  {path: '', redirectTo:'products',pathMatch:'full'},
   {path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)},
   {path: 'orders', loadChildren:() => import('./orders/orders.module').then(m => m.OrdersModule )},
   {path: 'categories', loadChildren:() => import('./categories/categories.module').then(m => m.CategoriesModule )},
