@@ -156,3 +156,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Ajout des pages Detail product
 ` ng g c products/pages/PageDetailProduct`
+
+# page login
+
+`ng g s login/services`
