@@ -18,7 +18,7 @@
       "price": 45,
       "category": "cd",
       "id": 9,
-      "imageUrl":"https://i.vimeocdn.com/video/672734020-4fe3ff81cfb06a2a4b92e3768dd5c154b1c3a9807d8c5608865cbeb78f83739b-d"
+      "imageUrl": "https://i.vimeocdn.com/video/672734020-4fe3ff81cfb06a2a4b92e3768dd5c154b1c3a9807d8c5608865cbeb78f83739b-d"
     },
     {
       "reference": "Seri 2021",
@@ -28,7 +28,7 @@
       "price": 24,
       "category": "dvd",
       "id": 10,
-      "imageUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png"
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png"
     },
     {
       "reference": "Best seller 2021",
@@ -38,7 +38,7 @@
       "price": 34,
       "category": "books",
       "id": 11,
-      "imageUrl":"https://ec56229aec51f1baff1d-185c3068e22352c56024573e929788ff.ssl.cf1.rackcdn.com/attachments/large/4/2/7/003531427.jpg"
+      "imageUrl": "https://ec56229aec51f1baff1d-185c3068e22352c56024573e929788ff.ssl.cf1.rackcdn.com/attachments/large/4/2/7/003531427.jpg"
     }
   ],
   "orders": [
@@ -48,27 +48,6 @@
       "date": "12/07/2023",
       "price": 120,
       "id": 1
-    },
-    {
-      "id": 2,
-      "idUser": 3,
-      "status": "KO",
-      "date": "16/07/2023",
-      "price": 234
-    },
-    {
-      "id": 3,
-      "idUser": 4,
-      "status": "Active",
-      "date": "14/07/2023",
-      "price": 120
-    },
-    {
-      "idUser": "12",
-      "status": "Attend",
-      "date": "20/07",
-      "price": "12",
-      "id": 4
     }
   ],
   "categories": [
