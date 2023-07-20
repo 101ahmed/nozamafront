@@ -1,7 +1,6 @@
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/products/models/product';
-
 
 @Component({
   selector: 'app-catalogue',
@@ -9,7 +8,6 @@ import { Product } from 'src/app/products/models/product';
   styleUrls: ['./catalogue.component.scss']
 })
 export class CatalogueComponent implements OnInit {
-
   products: any[] = []; // Utilisation d'un tableau de type any pour représenter les produits
   selectedCategory: string = 'all';
   selectedPriceRange: string = 'all';
@@ -31,24 +29,54 @@ export class CatalogueComponent implements OnInit {
       const categoryMatch = this.selectedCategory === 'all' || product.category === this.selectedCategory;
       const priceMatch = this.selectedPriceRange === 'all' || this.isPriceInRange(product.price, this.selectedPriceRange);
       return categoryMatch && priceMatch;
-
-    })
+    });
   }
-  
-  isPriceInRange(price: number, priceRange: string): boolean { 
+
+  isPriceInRange(price: number, priceRange: string): boolean {
     const [min, max] = priceRange.split('-').map((value) => parseFloat(value));
     return price >= min && price <= max;
-
   }
 
   resetFilters() {
     this.selectedCategory = 'all';
     this.selectedPriceRange = 'all';
     this.applyFilters();
+  }
 
+  @ViewChild('productCards') productCardsRef!: ElementRef;
+
+  private maxHeight = 0;
+
+  getMaxDescriptionHeight(): number {
+    return this.maxHeight;
+  }
+
+  // Utilisez l'événement de survol pour ajuster la hauteur de la description
+  @HostListener('window:resize', ['$event'])
+  @HostListener('window:mouseover', ['$event'])
+  onWindowResize(event: MouseEvent): void {
+    this.calculateMaxHeight();
+  }
+
+  private calculateMaxHeight(): void {
+    const productCards: HTMLElement = this.productCardsRef.nativeElement;
+    const cards: NodeListOf<HTMLElement> = productCards.querySelectorAll('.product-card');
+
+    cards.forEach((card) => {
+      const description: HTMLElement | null = card.querySelector('.description');
+
+      if (description) {
+        description.style.maxHeight = 'none'; // Réinitialise la hauteur pour calculer la vraie hauteur
+        const descriptionHeight = description.clientHeight;
+        description.style.maxHeight = ''; // Réinitialise la hauteur pour la suite de l'affichage
+        if (descriptionHeight > this.maxHeight) {
+          this.maxHeight = descriptionHeight;
+        }
+      }
+    });
   }
 
   addToCart(product: Product) {
-  // a faire 
-  }
+    // a faire 
+    }
 }
