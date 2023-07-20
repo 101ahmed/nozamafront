@@ -7,6 +7,14 @@ import { Observable, map } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   
+  constructor() { }
+
+  showProducts() {
+    const modal = document.createElement('div');
+    modal.innerHTML = '<app-products></app-products>';
+    document.body.appendChild(modal);
+  }
 }
