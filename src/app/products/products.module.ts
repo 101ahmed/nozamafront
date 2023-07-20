@@ -11,6 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { FilterComponent } from './filter/filter.component';
+import { PageDetailProductComponent } from './pages/page-detail-product/page-detail-product.component';
 
 
 
@@ -23,6 +24,7 @@ import { FilterComponent } from './filter/filter.component';
     ProductFormComponent,
     SearchComponent,
     FilterComponent,
+    PageDetailProductComponent,
     
   ],
   imports: [

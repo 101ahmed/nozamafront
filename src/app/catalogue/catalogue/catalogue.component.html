@@ -1,0 +1,56 @@
+<div class="catalogue-container">
+  <div class="filters">
+    <!-- Vos filtres vont ici -->
+    <h2> Filtres </h2>
+    <div class="filter-item">
+      <label for="filter-category"> Catégorie : </label>
+      <select id="filter-category" [(ngModel)]="selectedCategory">
+        <option value="all"> Tous </option>
+        <option value="books"> Livres </option>
+        <option value="cd"> CD </option>
+        <option value="dvd"> DVD </option>
+        <option value="games"> Jeux vidéos </option>
+      </select>
+    </div>
+
+    <div class="filter-item">
+      <label for="filter-price"> Choisir le prix : </label>
+      <select id="filter-price" [(ngModel)]="selectedPriceRange">
+        <option value="all"> Tous </option>
+        <option value="0-10"> 0 € - 10 € </option>
+        <option value="11-20"> 11 € - 20 € </option>
+        <option value="21-30"> 21 € - 30 € </option>
+        <option value="31-40"> 31 € - 40 € </option>
+        <option value="41-50"> 41 € - 50 € </option>
+        <option value="51-60"> 51 € - 60 € </option>
+        <option value="61-70"> 61 € - 70 € </option>
+      </select>
+    </div>
+
+    <div class="filter-buttons">
+      <button (click)="applyFilters()"> Appliquer les filtres </button>
+      <button (click)="resetFilters()"> Réinitialiser les filtres</button>
+    </div>
+  </div>
+
+  <div class="product-list">
+    <div class="card product-card" *ngFor="let product of filteredProducts">
+      <img class="card-img-top" [src]="product.imageUrl" alt="{{ product.name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+      </div>
+      <div class="row">
+        <div class="col">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Prix : {{ product.price }} €</li>
+        
+          </ul>
+        </div>
+        <div class="col">
+          <button class="btn btn-primary" (click)="addToCart(product)">Ajouter au panier</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

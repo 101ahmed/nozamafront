@@ -152,3 +152,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 `ng g s categories/services/categories`
 
 `ng g component categories/search/search`
+
+
+## Ajout des pages Detail product
+` ng g c products/pages/PageDetailProduct`
