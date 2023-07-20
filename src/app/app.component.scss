@@ -1,19 +1,25 @@
 header {
-
+   
     background-color: var(--app-primary);
     color: var(--app-light);
 
 }
 
-.bg-secondary {
-    background-color: var(--app-secondary);
+.bg-lou {
+    background-color: var(--app-lou);
 }
+.text-sylvain{
+    color: white ;
+}
+.text-sylvain:hover {
+    color: #a3d3f0;
+ }
 
 main{
     background-color: var(--app-darklight2);
-    margin-top: 10rem;
-    // height: calc(100vh - 18rem);
+    height: calc(100vh - 18rem);
 }
+
 
 footer{
     

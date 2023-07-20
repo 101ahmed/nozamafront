@@ -1,15 +1,13 @@
-
-
 <router-outlet></router-outlet>
 
-
 <div class="container-fluid my-3 ">
+   
     <header class="fixed-top">
 
        <nav class="navbar navbar-expand-lg  row">
 
         <div class="col">
-            <a class="navbar-brand mx-2" href="#"><img src="../assets/images/nozama_logo_b.svg" width="125px" ></a>
+            <a class="navbar-brand mx-2" href=""><img src="../assets/images/nozama_logo_b.svg" width="125px" ></a>
         </div>
         <div class="col">
                <form class="d-flex" role="search">
@@ -18,11 +16,11 @@
               </form>
             </div>
             <div class="col text-end">
-              <i class="bi bi-person-fill mx-2"> Se connecter / S'inscrire</i>
-              <i class="bi bi-cart-fill mx-2"> Mon Panier</i>
+             <a [routerLink]="['/', 'login', 'sign-in']" class="text-sylvain"> <i class="bi bi-person-fill mx-2" > Se connecter / S'inscrire</i></a>
+             <a [routerLink]="['/', 'login', 'sign-in']" class="text-sylvain"><i class="bi bi-cart-fill mx-2"> Mon Panier</i></a>
             </div>
     </nav>
-    <nav class="navbar navbar-expand-lg navbar-dark row">
+    <nav class="navbar navbar-expand-lg bg-lou row">
         <div class="row">
             <div class="col">
                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,16 +55,13 @@
          
      </header>
    
-   <main class="">
-    <div class="">
-    <button class=" btn btn-primary ms-2" [routerLink]="['/', 'products', 'list' , ]"> Produits</button>
-    <button class="btn btn-primary ms-2" [routerLink]="['/', 'orders', 'list']">Commandes</button>
-    <button class="btn btn-primary ms-2" [routerLink]="['/', 'categories', 'list']">Catégories</button>
-    <button class="btn btn-primary ms-2" [routerLink]="['/', 'users', 'list']">Utilisateurs</button>
-    <button class="btn btn-primary ms-2" [routerLink]="['/', 'login', 'sign-in']">Sign in</button>
-    <button class="btn btn-primary ms-2" [routerLink]="['/', 'login', 'sign-up']">Sign up</button>
-   
-  </div>
+   <main>
+       <ng-content select=".tr-main" class="test"></ng-content>
+       <button class=" btn btn-primary ms-2" [routerLink]="['/', 'products', 'list']"> Produits</button>
+        <button class="btn btn-primary ms-2" [routerLink]="['/', 'orders', 'list']">Commandes</button>
+        <button class="btn btn-primary ms-2" [routerLink]="['/', 'categories', 'list']">Catégories</button>
+        <button class="btn btn-primary ms-2" [routerLink]="['/', 'users', 'list']">Utilisateurs</button>
+        <button class="btn btn-primary ms-2" [routerLink]="['/', 'login', 'sign-up']">Sign up</button>
    </main>
 
        
@@ -102,3 +97,4 @@
      
    
    </footer>
+   
