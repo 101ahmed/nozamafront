@@ -1,10 +1,5 @@
 
-<button class=" btn btn-primary ms-2" [routerLink]="['/', 'products', 'list']"> Produits</button>
-<button class="btn btn-primary ms-2" [routerLink]="['/', 'orders', 'list']">Commandes</button>
-<button class="btn btn-primary ms-2" [routerLink]="['/', 'categories', 'list']">Catégories</button>
-<button class="btn btn-primary ms-2" [routerLink]="['/', 'users', 'list']">Utilisateurs</button>
-<button class="btn btn-primary ms-2" [routerLink]="['/', 'login', 'sign-in']">Sign in</button>
-<button class="btn btn-primary ms-2" [routerLink]="['/', 'login', 'sign-up']">Sign up</button>
+
 <router-outlet></router-outlet>
 
 
@@ -40,8 +35,9 @@
                    <li class="nav-item">
                      <a class="nav-link active" aria-current="page" href="#">Accueil</a>
                    </li>
+                   
                    <li class="nav-item">
-                     <a class="nav-link" href="#">Tous les produits</a>
+                     <a class="nav-link" href="#" >Tous les produits</a> 
                    </li>
                    <li class="nav-item">
                      <a class="nav-link" href="#">CD</a>
@@ -61,9 +57,19 @@
          
      </header>
    
-   <main>
-       <ng-content select=".tr-main"></ng-content>
+   <main class="">
+    <div class="">
+    <button class=" btn btn-primary ms-2" [routerLink]="['/', 'products', 'list' , ]"> Produits</button>
+    <button class="btn btn-primary ms-2" [routerLink]="['/', 'orders', 'list']">Commandes</button>
+    <button class="btn btn-primary ms-2" [routerLink]="['/', 'categories', 'list']">Catégories</button>
+    <button class="btn btn-primary ms-2" [routerLink]="['/', 'users', 'list']">Utilisateurs</button>
+    <button class="btn btn-primary ms-2" [routerLink]="['/', 'login', 'sign-in']">Sign in</button>
+    <button class="btn btn-primary ms-2" [routerLink]="['/', 'login', 'sign-up']">Sign up</button>
+   
+  </div>
    </main>
+
+       
      
    </div>
    
