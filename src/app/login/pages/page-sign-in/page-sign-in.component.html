@@ -1,1 +1,32 @@
-<p>page-sign-in works!</p>
+<div class="container"> 
+    <h2 class="text-center">S'identifier</h2>
+    <div class="col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+      <form [formGroup]="loginForm" class="p-5 border bg-light needs-validation rounded" >        
+        <div class="form-group mb-2" [class.error]="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')">                    
+            <input type="email" class="form-control"placeholder="Email"  aria-describedby="emailHelp" formControlName="email">
+        </div>
+        <small *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')" class="text-danger ">*Email est requis</small>
+
+        <div class="form-group mb-2 mt-4" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')">          
+            <input type="password" class="form-control" placeholder="Password" formControlName="password">         
+        </div>
+        <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required', 'password')" class="text-danger ">*Password est requis</small>
+
+        <div class="form-inline fr my-4">
+          <a id="forget" class="font-weight-bold " [routerLink]="['/', 'forgot-password']"> Oublié password?</a>
+        </div>
+
+        <div class=" d-flex justify-content-center mt-2 mb-2">      
+          <button (click)="onSubmit()" type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" >Valider </button>          
+        </div>
+
+        <div class="form-group form-check">
+            <label class="form-check-label pe-4" for="">Vous n'avez pas d'account <a  id="forget" [routerLink]="['/', 'sign-up']"> S'incrire</a></label>
+        </div>
+    </form>
+    </div>
+    
+                  
+
+
+</div>

@@ -35,7 +35,7 @@ export class PageListCategoriesComponent implements OnInit {
       });
   }
   
-  //search products
+  //search categories
   searchText: string = '';
   onSearchTextEntered(searchValue: string){
     this.searchText =  searchValue;
