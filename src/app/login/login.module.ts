@@ -7,6 +7,7 @@ import { PageSignUpComponent } from './pages/page-sign-up/page-sign-up.component
 import { PageResetPasswordComponent } from './pages/page-reset-password/page-reset-password.component';
 import { PageForgotPasswordComponent } from './pages/page-forgot-password/page-forgot-password.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,12 +20,12 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    LoginRoutingModule,
-    SharedModule
+    LoginRoutingModule, 
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [
-    PageSignInComponent,
-    PageSignUpComponent
+    
   ]
 })
 export class LoginModule { }
