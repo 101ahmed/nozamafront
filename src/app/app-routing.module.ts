@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: 'login', loadChildren:() => import('./login/login.module').then(m => m.LoginModule)},
   {path: 'page-not-found', loadChildren:() => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)},
   {path: '**', redirectTo:'page-not-found',pathMatch:'full'},
+  
 ];
 
 @NgModule({
