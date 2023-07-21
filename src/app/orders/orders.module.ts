@@ -8,7 +8,6 @@ import { PageAddOrderComponent } from './pages/page-add-order/page-add-order.com
 import { OrderFormComponent } from './order-form/order-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
-import { PanierOffcanvasComponent } from './pages/panier-offcanvas/panier-offcanvas.component';
 
 
 @NgModule({
@@ -17,7 +16,6 @@ import { PanierOffcanvasComponent } from './pages/panier-offcanvas/panier-offcan
     PageEditOrderComponent,
     PageAddOrderComponent,
     OrderFormComponent,
-    PanierOffcanvasComponent
   ],
   imports: [
     CommonModule,

@@ -8,8 +8,9 @@ import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { CatalogueModule } from '../catalogue/catalogue.module';
-import { CatalogueComponent } from '../catalogue/catalogue/catalogue.component';
 import { AdminModule } from '../admin/admin.module';
+import { ContactModule } from '../contact/contact.module';
+
 
 
 
@@ -34,7 +35,8 @@ import { AdminModule } from '../admin/admin.module';
     FooterComponent,
     LoginModule,
     CatalogueModule,
-    AdminModule
+    AdminModule,
+    ContactModule
  
     
    ]
