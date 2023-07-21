@@ -9,7 +9,7 @@ import { PageResetPasswordComponent } from './login/pages/page-reset-password/pa
 const routes: Routes = [
   {path: '', redirectTo:'catalogue',pathMatch:'full'},
   {path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)},
- // { path: 'detail/:id', component: PageDetailProductComponent},
+  {path: 'detail/:id', component: PageDetailProductComponent},
   {path: 'orders', loadChildren:() => import('./orders/orders.module').then(m => m.OrdersModule )},
   {path: 'categories', loadChildren:() => import('./categories/categories.module').then(m => m.CategoriesModule )},
   {path: 'users', loadChildren:() => import('./users/users.module').then(m => m.UsersModule )},
@@ -18,6 +18,7 @@ const routes: Routes = [
   {path: 'sign-up', component: PageSignUpComponent },
   {path: 'forgot-password', component: PageForgotPasswordComponent},
   {path: 'reset-password', component: PageResetPasswordComponent},
+  {path: 'admin', loadChildren:() => import('./admin/admin.module').then(m => m.AdminModule)},
   
   
 

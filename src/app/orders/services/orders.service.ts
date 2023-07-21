@@ -1,16 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Orders } from '../models/orders';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdersService {
-
+  private data: BehaviorSubject<Orders[]> = new BehaviorSubject<Orders[]>([]);
   constructor(
     private http: HttpClient
   ) { }
+
+  get data$(): Observable<Orders[]> {
+    return this.data.asObservable();
+  }
 
   getOrders(): Observable<Orders[]>{
     return this.http.get<Orders[]>('http://localhost:3000/orders');

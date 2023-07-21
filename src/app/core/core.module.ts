@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { CatalogueModule } from '../catalogue/catalogue.module';
 import { CatalogueComponent } from '../catalogue/catalogue/catalogue.component';
+import { AdminModule } from '../admin/admin.module';
 
 
 
@@ -33,6 +34,7 @@ import { CatalogueComponent } from '../catalogue/catalogue/catalogue.component';
     FooterComponent,
     LoginModule,
     CatalogueModule,
+    AdminModule
  
     
    ]

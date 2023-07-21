@@ -7,6 +7,7 @@ import { UiModule } from '../ui/ui.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CatalogueModule } from '../catalogue/catalogue.module';
+import { AdminModule } from '../admin/admin.module';
 
 
 
@@ -25,7 +26,8 @@ import { CatalogueModule } from '../catalogue/catalogue.module';
     IconsModule,
     UiModule,
     HttpClientModule,
-    CatalogueModule
+    CatalogueModule,
+    AdminModule
     
    ]
 })
