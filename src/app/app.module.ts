@@ -19,7 +19,8 @@ import { NgModule } from '@angular/core';
     AppRoutingModule,
     NgbModule,
     SharedModule, 
-    CoreModule
+    CoreModule, 
+
    
   ],
   providers: [],
