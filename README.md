@@ -175,6 +175,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Page Admin
 
-ng g module admin --routing
+`ng g module admin --routing`
 
-ng g c admin/components/admin
+`ng g c admin/components/admin`
