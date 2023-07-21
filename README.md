@@ -160,3 +160,21 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 # page login
 
 `ng g s login/services`
+
+# Home Page
+
+## Header
+`ng g component core/components/Header`
+
+## Nav
+`ng g component core/components/Nav`
+
+## Footer
+
+`ng g component core/components/Footer`
+
+# Page Admin
+
+ng g module admin --routing
+
+ng g c admin/components/admin
