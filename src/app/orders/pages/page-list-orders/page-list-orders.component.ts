@@ -15,6 +15,8 @@ export class PageListOrdersComponent {
   ){}
 
   remove(order: Orders): void{
+    if(confirm("Voulez vous supprimer la commande ?"))
+    
     this.ordersService.deleteOrder(order)
     .subscribe((): void => {
       this.orders$ = this.ordersService.getOrders();

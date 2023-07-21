@@ -32,6 +32,7 @@ export class PageListProductsComponent implements OnInit{
   }
 
   delete(product: Product) {
+    if(confirm("Voulez vous supprimer le produit ?"))
     this.productsService.deleteProductById(product.id)
       .subscribe(() => {
         this.getData();
