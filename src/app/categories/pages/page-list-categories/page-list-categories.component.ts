@@ -29,6 +29,7 @@ export class PageListCategoriesComponent implements OnInit {
   }
 
   delete(category: Categories) {
+    if(confirm("Voulez vous supprimer la catégorie ?"))
     this.categoriesService.deleteCategoryById(category.id)
       .subscribe(() => {
         this.getData();
