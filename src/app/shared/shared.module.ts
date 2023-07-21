@@ -6,6 +6,7 @@ import { IconsModule } from '../icons/icons.module';
 import { UiModule } from '../ui/ui.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { CatalogueModule } from '../catalogue/catalogue.module';
 
 
 
@@ -24,6 +25,7 @@ import { NgModule } from '@angular/core';
     IconsModule,
     UiModule,
     HttpClientModule,
+    CatalogueModule
     
    ]
 })
