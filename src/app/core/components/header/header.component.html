@@ -16,7 +16,21 @@
               <div class="col text-end">
                <a [routerLink]="['/', 'sign-in']" class="text-sylvain"> <i class="bi bi-person-fill mx-2" > Se connecter / S'inscrire</i></a>
                <a [routerLink]="['/', 'sign-in']" class="text-sylvain"><i class="bi bi-cart-fill mx-2"> Mon Panier</i></a>
+               
+               <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</button>
+               <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                 <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                 </div>
+                 <div class="offcanvas-body">
+                    ...
+                 </div>
+                </div>
+               
               </div>
+
+              
       </nav>
       <nav class="navbar navbar-expand-lg bg-lou row">
           <div class="row">
@@ -44,7 +58,7 @@
                     <li class="nav-item">
                       <a class="nav-link " aria-current="page" href="#">
                          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button class=" btn btn-primary  justify-content-md-end" [routerLink]="['/', 'contact',]"> Contact nous </button>
+                        <button class=" btn btn-primary  justify-content-md-end" [routerLink]="['/', 'contact',]"> Contactez-nous </button>
                        </div>
                       </a>
                     </li>

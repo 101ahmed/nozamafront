@@ -20,6 +20,7 @@ const routes: Routes = [
   {path: 'sign-up', component: PageSignUpComponent },
   {path: 'forgot-password', component: PageForgotPasswordComponent},
   {path: 'reset-password', component: PageResetPasswordComponent},
+ 
 
 ];
 
