@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { CategoriesRoutingModule } from './categories-routing.module';
 import { PageListCategoriesComponent } from './pages/page-list-categories/page-list-categories.component';
 import { PageEditCategorieComponent } from './pages/page-edit-categorie/page-edit-categorie.component';

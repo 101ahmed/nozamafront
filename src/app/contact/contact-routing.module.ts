@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactFormComponent } from './components/contact-form/contact-form.component';
-
+import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'contact', pathMatch: 'full' },
-  { path: 'contact', component:ContactFormComponent},
+  { path: 'contact', component: ContactComponent },
 ];
 
 @NgModule({
@@ -13,4 +12,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class ContactRoutingModule { }
-
