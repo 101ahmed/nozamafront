@@ -7,6 +7,7 @@ import { NgModule } from '@angular/core';
 import { CatalogueModule } from '../catalogue/catalogue.module';
 import { AdminModule } from '../admin/admin.module';
 import { ContactModule } from '../contact/contact.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -23,8 +24,8 @@ import { ContactModule } from '../contact/contact.module';
     HttpClientModule,
     CatalogueModule,
     AdminModule,
-    ContactModule
-   
+    ContactModule,
+   ReactiveFormsModule
     
    ]
 })
