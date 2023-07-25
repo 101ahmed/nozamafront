@@ -1,17 +1,17 @@
 <div class=" container-fluid">
-    <div class="row border border-1">
-        <div class="col border border-1">
+    <div class="row ">
+        <div class="col">
             <h1>Mon Panier</h1>
         </div>
     </div>
-    <div class="row border p-3 mb-2 bg-light text-dark align-items-center">
+    <div class="row p-3 mb-2 bg-light text-dark align-items-center">
       <div class="col-3" >
         <img class="img-fluid" style="height: 200px; width: 200px;" src="../nozama/assets/images/enceinte-bluetooth-flip-essential.jpg" alt=“Enceinte_Bluetooth”>
       </div>
-      <div class="col-4 border">
+      <div class="col-4 ">
         <h5>JBL Flip Essential 2 Enceinte Bluetooth portable avec batterie rechargeable, Étanchéité IPX7, Autonomie de 10h, Noir</h5>
       </div>
-      <div class="col-1 border ">
+      <div class="col-1  ">
         <div class="row">
           <p>Quantité</p>
         </div>
@@ -31,25 +31,25 @@
             </select>
         </div>
       </div>
-      <div class="col-2 border text-center">
+      <div class="col-2  text-center">
         <div class="row">
           <p>Prix</p>
         </div>
         <div class="row justify-content-center">28,50€</div>
       </div>
-      <div class="col-2 border text-center align-items-center">
+      <div class="col-2  text-center align-items-center">
           <button type="button" class="btn btn-primary shadow rounded"> Supprimer</button>
       </div>
     </div>
   
 <div class="row justify-content-end">
-  <div class="col-4 border border-1">
-    <div class="row ">
+  <div class="col-4 ">
+    <div class="row mt-4">
       <h2>Récapitulatif</h2>
     </div>
     <div class="row   ">
       <div class="col ">
-        <p>Panier (2)</p>
+        <p>Panier</p>
         <p>Frais de livraison</p>
         <p>Total (TVA incluse)</p>
       </div> 
@@ -79,14 +79,49 @@
     </div>
 </div>
 
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Toggle right offcanvas</button>
+<div class="container-fluid">
+  <h2 class="text-center">Liste des produits panier A MODIFIER</h2>
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    ...
-  </div>
+
+    <ng-container *ngIf="data | async as product; ">
+      <table *ngIf="product.length > 0;"
+             class="table  table-hover table-bordered text-center"
+      >
+        <thead>
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Reference</th>
+          <th scope="col">Description</th>
+          <th scope="col">Quantité</th>
+          <th scope="col">Prix</th>
+          <th scope="col">Catégorie</th>
+          <th scope="col">Modifier / Supprimer</th>
+      
+        </tr>
+        </thead>
+        <tbody *ngFor="let productCart of product">
+            <tr>
+              <td>{{ productCart.name }}</td>
+              <td>{{ productCart.reference }}</td>
+              <td>{{ productCart.description }}</td>
+              <td>{{ productCart.quantityStock }}</td>
+              <td>{{ productCart.price }} €</td>
+              <td>{{ productCart.category }}</td> 
+              <td>
+                <button class="btn btn-primary"
+                        >
+                  <app-icon-edit></app-icon-edit>
+                </button>
+    
+                <button class="btn btn-danger ms-2">
+                  <app-icon-delete></app-icon-delete>
+                </button>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+ 
+<div class="">
+  <button class=" btn btn-primary ms-2" [routerLink]="['/', 'catalogue']">
+    Catalogue</button>
 </div>
