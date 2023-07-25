@@ -1,0 +1,52 @@
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h4 class="offcanvas-title" id="offcanvasRightLabel">Mon Panier</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+   
+    <div class="container border border-secondary border-1">
+      
+    <nav class="navbar navbar-expand-md col">
+      <div class="row mx-2">
+        
+      <img src="./../../../../assets/images/ecouteur.jpg" class="img-fluid" alt="Responsive image">
+      <div class="row">
+      <a class="text-dark" href="#"><div >IKG Ecouteurs Bluetooth sans Fil 5.3 HiFi Son Stéréo Basses, Oreillette 37H d’Autonomie, HD Mic Intégrés, Étanchéité IP7, USB-C, pour iOS et Android(Blancs) </div></a>
+      <!-- TODO : Lier description à la fiche détails du produit -->
+      </div>
+      <b class="nav-item mx-2 m-2 text-center">20,60 €</b>
+      
+      <ul class="navbar-nav mr-auto col">
+        
+          <select name=“quantite”>
+            <option selected value=“1”>Quantité</option>
+            <option value=“2”>2</option>
+            <option value=“3”>3</option>
+            <option value=“4”>4</option>
+            <option value=“5”>5</option>
+            <option value=“6”>6</option>
+            <option value=“7”>7</option>
+            <option value=“8”>8</option>
+            <option value=“9”>9</option>
+            <option value=“10”>10</option>
+            <option value=“11”>11</option>
+        </select>
+        <li class="nav-item"><a class="nav-link " href="#">Voir l'article</a></li>
+         <!-- TODO : Lier bouton voir article à la fiche détails du produit -->
+        <li class="nav-item"><a class="nav-link " href="#">Supprimer</a></li> 
+        <!-- TODO : faire bouton supprimer article -->
+        
+      </ul>
+    </div>
+    
+    </nav>
+    
+    </div>
+    <div class="h4 m-2">Total de la commande : </div>
+    <div>
+        <!-- Todo : lier le prix en fonction des différents articles commandés -->
+    </div>
+    <div class="container row d-grid gap-2 ">
+      <button class="col btn btn-warning shadow p-3 mt-2 mx-3 bg-warning rounded" [routerLink]="['/', 'orders','cart']">Valider le panier</button>
+    </div>
+  </div>
