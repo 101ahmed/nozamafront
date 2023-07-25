@@ -14,19 +14,9 @@
                 </form>
               </div>
               <div class="col text-end">
-               <a [routerLink]="['/', 'sign-in']" class="text-sylvain"> <i class="bi bi-person-fill mx-2" > Se connecter / S'inscrire</i></a>
-               <a [routerLink]="['/', 'sign-in']" class="text-sylvain"><i class="bi bi-cart-fill mx-2"> Mon Panier</i></a>
-               
-               <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</button>
-               <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
-                 <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                 </div>
-                 <div class="offcanvas-body">
-                    ...
-                 </div>
-                </div>
+               <a [routerLink]="['/', 'sign-in']" class="text-sylvain"> <i class="bi bi-person mx-2 h3" ></i></a>
+               <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="text-sylvain"><i class="bi bi-bag mx-2 h4"></i></a>
+				
                
               </div>
 
@@ -77,4 +67,7 @@
           </div>
       </nav>                              
     </header>
-  </div>  
+   </div>
+      
+<app-off-canvas-cart></app-off-canvas-cart>
+
