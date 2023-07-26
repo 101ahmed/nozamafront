@@ -37,4 +37,11 @@ export class ProductsService {
   deleteProductById(id : number): Observable<Product> {
    return this.http.delete<Product>(`http://localhost:8080/products/${id}`);
     }
+
+  postProductInCart(product: Product){
+    return this.http.post<Product[]>('http://localhost:3000/productCart', product);
+  }
+  getCart(): Observable<Product[]> {
+    return this.http.get<Product[]>('http://localhost:3000/productCart');
+  }
   }

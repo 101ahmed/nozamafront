@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { CatalogueModule } from '../catalogue/catalogue.module';
 import { AdminModule } from '../admin/admin.module';
 import { ContactModule } from '../contact/contact.module';
+import { OffCanvasCartComponent } from './components/off-canvas-cart/off-canvas-cart.component';
 
 
 
@@ -19,7 +20,8 @@ import { ContactModule } from '../contact/contact.module';
   declarations: [
     HeaderComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    OffCanvasCartComponent
   
   ],
   imports: [
@@ -37,7 +39,7 @@ import { ContactModule } from '../contact/contact.module';
     CatalogueModule,
     AdminModule,
     ContactModule,
-    
+    OffCanvasCartComponent
  
     
    ]

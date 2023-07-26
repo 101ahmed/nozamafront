@@ -1,7 +1,8 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from 'src/app/products/models/product';
-import { OrdersService } from 'src/app/orders/services/orders.service';
+import { ProductsService } from 'src/app/products/services/products.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-catalogue',
@@ -18,7 +19,8 @@ export class CatalogueComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private ordersService: OrdersService
+    private productsService: ProductsService,
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -82,5 +84,12 @@ export class CatalogueComponent implements OnInit {
 
   addToCart(product: Product) {
     // a faire 
+    this.productsService.postProductInCart(product)
+    .subscribe((res) => { this.goToCatalogue();
+    });
     }
+
+  goToCatalogue(){
+    this.router.navigate(['/','catalogue']);
+  }
 }
