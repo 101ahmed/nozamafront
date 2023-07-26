@@ -26,7 +26,8 @@ import { OffCanvasCartComponent } from './components/off-canvas-cart/off-canvas-
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
    exports : [
     IconsModule,

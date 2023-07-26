@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../models/product';
+import { query } from '@angular/animations';
 
 @Injectable({
   providedIn: 'root'
@@ -38,10 +39,17 @@ export class ProductsService {
    return this.http.delete<Product>(`http://localhost:8080/products/${id}`);
     }
 
+  searchProduct(query:string){
+    return this.http.get<Product[]>(`http://localhost:3000/products?q=${query}`);
+  }
+
   postProductInCart(product: Product){
+    return this.http.get<Product[]>(`http://localhost:3000/products?q=${query}`);
     return this.http.post<Product[]>('http://localhost:3000/productCart', product);
   }
   getCart(): Observable<Product[]> {
     return this.http.get<Product[]>('http://localhost:3000/productCart');
   }
-  }
+  
+
+}
