@@ -8,7 +8,3 @@ export interface Product {
     category: string;
     imageUrl: string;
 }
-
-
-
-
