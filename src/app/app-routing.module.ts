@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { PageSignInComponent } from './login/pages/page-sign-in/page-sign-in.component';
@@ -6,6 +5,7 @@ import { PageSignUpComponent } from './login/pages/page-sign-up/page-sign-up.com
 import { PageForgotPasswordComponent } from './login/pages/page-forgot-password/page-forgot-password.component';
 import { PageResetPasswordComponent } from './login/pages/page-reset-password/page-reset-password.component';
 import { SearchComponent } from './search/search.component';
+import { PageDetailProductComponent } from './products/pages/page-detail-product/page-detail-product.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'products',pathMatch:'full'},
