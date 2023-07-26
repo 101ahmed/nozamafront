@@ -7,10 +7,10 @@
         </button>
     </div>
 
-    <ng-container *ngIf = "orders$ | async as orders; else loading">
+    <ng-container *ngIf="orders$ | async as orders; else loading">
 
         <table class="table  table-hover table-bordered text-center" 
-                *ngIf ="orders.length > 0; else noData">
+                *ngIf="orders.length > 0; else noData">
             <thead>
                 <tr>
                     <th scope="col">Id de l'utilisateur</th>
