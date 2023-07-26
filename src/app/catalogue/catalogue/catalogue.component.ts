@@ -92,4 +92,11 @@ export class CatalogueComponent implements OnInit {
   goToCatalogue(){
     this.router.navigate(['/','catalogue']);
   }
+
+  addToOffCanvas(product: Product) {
+    // a faire 
+    this.productsService.postProductInOffCanvas(product)
+    .subscribe((res) => { this.goToCatalogue();
+    });
+    }
 }

@@ -9,6 +9,8 @@ import { Product } from '../models/product';
 export class ProductsService {
   private data: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
 
+
+
   constructor(
     private http: HttpClient
   ) { }
@@ -38,10 +40,27 @@ export class ProductsService {
    return this.http.delete<Product>(`http://localhost:8080/products/${id}`);
     }
 
+  deleteProductCartById(id : number): Observable<Product> {
+    return this.http.delete<Product>(`http://localhost:3000/productCart/${id}`);
+    }
+    
+
   postProductInCart(product: Product){
     return this.http.post<Product[]>('http://localhost:3000/productCart', product);
   }
   getCart(): Observable<Product[]> {
     return this.http.get<Product[]>('http://localhost:3000/productCart');
   }
+
+  postProductInOffCanvas(product: Product){
+    return this.http.post<Product[]>('http://localhost:3000/productCart', product);
+  }
+
+  // calculateTotal(): number {
+  //   let total = 0;
+  //   for (const productCart of this.) {
+  //     total += productCart.price;
+  //   }
+  //   return total;
+  // }
   }
