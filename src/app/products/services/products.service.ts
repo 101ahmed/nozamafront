@@ -41,12 +41,15 @@ export class ProductsService {
    return this.http.delete<Product>(`http://localhost:8080/products/${id}`);
     }
 
+    deleteProductCartById(id : number): Observable<Product> {
+      return this.http.delete<Product>(`http://localhost:3000/productCart/${id}`);
+       }
+
   searchProduct(query:string){
     return this.http.get<Product[]>(`http://localhost:3000/products?q=${query}`);
   }
 
   postProductInCart(product: Product){
-    return this.http.get<Product[]>(`http://localhost:3000/products?q=${query}`);
     return this.http.post<Product[]>('http://localhost:3000/productCart', product);
   }
   getCart(): Observable<Product[]> {
