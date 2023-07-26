@@ -21,6 +21,8 @@ const routes: Routes = [
   {path: 'reset-password', component: PageResetPasswordComponent},
   {path: 'admin', loadChildren:() => import('./admin/admin.module').then(m => m.AdminModule)},
   {path: 'search/:query', component: SearchComponent},
+  {path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)},
+ 
   
   
 

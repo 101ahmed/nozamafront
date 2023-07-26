@@ -180,6 +180,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 `ng g c admin/components/admin`
 
+# Page Contact et contact services
+
+
+`ng g s contact/services/contact`
+
+
 # Search on home page 
 
 `ng g c search`

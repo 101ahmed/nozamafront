@@ -42,4 +42,14 @@ export class ProductsService {
   searchProduct(query:string){
     return this.http.get<Product[]>(`http://localhost:3000/products?q=${query}`);
   }
+
+  postProductInCart(product: Product){
+    return this.http.get<Product[]>(`http://localhost:3000/products?q=${query}`);
+    return this.http.post<Product[]>('http://localhost:3000/productCart', product);
   }
+  getCart(): Observable<Product[]> {
+    return this.http.get<Product[]>('http://localhost:3000/productCart');
+  }
+  
+
+}
