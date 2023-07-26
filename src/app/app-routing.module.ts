@@ -5,6 +5,7 @@ import { PageSignInComponent } from './login/pages/page-sign-in/page-sign-in.com
 import { PageSignUpComponent } from './login/pages/page-sign-up/page-sign-up.component';
 import { PageForgotPasswordComponent } from './login/pages/page-forgot-password/page-forgot-password.component';
 import { PageResetPasswordComponent } from './login/pages/page-reset-password/page-reset-password.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'catalogue',pathMatch:'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'forgot-password', component: PageForgotPasswordComponent},
   {path: 'reset-password', component: PageResetPasswordComponent},
   {path: 'admin', loadChildren:() => import('./admin/admin.module').then(m => m.AdminModule)},
+  {path: 'search/:query', component: SearchComponent},
   
   
 

@@ -8,8 +8,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { CatalogueModule } from '../catalogue/catalogue.module';
-import { CatalogueComponent } from '../catalogue/catalogue/catalogue.component';
 import { AdminModule } from '../admin/admin.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -23,7 +23,8 @@ import { AdminModule } from '../admin/admin.module';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
    exports : [
     IconsModule,
@@ -34,7 +35,8 @@ import { AdminModule } from '../admin/admin.module';
     FooterComponent,
     LoginModule,
     CatalogueModule,
-    AdminModule
+    AdminModule,
+    
  
     
    ]

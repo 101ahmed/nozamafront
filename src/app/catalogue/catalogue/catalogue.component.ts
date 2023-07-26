@@ -79,4 +79,6 @@ export class CatalogueComponent implements OnInit {
   addToCart(product: Product) {
     // a faire 
     }
+
+ 
 }

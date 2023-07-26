@@ -110,6 +110,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 `ng g component icons/components/IconDelete --export`
 
+`ng g component icons/components/IconSearch --export`
+
 # JSON Server
 
 `npm install -g json-server`
@@ -153,7 +155,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 `ng g component categories/search/search`
 
-
 ## Ajout des pages Detail product
 ` ng g c products/pages/PageDetailProduct`
 
@@ -178,3 +179,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 `ng g module admin --routing`
 
 `ng g c admin/components/admin`
+
+# Search on home page 
+
+`ng g c search`
+
+
+
