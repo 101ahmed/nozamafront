@@ -1,4 +1,4 @@
-
+tr
  <div class="container-fluid">
     <h2 class="text-center">Liste des produits</h2>
   
@@ -31,9 +31,12 @@
         
           </tr>
           </thead>
-          <tbody *ngFor="let product of products">
-            <ng-container *ngIf="searchText ===''|| product.name.toLowerCase().includes(searchText)" >
-              <tr *ngIf="productCategory === 'All' || productCategory === product.category">
+
+
+
+          <tbody *ngFor="let product of products">  
+            <ng-container *ngIf="searchText ===''|| product.name.toLowerCase().includes(searchText)">
+              <tr *ngIf="productCategory === 'All' || productCategory === product.category" [routerLink]="['/', 'products', 'detail', product.id]">
                 <th scope="row">{{ product.id }}</th>
                 <td>{{ product.name }}</td>         
                 <td>{{ product.reference }}</td>
@@ -41,18 +44,18 @@
                 <td>{{ product.quantityStock }}</td>
                 <td>{{ product.price }} €</td>
                 <td>{{ product.category }}</td>
-                <td  >
+                <td >
                   <button class="btn btn-primary"
                           [routerLink]="['/', 'products', 'edit', product.id]">
                     <app-icon-edit></app-icon-edit>
                   </button>
-      
+                  
                   <button class="btn btn-danger ms-2"
                           (click)="delete(product)">
                     <app-icon-delete></app-icon-delete>
                   </button>
                 </td>
-              </tr>
+             </tr>
             </ng-container>
           </tbody>
         </table>
@@ -62,7 +65,11 @@
    
   <div class="">
     <button class=" btn btn-primary ms-2" [routerLink]="['/', 'catalogue', 'catalogue']">
-      Catalogue</button>
+      Catalogue
+    </button>
+    <button class=" btn btn-primary ms-2" [routerLink]="['/', 'products', 'detail']">
+      Detail Product
+    </button>
   </div>
   
   <ng-template #noData>

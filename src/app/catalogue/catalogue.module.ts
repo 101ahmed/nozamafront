@@ -9,7 +9,9 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
 
-    CatalogueComponent
+    CatalogueComponent,
+     
+
   ],
   imports: [
     CommonModule,

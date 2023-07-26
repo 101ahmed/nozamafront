@@ -1,0 +1,19 @@
+
+<div class="row search-item" *ngFor="let item of searchResult">
+    <div class="col-sm-3">
+        <img src="{{item.imageUrl}}" alt="">
+
+    </div>
+    <div class="col-sm-8 details">
+        <h6>{{item.name}}</h6>
+        <p>Description: {{item.description}}</p>
+        <p>Catégorie: {{item.category}}</p>
+        <p>Réference: {{item.reference}}</p>
+        <p><b>Prix: {{item.price}} €</b></p>
+        <p>Quantité: {{item.quantityStock}}</p>
+    </div>
+    <div class="col-sm-8 d-flex justify-content-end mt-2">
+        <button class="btn btn-outline-primary ms-2" [routerLink]="['/', '']">Voir détail</button>
+        <button class="btn btn-outline-primary ms-2" [routerLink]="['/', '']">Ajouter au panier</button>
+    </div>
+</div>

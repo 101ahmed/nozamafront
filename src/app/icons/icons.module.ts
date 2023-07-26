@@ -4,6 +4,7 @@ import { IconNavComponent } from './components/icon-nav/icon-nav.component';
 import { IconCloseComponent } from './components/icon-close/icon-close.component';
 import { IconEditComponent } from './components/icon-edit/icon-edit.component';
 import { IconDeleteComponent } from './components/icon-delete/icon-delete.component';
+import { StartComponent } from './components/start/start.component';
 
 
 
@@ -12,7 +13,8 @@ import { IconDeleteComponent } from './components/icon-delete/icon-delete.compon
     IconNavComponent,
     IconCloseComponent,
     IconEditComponent,
-    IconDeleteComponent
+    IconDeleteComponent,
+    StartComponent
   ],
   imports: [
     CommonModule
@@ -21,7 +23,8 @@ import { IconDeleteComponent } from './components/icon-delete/icon-delete.compon
     IconNavComponent,
     IconCloseComponent,
     IconEditComponent,
-    IconDeleteComponent
+    IconDeleteComponent,
+    StartComponent
   ]
 })
 export class IconsModule { }

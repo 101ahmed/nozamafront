@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../models/product';
+import { query } from '@angular/animations';
 
 @Injectable({
   providedIn: 'root'
@@ -21,11 +22,11 @@ export class ProductsService {
 
  
   getProduct(): Observable<Product[]> {
-    return this.http.get<Product[]>('http://localhost:8080/products');
+    return this.http.get<Product[]>('http://localhost:3000/products');
   }
 
   getProductById(id: number): Observable<Product> {
-    return this.http.get<Product>(`http://localhost:8080/products/${id}`);
+    return this.http.get<Product>(`http://localhost:3000/products/${id}`);
   }
 
   postProduct(product: Product): Observable<Product> {
@@ -40,12 +41,12 @@ export class ProductsService {
    return this.http.delete<Product>(`http://localhost:8080/products/${id}`);
     }
 
-  deleteProductCartById(id : number): Observable<Product> {
-    return this.http.delete<Product>(`http://localhost:3000/productCart/${id}`);
-    }
-    
+  searchProduct(query:string){
+    return this.http.get<Product[]>(`http://localhost:3000/products?q=${query}`);
+  }
 
   postProductInCart(product: Product){
+    return this.http.get<Product[]>(`http://localhost:3000/products?q=${query}`);
     return this.http.post<Product[]>('http://localhost:3000/productCart', product);
   }
   getCart(): Observable<Product[]> {

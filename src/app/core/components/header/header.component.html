@@ -7,12 +7,24 @@
           <div class="col">
               <a class="navbar-brand mx-2" href=""><img src="../assets/images/nozama_logo_b.svg" width="125px" ></a>
           </div>
-          <div class="col">
+        <!--========searchHomePage=============-->
+          <div class="col nav-search" >
                  <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Rechercher un produit" aria-label="Search">
-                  <button class="btn btn-outline-light" type="submit">Rechercher</button>
+                  <input class="form-control me-2" type="text"  #searchInput
+                          placeholder="Rechercher un produit" aria-label="Search"
+                          (keyup)="searchProduct($event)" (blur)="hideSearch()">
+
+                  <button (click)="submitSearch(searchInput.value)" class="btn btn-outline-light" type="submit">Rechercher</button>
+                  
+                  <ul class="suggested-search" *ngIf="searchResult">
+                    <li *ngFor="let item of searchResult">
+                      <a>{{item.name}}</a>
+                    </li>
+                  </ul>
                 </form>
               </div>
+        <!--============================-->
+              
               <div class="col text-end">
                <a [routerLink]="['/', 'sign-in']" class="text-sylvain "> <i class="bi bi-person mx-2 h4" ></i></a>
                <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="text-sylvain"><i class="bi bi-bag mx-2 h5"></i></a>
@@ -34,13 +46,14 @@
                        <a class="nav-link active" aria-current="page" [routerLink]="['/', 'catalogue']">Accueil</a>
                      </li>
                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false" [routerLink]="['/', 'products', 'list']">
-                        Tous les produits
+                      <!-- [routerLink]="['/', 'products', 'list']" -->
+                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                        Boutique
                         </a>                    
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" >CD</a></li>
-                          <li><a class="dropdown-item" >Livres</a></li>
-                          <li><a class="dropdown-item" >Jeux vidéos</a></li>
+                          <li><a class="dropdown-item" [routerLink]="[]">CD</a></li>
+                          <li><a class="dropdown-item" [routerLink]="[]" >Livres</a></li>
+                          <li><a class="dropdown-item" [routerLink]="[]" >Jeux vidéos</a></li>
                         </ul>                
                     </li>
                     <li class="nav-item">
