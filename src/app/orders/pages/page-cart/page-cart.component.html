@@ -6,9 +6,9 @@
     </div>
     <ng-container *ngIf="data | async as product; else loading">
       <div *ngIf="product.length > 0; else noData">
-        <div class="row p-3 mb-2 bg-light text-dark align-items-center" *ngFor="let productCart of product">
+        <div class="row p-3 border-bottom bg-light text-dark align-items-center" *ngFor="let productCart of product">
           <div class="col-3" >
-            <img class="img-fluid" style="height: 200px; width: 200px;" src="../nozama/assets/images/enceinte-bluetooth-flip-essential.jpg" alt=“Enceinte_Bluetooth”>
+            <img class="img-fluid" style="height: 100px; width: 100px;" [src]="productCart.imageUrl" alt=“Enceinte_Bluetooth”>
           </div>
           <div class="col-4 ">
             <h5><strong>{{ productCart.name }}</strong></h5>
