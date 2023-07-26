@@ -33,8 +33,8 @@
     </div>
   </div>
 
-  <div class="product-list" #productCards [ngStyle]="{'height.px': getMaxDescriptionHeight()}">
-    <div class="card product-card" *ngFor="let product of filteredProducts" [attr.id]="'product-card-' + product.id">
+  <div   class="product-list" #productCards [ngStyle]="{'height.px': getMaxDescriptionHeight()}">
+    <div class="card product-card" *ngFor="let product of filteredProducts" [routerLink]="['/','products', 'detail', product.id]" [attr.id]="'product-card-' + product.id">
       <img class="card-img-top" [src]="product.imageUrl" alt="{{ product.name }}">
       <div class="card-body">
         <h5 class="card-title">{{ product.name }}</h5>

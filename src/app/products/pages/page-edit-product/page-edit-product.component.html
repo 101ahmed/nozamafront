@@ -5,6 +5,7 @@
         <h2 class="text-center">Modifier le produit {{product.id}}</h2>
 
         <app-product-form [product]="product" (cancel)="goToProductsList()" (validate)="updateProduct($event)">
+       
         </app-product-form>
 
     </ng-container>
