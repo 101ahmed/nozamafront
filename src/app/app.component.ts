@@ -17,4 +17,5 @@ export class AppComponent {
     modal.innerHTML = '<app-products></app-products>';
     document.body.appendChild(modal);
   }
+  
 }

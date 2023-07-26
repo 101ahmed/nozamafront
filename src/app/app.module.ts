@@ -5,15 +5,16 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-import { NgModule } from '@angular/core';
+
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     AppComponent,
-    
   
-    
   ],
   imports: [
     BrowserModule,
@@ -27,3 +28,5 @@ import { NgModule } from '@angular/core';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

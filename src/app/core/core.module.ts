@@ -36,7 +36,8 @@ import { ContactModule } from '../contact/contact.module';
     LoginModule,
     CatalogueModule,
     AdminModule,
-    ContactModule
+    ContactModule,
+    
  
     
    ]

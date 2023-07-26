@@ -10,6 +10,7 @@ import { ContactModule } from '../contact/contact.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [
 
@@ -25,7 +26,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CatalogueModule,
     AdminModule,
     ContactModule,
-   ReactiveFormsModule
+    ReactiveFormsModule
+ 
     
    ]
 })

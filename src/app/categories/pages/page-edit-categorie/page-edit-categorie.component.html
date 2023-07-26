@@ -2,7 +2,8 @@
     <ng-container *ngIf="category$ | async as category">
         <h2 class="text-center">Modifier le produit {{category.id}}</h2>
 
-        <app-categories-form [category]="category" (cancel)="goToCategoriesList()" (validate)="updateProduct($event)">
+        <app-categories-form [category]="category" (cancel)="goToCategoriesList()"
+         (validate)="updateProduct($event)">
         </app-categories-form>
 
     </ng-container>
