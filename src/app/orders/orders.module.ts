@@ -8,6 +8,7 @@ import { PageAddOrderComponent } from './pages/page-add-order/page-add-order.com
 import { OrderFormComponent } from './order-form/order-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { PageCartComponent } from './pages/page-cart/page-cart.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SharedModule } from '../shared/shared.module';
     PageListOrdersComponent,
     PageEditOrderComponent,
     PageAddOrderComponent,
-    OrderFormComponent
+    OrderFormComponent,
+    PageCartComponent
   ],
   imports: [
     CommonModule,

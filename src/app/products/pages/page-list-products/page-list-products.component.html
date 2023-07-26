@@ -1,4 +1,4 @@
-
+tr
  <div class="container-fluid">
     <h2 class="text-center">Liste des produits</h2>
   
@@ -31,9 +31,12 @@
         
           </tr>
           </thead>
-          <tbody *ngFor="let product of products">
-            <ng-container *ngIf="searchText ===''|| product.name.toLowerCase().includes(searchText)" >
-              <tr *ngIf="productCategory === 'All' || productCategory === product.category">
+
+
+
+          <tbody *ngFor="let product of products">  
+            <ng-container *ngIf="searchText ===''|| product.name.toLowerCase().includes(searchText)">
+              <tr *ngIf="productCategory === 'All' || productCategory === product.category" [routerLink]="['/', 'products', 'detail', product.id]">
                 <th scope="row">{{ product.id }}</th>
                 <td>{{ product.name }}</td>         
                 <td>{{ product.reference }}</td>
@@ -46,13 +49,13 @@
                           [routerLink]="['/', 'products', 'edit', product.id]">
                     <app-icon-edit></app-icon-edit>
                   </button>
-      
+                  
                   <button class="btn btn-danger ms-2"
                           (click)="delete(product)">
                     <app-icon-delete></app-icon-delete>
                   </button>
                 </td>
-              </tr>
+             </tr>
             </ng-container>
           </tbody>
         </table>

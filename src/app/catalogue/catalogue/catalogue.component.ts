@@ -1,6 +1,8 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from 'src/app/products/models/product';
+import { ProductsService } from 'src/app/products/services/products.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-catalogue',
@@ -15,7 +17,11 @@ export class CatalogueComponent implements OnInit {
   priceRanges: string[] = ['all', '0-10', '11-20', '21-30', '31-40', '41-50', '51-60', '61-70'];
   filteredProducts: any[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private productsService: ProductsService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.http.get<any[]>('http://localhost:3000/products').subscribe((data) => {
@@ -78,7 +84,12 @@ export class CatalogueComponent implements OnInit {
 
   addToCart(product: Product) {
     // a faire 
+    this.productsService.postProductInCart(product)
+    .subscribe((res) => { this.goToCatalogue();
+    });
     }
 
- 
+  goToCatalogue(){
+    this.router.navigate(['/','catalogue']);
+  }
 }

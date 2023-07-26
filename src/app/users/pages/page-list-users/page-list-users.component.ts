@@ -30,6 +30,7 @@ export class PageListUsersComponent implements OnInit {
   }
 
   delete(user: User) {
+    if(confirm("Voulez vous supprimer l'utilisateur ?"))
     this.usersService.deleteUserById(user.id)
     .subscribe(() => {
       this.getData();

@@ -4,7 +4,7 @@ import { IconNavComponent } from './components/icon-nav/icon-nav.component';
 import { IconCloseComponent } from './components/icon-close/icon-close.component';
 import { IconEditComponent } from './components/icon-edit/icon-edit.component';
 import { IconDeleteComponent } from './components/icon-delete/icon-delete.component';
-import { IconSearchComponent } from './components/icon-search/icon-search.component';
+import { StartComponent } from './components/start/start.component';
 
 
 
@@ -14,7 +14,7 @@ import { IconSearchComponent } from './components/icon-search/icon-search.compon
     IconCloseComponent,
     IconEditComponent,
     IconDeleteComponent,
-    IconSearchComponent
+    StartComponent
   ],
   imports: [
     CommonModule
@@ -24,7 +24,7 @@ import { IconSearchComponent } from './components/icon-search/icon-search.compon
     IconCloseComponent,
     IconEditComponent,
     IconDeleteComponent,
-    IconSearchComponent
+    StartComponent
   ]
 })
 export class IconsModule { }

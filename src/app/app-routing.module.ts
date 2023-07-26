@@ -1,6 +1,6 @@
+
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { PageDetailProductComponent } from './products/pages/page-detail-product/page-detail-product.component';
 import { PageSignInComponent } from './login/pages/page-sign-in/page-sign-in.component';
 import { PageSignUpComponent } from './login/pages/page-sign-up/page-sign-up.component';
 import { PageForgotPasswordComponent } from './login/pages/page-forgot-password/page-forgot-password.component';
@@ -8,7 +8,7 @@ import { PageResetPasswordComponent } from './login/pages/page-reset-password/pa
 import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'catalogue',pathMatch:'full'},
+  {path: '', redirectTo:'products',pathMatch:'full'},
   {path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)},
   {path: 'detail', component: PageDetailProductComponent},
   {path: 'orders', loadChildren:() => import('./orders/orders.module').then(m => m.OrdersModule )},
@@ -39,3 +39,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

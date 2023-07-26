@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../models/product';
@@ -28,15 +28,15 @@ export class ProductsService {
   }
 
   postProduct(product: Product): Observable<Product> {
-    return this.http.post<Product>('http://localhost:3000/products', product);
+    return this.http.post<Product>('http://localhost:8080/products', product);
   }
 
   putProduct(product: Product): Observable<Product> {
-    return this.http.put<Product>(`http://localhost:3000/products/${product.id}`, product);
+    return this.http.put<Product>(`http://localhost:8080/products/${product.id}`, product);
   }
 
   deleteProductById(id : number): Observable<Product> {
-   return this.http.delete<Product>(`http://localhost:3000/products/${id}`);
+   return this.http.delete<Product>(`http://localhost:8080/products/${id}`);
     }
 
   searchProduct(query:string){

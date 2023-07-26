@@ -10,11 +10,11 @@ import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
     AppComponent,
     SearchComponent,
   
-    
   ],
   imports: [
     BrowserModule,
@@ -29,3 +29,5 @@ import { SearchComponent } from './search/search.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

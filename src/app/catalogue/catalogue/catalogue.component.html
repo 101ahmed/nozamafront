@@ -33,24 +33,24 @@
     </div>
   </div>
 
-  <div class="product-list" #productCards [ngStyle]="{'height.px': getMaxDescriptionHeight()}">
-    <div class="card product-card" *ngFor="let product of filteredProducts" [attr.id]="'product-card-' + product.id">
-      
-        <img class="card-img-top" [src]="product.imageUrl" alt="{{ product.name }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text description" [title]="product.description">{{ product.description }}</p>
+  <div   class="product-list" #productCards [ngStyle]="{'height.px': getMaxDescriptionHeight()}">
+    <div class="card product-card" *ngFor="let product of filteredProducts" [routerLink]="['/','products', 'detail', product.id]" [attr.id]="'product-card-' + product.id">
+      <img class="card-img-top" [src]="product.imageUrl" alt="{{ product.name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text description" [title]="product.description">{{ product.description }}</p>
+      </div>
+      <div class="row">
+        <div class="col">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Prix : {{ product.price }} €</li>
+          </ul>
         </div>
-        <div class="row">
-          <div class="col">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Prix : {{ product.price }} €</li>
-            </ul>
-          </div>
-          <div class="col">
-            <button class="btn btn-primary" (click)="addToCart(product)" [routerLink]="['/', 'products', 'detail']">Ajouter au panier</button>
-          </div>
-        </div>  
-      
+        <div class="col">
+          <button class="btn btn-primary" (click)="addToCart(product)" >Ajouter au panier</button>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+<!-- [routerLink]="['/', 'products', 'detail']" -->
