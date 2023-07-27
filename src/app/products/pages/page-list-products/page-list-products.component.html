@@ -1,17 +1,21 @@
-tr
  <div class="container-fluid">
     <h2 class="text-center">Liste des produits</h2>
-  
-    <div class="mb-2">
-      <button class="btn btn-primary" [routerLink]="['/', 'products', 'add']">
-        Ajouter un produit
-      </button>
+    <div class="row mx-2 border">
+      <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+    </div>
+    <div class="row border">
+      <div class="col border">
+        <app-filter (filterRadioSelection)="onFilterCategory($event)"></app-filter>
+      </div>
+      <div class="col border">
+        <button class="btn btn-primary" [routerLink]="['/', 'products', 'add']">
+          Ajouter un produit
+        </button>
+      </div>
+      
+
     </div>
 
-    <div>
-      <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
-      <app-filter (filterRadioSelection)="onFilterCategory($event)"></app-filter>
-    </div>
   
     <ng-container *ngIf="!isLoading; else loading">
       <ng-container *ngIf="data | async as products; else loading">
