@@ -4,11 +4,11 @@
   
       <nav class="navbar navbar-expand-lg  row">
   
-          <div class="col">
+          <div class="col col-4">
               <a class="navbar-brand mx-2" href=""><img src="../assets/images/nozama_logo_b.svg" width="125px" ></a>
           </div>
         <!--========searchHomePage=============-->
-          <div class="col nav-search" >
+          <div class="col col-4 nav-search" >
                  <form class="d-flex" role="search">
                   <input class="form-control me-2" type="text"  #searchInput
                           placeholder="Rechercher un produit" aria-label="Search"
@@ -24,11 +24,33 @@
                 </form>
               </div>
         <!--============================-->
-              
-              <div class="col text-end">
-               <a [routerLink]="['/', 'sign-in']" class="text-sylvain "> <i class="bi bi-person mx-2 h4" ></i></a>
-               <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="text-sylvain"><i class="bi bi-bag mx-2 h5"></i></a>
+              <div class="col border text-end align-self-center">
+                <div class="btn-group dropstart">
+                  <a  class="text-sylvain dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person mx-2 h4" ></i></a>
+                  <!-- <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> -->
+                  <!-- </button> -->
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" [routerLink]="['/', 'sign-in']">Connexion</a></li>
+                    <li><a class="dropdown-item" [routerLink]="['/', 'sign-up']">Inscription</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                  </ul>
+                </div>
+                <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="text-sylvain"><i class="bi bi-bag mx-2 h5"></i></a>
               </div>
+
+              <!-- <div class="col border text-end">
+                <div class="dropdown border">
+                  <a  class="text-sylvain dropdown-toggle border" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person mx-2 h4" ></i></a>  
+                  [routerLink]="['/', 'sign-in']"
+                  <ul class="dropdown-menu border">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div>
+                <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="text-sylvain"><i class="bi bi-bag mx-2 h5"></i></a>
+              </div> -->
 
               
       </nav>
@@ -79,6 +101,11 @@
       </nav>                              
     </header>
    </div>
+   <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+    </div>
+  </div> 
       
 <app-off-canvas-cart></app-off-canvas-cart>
 
