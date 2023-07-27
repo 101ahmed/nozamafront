@@ -1,13 +1,13 @@
  <div class="container-fluid">
     <h2 class="text-center">Liste des produits</h2>
-    <div class="row mx-2 border">
+    <div>
       <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
     </div>
-    <div class="row border">
-      <div class="col border">
+    <div>
+      <div class="col">
         <app-filter (filterRadioSelection)="onFilterCategory($event)"></app-filter>
       </div>
-      <div class="col border">
+      <div class="col">
         <button class="btn btn-primary" [routerLink]="['/', 'products', 'add']">
           Ajouter un produit
         </button>
