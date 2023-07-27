@@ -6,9 +6,9 @@
     </div>
     <ng-container *ngIf="data | async as product; else loading">
       <div *ngIf="product.length > 0; else noData">
-        <div class="row p-3 mb-2 bg-light text-dark align-items-center" *ngFor="let productCart of product">
+        <div class="row p-3 border-bottom bg-light text-dark align-items-center" *ngFor="let productCart of product">
           <div class="col-3" >
-            <img class="img-fluid" style="height: 200px; width: 200px;" src="../nozama/assets/images/enceinte-bluetooth-flip-essential.jpg" alt=“Enceinte_Bluetooth”>
+            <img class="img-fluid" style=" width: 100px;" [src]="productCart.imageUrl" [alt]="productCart.description">
           </div>
           <div class="col-4 ">
             <h5><strong>{{ productCart.name }}</strong></h5>
@@ -41,7 +41,7 @@
             <div class="row justify-content-center">{{calculateResult(productCart.price, selectedValue[productCart.id] ) }}€</div>
           </div>
           <div class="col-2  text-center align-items-center">
-              <button type="button" class="btn btn-primary shadow rounded"> Supprimer</button>
+              <button type="button" class="btn btn-primary shadow " (click)="delete(productCart)"> Supprimer</button>
           </div>
         </div>    
         <div class="row justify-content-end">
@@ -53,33 +53,24 @@
               <div class="col ">
                 <p>Panier</p>
                 <p>Frais de livraison</p>
+                <p>TVA</p>
                 <p>Total (TVA incluse)</p>
               </div> 
               <div class="col text-end  ">
-                <p>57 €</p>
+                <p>{{ calculateCartTotal(product) }} €</p>
                 <p>8 €</p>
-                <p>65 €</p>
+                <p>{{(calculateCartTotal(product)*(0.20)).toFixed(2)}}</p>
+                <p>{{ (calculateCartTotal(product) + calculateCartTotal(product)*(0.20) + 8)  }} €</p>
               </div>
             </div>
+            <div class="row"><button type="button" class="btn btn-primary  btn-lg shadow p-3 mb-2">Valider mon panier</button></div>
+
           </div>
         </div>
-        <div class="row mt-2 fixed ">
-          <div class="col">
-            <div class="row"><button type="button" class="btn btn-warning btn-lg btn-block shadow p-3 mb-5 bg-warning rounded">Valider mon panier</button></div>
-          </div>
-            
-        </div>
-        <div class="row">
-          <div class="col-12">Nous acceptons : </div>
-          <div class="col-3"> <i class="fab fa-cc-mastercard fa-4x p-3 mb-5"></i></div>
-          <div class="col-3"><i class="fab fa-cc-paypal fa-4x p-3 mb-5"></i></div>
-          <div class="col-3"><i class="fab fa-cc-visa fa-4x p-3 mb-5"></i></div>
-          
-        </div>
+
       </div>
     </ng-container>
 </div>
-
 <ng-template #noData>
     <div class="alert alert-danger" role="alert">
         <p>Aucune order disponible!</p>
