@@ -6,7 +6,7 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { SearchComponent } from './search/search.component';
-import {NgxPayPalModule} from 'ngx-paypal';
+
 
 
 
@@ -23,7 +23,7 @@ import {NgxPayPalModule} from 'ngx-paypal';
     NgbModule,
     SharedModule, 
     CoreModule, 
-    NgxPayPalModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -63,7 +63,7 @@
                 <p>{{ (calculateCartTotal(product) + calculateCartTotal(product)*(0.20) + 8)  }} €</p>
               </div>
             </div>
-            <div class="row"><button type="button" class="btn btn-primary  btn-lg shadow p-3 mb-2">Valider mon panier</button></div>
+            <div class="row"><button type="button" class="btn btn-primary  btn-lg shadow p-3 mb-2" [routerLink]="['/','orders','payment']">Valider mon panier</button></div>
 
           </div>
         </div>
