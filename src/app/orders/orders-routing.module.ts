@@ -7,7 +7,7 @@ import { PagePaymentComponent } from './pages/page-payment/page-payment.componen
 
 
 const routes: Routes = [
-  {path:'', redirectTo:'/list', pathMatch: 'full' },
+  {path:'', redirectTo:'list', pathMatch: 'full' },
   {path:'list', component: PageListOrdersComponent},
   {path:'add', component: PageAddOrderComponent},
   {path:'edit/:id', component: PageEditOrderComponent},
