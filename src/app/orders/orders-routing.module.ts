@@ -3,14 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageListOrdersComponent } from './pages/page-list-orders/page-list-orders.component';
 import { PageAddOrderComponent } from './pages/page-add-order/page-add-order.component';
 import { PageEditOrderComponent } from './pages/page-edit-order/page-edit-order.component';
-import { PageCartComponent } from './pages/page-cart/page-cart.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'/list', pathMatch: 'full' },
+  {path:'', redirectTo:'list', pathMatch: 'full' },
   {path:'list', component: PageListOrdersComponent},
   {path:'add', component: PageAddOrderComponent},
   {path:'edit/:id', component: PageEditOrderComponent},
-  {path:'cart', component: PageCartComponent},
+
 ];
 
 @NgModule({

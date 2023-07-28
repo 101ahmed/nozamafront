@@ -4,21 +4,53 @@
   
       <nav class="navbar navbar-expand-lg  row">
   
-          <div class="col">
-              <a class="navbar-brand mx-2" href=""><img src="../assets/images/nozama_logo_b.svg" width="125px" ></a>
+          <div class="col col-4">
+              <a class="navbar-brand mx-2" [routerLink]="['/', 'catalogue']"><img src="../assets/images/nozama_logo_b.svg" width="125px" ></a>
           </div>
-          <div class="col">
+        <!--========searchHomePage=============-->
+          <div class="col col-4 nav-search" >
                  <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Rechercher un produit" aria-label="Search">
-                  <button class="btn btn-outline-light" type="submit">Rechercher</button>
+                  <input class="form-control me-2" type="text"  #searchInput
+                          placeholder="Rechercher un produit" aria-label="Search"
+                          (keyup)="searchProduct($event)" (blur)="hideSearch()">
+
+                  <button (click)="submitSearch(searchInput.value)" class="btn btn-outline-light" type="submit">Rechercher</button>
+                  
+                  <ul class="suggested-search" *ngIf="searchResult">
+                    <li *ngFor="let item of searchResult">
+                      <a>{{item.name}}</a>
+                    </li>
+                  </ul>
                 </form>
               </div>
-              <div class="col text-end">
-               <a [routerLink]="['/', 'sign-in']" class="text-sylvain"> <i class="bi bi-person mx-2 h3" ></i></a>
-               <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="text-sylvain"><i class="bi bi-bag mx-2 h4"></i></a>
-				
-               
+        <!--============================-->
+              <div class="col  text-end align-self-center">
+                <div class="btn-group dropstart">
+                  <a  class="text-sylvain dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person mx-2 h4" ></i></a>
+                  <!-- <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> -->
+                  <!-- </button> -->
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" [routerLink]="['/', 'sign-in']">Connexion</a></li>
+                    <li><a class="dropdown-item" [routerLink]="['/', 'sign-up']">Inscription</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" [routerLink]="['/', 'admin']">Administration</a></li>
+                  </ul>
+                </div>
+                <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="text-sylvain"><i class="bi bi-bag mx-2 h5"></i></a>
               </div>
+
+              <!-- <div class="col border text-end">
+                <div class="dropdown border">
+                  <a  class="text-sylvain dropdown-toggle border" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person mx-2 h4" ></i></a>  
+                  [routerLink]="['/', 'sign-in']"
+                  <ul class="dropdown-menu border">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </div>
+                <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="text-sylvain"><i class="bi bi-bag mx-2 h5"></i></a>
+              </div> -->
 
               
       </nav>
@@ -36,13 +68,14 @@
                        <a class="nav-link active" aria-current="page" [routerLink]="['/', 'catalogue']">Accueil</a>
                      </li>
                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false" [routerLink]="['/', 'products', 'list']">
-                        Tous les produits
+                      <!-- [routerLink]="['/', 'products', 'list']" -->
+                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                        Boutique
                         </a>                    
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" >CD</a></li>
-                          <li><a class="dropdown-item" >Livres</a></li>
-                          <li><a class="dropdown-item" >Jeux vidéos</a></li>
+                          <li><a class="dropdown-item" [routerLink]="[]">CD</a></li>
+                          <li><a class="dropdown-item" [routerLink]="[]" >Livres</a></li>
+                          <li><a class="dropdown-item" [routerLink]="[]" >Jeux vidéos</a></li>
                         </ul>                
                     </li>
                     <li class="nav-item">
@@ -51,23 +84,25 @@
                         
                        </div>
                     </li>
-  
-  
-                    <!-- <li class="nav-item">
-                      <a class="nav-link" href="#">CD</a>
+                    <li class="nav-item dropdown">
+                      <!-- [routerLink]="['/', 'products', 'list']" -->
+                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                        Admin
+                        </a>                    
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" [routerLink]="['/', 'products', 'list']">Produits</a></li>
+                          <li><a class="dropdown-item" [routerLink]="['/', 'orders', 'list']" >Commandes</a></li>
+                          <li><a class="dropdown-item" [routerLink]="['/', 'categories', 'list']" >Catégories</a></li>
+                          <li><a class="dropdown-item" [routerLink]="['/', 'users', 'list']" >Utilisateurs</a></li>
+                          <li><a class="dropdown-item" [routerLink]="['/', 'reset-password']" >Reset mot de passe</a></li>
+                          <li><a class="dropdown-item" [routerLink]="['/', 'catalogue']" >Catalogue</a></li>
+                        </ul>                
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Livres</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Jeux vidéos</a>
-                    </li> -->
-                   </ul>
+                  </ul>
               </div>
           </div>
       </nav>                              
     </header>
    </div>
-      
 <app-off-canvas-cart></app-off-canvas-cart>
 

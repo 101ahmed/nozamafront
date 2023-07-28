@@ -4,124 +4,80 @@
             <h1>Mon Panier</h1>
         </div>
     </div>
-    <div class="row p-3 mb-2 bg-light text-dark align-items-center">
-      <div class="col-3" >
-        <img class="img-fluid" style="height: 200px; width: 200px;" src="../nozama/assets/images/enceinte-bluetooth-flip-essential.jpg" alt=“Enceinte_Bluetooth”>
-      </div>
-      <div class="col-4 ">
-        <h5>JBL Flip Essential 2 Enceinte Bluetooth portable avec batterie rechargeable, Étanchéité IPX7, Autonomie de 10h, Noir</h5>
-      </div>
-      <div class="col-1  ">
-        <div class="row">
-          <p>Quantité</p>
+    <ng-container *ngIf="data | async as product; else loading">
+      <div *ngIf="product.length > 0; else noData">
+        <div class="row p-3 border-bottom bg-light text-dark align-items-center" *ngFor="let productCart of product">
+          <div class="col-3" >
+            <img class="img-fluid" style=" width: 100px;" [src]="productCart.imageUrl" [alt]="productCart.description">
+          </div>
+          <div class="col-4 ">
+            <h5><strong>{{ productCart.name }}</strong></h5>
+          </div>
+          <div class="col-1  ">
+            <div class="row">
+              <p>Quantité</p>
+            </div>
+            <div class="row">
+              <!-- <form [formGroup]="quantityForm"> -->
+                <select  [(ngModel)]="selectedValue[productCart.id]">
+                    <option [value]=1>1</option>
+                    <option [value]=2>2</option>
+                    <option [value]=3>3</option>
+                    <option [value]=4>4</option>
+                    <option [value]=5>5</option>
+                    <option [value]=6>6</option>
+                    <option [value]=7>7</option>
+                    <option [value]=8>8</option>
+                    <option [value]=9>9</option>
+                    <option [value]=10>10</option>
+                </select>
+              <!-- </form> -->
+            </div>
+          </div>
+          <div class="col-2  text-center">
+            <div class="row">
+              <p>Prix</p>
+            </div>
+            <div class="row justify-content-center">{{calculateResult(productCart.price, selectedValue[productCart.id] ) }}€</div>
+          </div>
+          <div class="col-2  text-center align-items-center">
+              <button type="button" class="btn btn-primary shadow " (click)="delete(productCart)"> Supprimer</button>
+          </div>
+        </div>    
+        <div class="row justify-content-end">
+          <div class="col-4 ">
+            <div class="row mt-4">
+              <h2>Récapitulatif</h2>
+            </div>
+            <div class="row   ">
+              <div class="col ">
+                <p>Panier</p>
+                <p>Frais de livraison</p>
+                <p>TVA</p>
+                <p>Total (TVA incluse)</p>
+              </div> 
+              <div class="col text-end  ">
+                <p>{{ calculateCartTotal(product) }} €</p>
+                <p>8 €</p>
+                <p>{{(calculateCartTotal(product)*(0.20)).toFixed(2)}}</p>
+                <p>{{ (calculateCartTotal(product) + calculateCartTotal(product)*(0.20) + 8)  }} €</p>
+              </div>
+            </div>
+            <div class="row"><button type="button" class="btn btn-primary  btn-lg shadow p-3 mb-2">Valider mon panier</button></div>
+
+          </div>
         </div>
-        <div class="row">
-            <select name=“quantite”>
-                <option selected value=“1”>1</option>
-                <option value=“2”>2</option>
-                <option value=“3”>3</option>
-                <option value=“4”>4</option>
-                <option value=“5”>5</option>
-                <option value=“6”>6</option>
-                <option value=“7”>7</option>
-                <option value=“8”>8</option>
-                <option value=“9”>9</option>
-                <option value=“10”>10</option>
-                <option value=“11”>11</option>
-            </select>
-        </div>
+
       </div>
-      <div class="col-2  text-center">
-        <div class="row">
-          <p>Prix</p>
-        </div>
-        <div class="row justify-content-center">28,50€</div>
-      </div>
-      <div class="col-2  text-center align-items-center">
-          <button type="button" class="btn btn-primary shadow rounded"> Supprimer</button>
-      </div>
-    </div>
-  
-<div class="row justify-content-end">
-  <div class="col-4 ">
-    <div class="row mt-4">
-      <h2>Récapitulatif</h2>
-    </div>
-    <div class="row   ">
-      <div class="col ">
-        <p>Panier</p>
-        <p>Frais de livraison</p>
-        <p>Total (TVA incluse)</p>
-      </div> 
-      <div class="col text-end  ">
-        <p>57 €</p>
-        <p>8 €</p>
-        <p>65 €</p>
-      </div>
-    </div>
-  </div>
+    </ng-container>
 </div>
-
-  
-
-    <div class="row mt-2 fixed ">
-      <div class="col">
-        <div class="row"><button type="button" class="btn btn-warning btn-lg btn-block shadow p-3 mb-5 bg-warning rounded">Valider mon panier</button></div>
-      </div>
-        
+<ng-template #noData>
+    <div class="alert alert-danger" role="alert">
+        <p>Aucune order disponible!</p>
     </div>
-    <div class="row">
-      <div class="col-12">Nous acceptons : </div>
-      <div class="col-3"> <i class="fab fa-cc-mastercard fa-4x p-3 mb-5"></i></div>
-      <div class="col-3"><i class="fab fa-cc-paypal fa-4x p-3 mb-5"></i></div>
-      <div class="col-3"><i class="fab fa-cc-visa fa-4x p-3 mb-5"></i></div>
-      
+</ng-template>  
+<ng-template #loading>
+    <div class="alert alert-info" role="alert">
+        <p class="">Chargement des données ... </p>
     </div>
-</div>
-
-<div class="container-fluid">
-  <h2 class="text-center">Liste des produits panier A MODIFIER</h2>
-
-
-    <ng-container *ngIf="data | async as product; ">
-      <table *ngIf="product.length > 0;"
-             class="table  table-hover table-bordered text-center"
-      >
-        <thead>
-        <tr>
-          <th scope="col">Nom</th>
-          <th scope="col">Reference</th>
-          <th scope="col">Description</th>
-          <th scope="col">Quantité</th>
-          <th scope="col">Prix</th>
-          <th scope="col">Catégorie</th>
-          <th scope="col">Modifier / Supprimer</th>
-      
-        </tr>
-        </thead>
-        <tbody *ngFor="let productCart of product">
-            <tr>
-              <td>{{ productCart.name }}</td>
-              <td>{{ productCart.reference }}</td>
-              <td>{{ productCart.description }}</td>
-              <td>{{ productCart.quantityStock }}</td>
-              <td>{{ productCart.price }} €</td>
-              <td>{{ productCart.category }}</td> 
-              <td>
-                <button class="btn btn-primary"
-                        >
-                  <app-icon-edit></app-icon-edit>
-                </button>
-    
-                <button class="btn btn-danger ms-2">
-                  <app-icon-delete></app-icon-delete>
-                </button>
-              </td>
-            </tr>
-        </tbody>
-      </table>
- 
-<div class="">
-  <button class=" btn btn-primary ms-2" [routerLink]="['/', 'catalogue']">
-    Catalogue</button>
-</div>
+</ng-template>
