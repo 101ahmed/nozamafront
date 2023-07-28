@@ -1,14 +1,20 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { Location } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { VersionService } from './core/services/version.service';
+import { Observable, map } from 'rxjs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent{
 
-
+  
+/////////////////////////////////////////////////////////
+showProducts() {
+    const modal = document.createElement('div');
+    modal.innerHTML = '<app-products></app-products>';
+    document.body.appendChild(modal);
+  }
   
 }
