@@ -3,7 +3,17 @@
     --app-lou: #a3d3f0;
     --app-light: white;
     --app-dark: #02111B;
-    --app-headerPanier : #afd0e6;
+    --app-headerPanier : #c4c4c4;
+    --app-greyArticle : #d1d1d1;
+    --app-submitButton :#73a0da ;
+    
+    .form-submit-button {
+        background: var(--app-dark);
+        color: white;
+    
+    }
+    
 
 }
+
 

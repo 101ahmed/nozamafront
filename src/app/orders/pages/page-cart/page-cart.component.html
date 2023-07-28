@@ -6,7 +6,7 @@
     </div>
     <ng-container *ngIf="data | async as product; else loading">
       <div *ngIf="product.length > 0; else noData">
-        <div class="row p-3 border-bottom bg-light text-dark align-items-center" *ngFor="let productCart of product">
+        <div class="row bg-article p-3 mb-2 text-dark align-items-center" *ngFor="let productCart of product">
           <div class="col-3" >
             <img class="img-fluid" style=" width: 100px;" [src]="productCart.imageUrl" [alt]="productCart.description">
           </div>
