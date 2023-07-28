@@ -9,6 +9,8 @@ import { OrderFormComponent } from './order-form/order-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { PageCartComponent } from './pages/page-cart/page-cart.component';
+import { NgxPayPalModule } from 'ngx-paypal';
+import { PagePaymentComponent } from './pages/page-payment/page-payment.component';
 
 
 @NgModule({
@@ -17,14 +19,17 @@ import { PageCartComponent } from './pages/page-cart/page-cart.component';
     PageEditOrderComponent,
     PageAddOrderComponent,
     OrderFormComponent,
-    PageCartComponent
+    PageCartComponent,
+    PagePaymentComponent
+    
   ],
   imports: [
     CommonModule,
     OrdersRoutingModule,
     ReactiveFormsModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    NgxPayPalModule
   ]
 })
 export class OrdersModule { }
