@@ -8,7 +8,7 @@ import { ICreateOrderRequest, IPayPalConfig, PayPalScriptService } from 'ngx-pay
 })
 export class PagePaymentComponent implements OnInit{
 
-  title = 'MyApp';
+  title = 'Nozama';
   constructor(private payPalScriptService: PayPalScriptService) {}
 
   public payPalConfig ?: IPayPalConfig;
@@ -20,7 +20,7 @@ export class PagePaymentComponent implements OnInit{
   private initConfig(): void {
     this.payPalConfig = {
       currency: 'EUR',
-      clientId: 'AdETruMgZWzONLAqq7Sa72zg6ShEANX645RQVXsVNiJ7BrOhRQ0KabXGg-Rn95FcJ5biDDXv6Ck6aFxY', // add paypal clientId here
+      clientId: 'AdETruMgZWzONLAqq7Sa72zg6ShEANX645RQVXsVNiJ7BrOhRQ0KabXGg-Rn95FcJ5biDDXv6Ck6aFxY', //paypal clientId here
       createOrderOnClient: (data) => <ICreateOrderRequest> {
         intent: 'CAPTURE',
         purchase_units: [{
