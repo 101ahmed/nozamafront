@@ -114,6 +114,16 @@
       "category": "DVD",
       "id": 10,
       "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png"
+    },
+    {
+      "reference": "Best seller 2021",
+      "name": "Short",
+      "description": "Petit short pépouze",
+      "quantityStock": 345,
+      "price": 34,
+      "category": "Livres",
+      "id": 11,
+      "imageUrl": "https://ec56229aec51f1baff1d-185c3068e22352c56024573e929788ff.ssl.cf1.rackcdn.com/attachments/large/4/2/7/003531427.jpg"
     }
   ]
 }
