@@ -11,20 +11,25 @@ import { SharedModule } from '../shared/shared.module';
 import { PageCartComponent } from './pages/page-cart/page-cart.component';
 
 
+
+
 @NgModule({
   declarations: [
     PageListOrdersComponent,
     PageEditOrderComponent,
     PageAddOrderComponent,
     OrderFormComponent,
-    PageCartComponent
+    PageCartComponent,
+ 
+    
   ],
   imports: [
     CommonModule,
     OrdersRoutingModule,
     ReactiveFormsModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+ 
   ]
 })
 export class OrdersModule { }

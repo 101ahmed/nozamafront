@@ -82,21 +82,17 @@ export class CatalogueComponent implements OnInit {
     });
   }
 
+
+  
   addToCart(product: Product) {
     // a faire 
     this.productsService.postProductInCart(product)
-    .subscribe((res) => { this.goToCatalogue();
-    });
+    .subscribe((res) => {this.goToCatalogue();});
+ 
     }
 
   goToCatalogue(){
     this.router.navigate(['/','catalogue']);
   }
 
-  addToOffCanvas(product: Product) {
-    // a faire 
-    this.productsService.postProductInOffCanvas(product)
-    .subscribe((res) => { this.goToCatalogue();
-    });
-    }
 }
