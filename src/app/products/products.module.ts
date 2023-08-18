@@ -25,7 +25,7 @@ import { PageDetailProductComponent } from './pages/page-detail-product/page-det
     SearchComponent,
     FilterComponent,
     PageDetailProductComponent,
-    
+   
   ],
   imports: [
     CommonModule,
@@ -33,7 +33,6 @@ import { PageDetailProductComponent } from './pages/page-detail-product/page-det
     SharedModule,
     ReactiveFormsModule,
     FormsModule
-    
   ]
 })
 export class ProductsModule { }

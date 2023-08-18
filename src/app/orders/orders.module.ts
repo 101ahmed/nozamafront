@@ -11,6 +11,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PageCartComponent } from './pages/page-cart/page-cart.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { PagePaymentComponent } from './pages/page-payment/page-payment.component';
+import { PageConfirmationComponent } from './pages/page-confirmation/page-confirmation.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { PagePaymentComponent } from './pages/page-payment/page-payment.componen
     PageAddOrderComponent,
     OrderFormComponent,
     PageCartComponent,
-    PagePaymentComponent
+    PagePaymentComponent,
+    PageConfirmationComponent
     
   ],
   imports: [

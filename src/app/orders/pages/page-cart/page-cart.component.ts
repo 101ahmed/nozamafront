@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { PaymentService } from 'src/app/payment.service';
 import { Product } from 'src/app/products/models/product';
 import { ProductsService } from 'src/app/products/services/products.service';
 
@@ -22,9 +24,9 @@ export class PageCartComponent implements OnInit{
   data = new BehaviorSubject<Product[]>([]);
   selectedValue: { [productId: number]: number } = {};
 
-  constructor(
-    private productsService: ProductsService,  
-  ){
+  
+
+  constructor(private productsService: ProductsService,private payment: PaymentService, private router: Router){
     this.data.subscribe(products => {
       for (const product of products) {
         this.selectedValue[product.id] = 1;
@@ -38,13 +40,15 @@ export class PageCartComponent implements OnInit{
     return result;
   }
   calculateCartTotal(products: Product[]): number {
-    let total = 0;
+    let totalAmount = 0;
     for (const product of products) {
       const quantity = this.selectedValue[product.id] || 1; // Utilisez 1 si la quantité n'est pas définie pour ce produit
-      total += product.price * quantity;
+      totalAmount += product.price * quantity;
     }
-    return total;
+    return totalAmount;
   }
+
+
 
   ngOnInit(): void {
     this.getData();
@@ -63,6 +67,13 @@ export class PageCartComponent implements OnInit{
       .subscribe(() => {
         this.getData();
       });
+      
   }
+  goToPayment() {
+    const totalAmount = this.calculateCartTotal(this.data.getValue()); // Calcul du montant total du panier
+    this.payment.totalAmount = totalAmount; // Passage du montant total au service de paiement
+    this.router.navigate(['payment']); // Redirection vers la page de paiement
+  }
+  
   
 }
