@@ -31,7 +31,7 @@ export class PageSignUpComponent implements OnInit{
       console.log(this.signUpForm.value)
     }else{
       this.validateAllFormFields(this.signUpForm);
-      alert("Votre formulaire n'a pas validé");
+      alert("Votre formulaire n'est pas validé");
     }
 
     

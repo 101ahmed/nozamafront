@@ -180,14 +180,14 @@
 				<i class="bi bi-star-fill text-warning"></i>
 				<i class="bi bi-star-fill text-warning"></i>
 				<i class="bi bi-star-half text-warning"></i>
-				<span class="fa-2x"><h6>(100) Votes</h6></span>
-				<a href="#">100 customer reviews</a>
+				<span class="fa-2x"><h6>(100) notes</h6></span>
+				<a href="#">100 avis clients</a>
 	
 				</div>   
 					
 				
 				<hr />
-				<h3 class="price-container">{{product.price}}<span>€</span><small>*includes tva</small></h3>
+				<h3 class="price-container">{{product.price}}<span>€</span><small> * TVA non incluse</small></h3>
 				<br>
 				<br>
 				<div class="description description-tabs">
@@ -242,12 +242,12 @@
 				<br>
 				<div class="row">
 					<div class="col-sm-12 col-md-6 col-lg-6">
-						<a href="#" class="btn btn-primary btn-lg">Ajouter au panier</a>
+						<a href="#" class="btn btn-primary btn-lg" [routerLink]="['/','cart']">Ajouter au panier</a>
 					</div>
 					<div class="col-sm-12 col-md-6 col-lg-6">
 						<div class="btn-group pull-right">
-							<button class="btn btn-white btn-default"><i class="fa fa-star text-primary"></i> Add to wishlist</button>
-							<button class="btn btn-white btn-default"><i class="fa fa-envelope text-primary"></i> Contact Seller</button>
+							<button class="btn btn-white btn-default"><i class="fa fa-star text-primary"></i> Ajouter aux favoris</button>
+							<button class="btn btn-white btn-default"><i class="fa fa-envelope text-primary"></i> Contact du vendeur</button>
 						</div>
 					</div>
 				</div>
