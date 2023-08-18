@@ -10,6 +10,7 @@ interface UserForm {
   gender: FormControl<string | null>;
   mobile: FormControl<number | null>;
   mail: FormControl<string | null>;
+  password: FormControl<string | null>;
   birthdate: FormControl<number | null>;
 
 }
@@ -34,7 +35,8 @@ export class UserFormComponent implements OnInit {
     gender: this.fb.control<string | null>(null, [Validators.required]),
     mobile: this.fb.control<number | null>(null, [Validators.required, Validators.min(10)]),
     mail: this.fb.control<string | null>(null, [Validators.required, Validators.min(0)]),
-    birthdate: this.fb.control<number | null>(null, [Validators.required]),
+    password: this.fb.control<string | null>(null, [Validators.required, Validators.min(0)]),
+    birthdate: this.fb.control<number | null>(null, [Validators.required, Validators.min(0)]),
 
   })
 
@@ -67,6 +69,7 @@ submit() {
 cancelAction(){
   this.cancel.emit();
 }
+
 }
 
 
