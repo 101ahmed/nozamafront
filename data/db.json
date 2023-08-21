@@ -1,13 +1,14 @@
 {
   "products": [
     {
-      "reference": "made in American",
+      "reference": "Meilleur porduit 2020",
       "name": "XBOX",
       "description": "Console de gaming ",
       "quantityStock": 50,
       "price": 350,
       "category": "games",
-      "id": 15
+      "id": 15,
+      "imageUrl": "../assets/images/ps5.jpg"
     },
     {
       "reference": "Grammy 2020",
@@ -16,7 +17,8 @@
       "quantityStock": 456,
       "price": 45,
       "category": "CD",
-      "id": 9
+      "id": 9,
+      "imageUrl": "https://i.vimeocdn.com/video/672734020-4fe3ff81cfb06a2a4b92e3768dd5c154b1c3a9807d8c5608865cbeb78f83739b-d"
     },
     {
       "reference": "Seri 2021",

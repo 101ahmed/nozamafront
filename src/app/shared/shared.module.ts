@@ -8,6 +8,7 @@ import { CatalogueModule } from '../catalogue/catalogue.module';
 import { AdminModule } from '../admin/admin.module';
 import { ContactModule } from '../contact/contact.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -26,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CatalogueModule,
     AdminModule,
     ContactModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbRatingModule
  
     
    ]
