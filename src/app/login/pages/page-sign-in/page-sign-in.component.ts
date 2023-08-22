@@ -29,7 +29,7 @@ export class PageSignInComponent implements OnInit{
       //send the object to database
     }else{
       this.validateAllFormFields(this.loginForm);
-      alert("La formulaire n'a pas validé");
+      alert("La formulaire n'est pas complet");
     }
 
   }
