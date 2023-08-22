@@ -104,6 +104,13 @@
       "password": "1234",
       "birthdate": "2023-08-15",
       "id": 2
+    },
+    {
+      "firstname": "Thomas",
+      "lastname": "Duchesne",
+      "mail": "duchesne.thomas@hotmail.fr",
+      "password": "th",
+      "id": 3
     }
   ],
   "productCart": [
