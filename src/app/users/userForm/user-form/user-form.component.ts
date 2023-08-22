@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../models/users';
 
 
@@ -69,8 +69,10 @@ submit() {
 cancelAction(){
   this.cancel.emit();
 }
-
+  
 }
+
+
 
 
 

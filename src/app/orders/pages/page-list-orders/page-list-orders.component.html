@@ -1,7 +1,10 @@
 <div class="mt-2 container-fluid">
     <h2 class="text-center">Liste des commandes</h2>
-
-    <div class="mb-2">
+    <div>
+        <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+        <!-- <app-filter (filterRadioSelection)="onFilterCategory($event)"></app-filter> -->
+      </div>
+    <div class="mb-2 text-end">
         <button class="btn btn-primary" [routerLink]="['/', 'orders', 'add']">
             Ajouter une commande
         </button>
@@ -20,9 +23,9 @@
                     <th scope="col">Modifier/Supprimer</th>
                 </tr>
             </thead>
-            <tbody>
-
-                <tr *ngFor="let order of orders">
+            <tbody  *ngFor="let order of orders">
+                <ng-container *ngIf="searchText ===''|| order.status.toLowerCase().includes(searchText)" >
+                <tr>
                     <th scope="row">{{order.idUser}}</th>
                     <td>{{order.status}}</td>
                     <td>{{order.date}} </td>
@@ -37,7 +40,8 @@
                         <app-icon-delete></app-icon-delete>                    
                         </button>
                     </td>
-                </tr>            
+                </tr> 
+                </ng-container>           
             </tbody>
         </table> 
     </ng-container>    

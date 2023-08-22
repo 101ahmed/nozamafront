@@ -8,6 +8,7 @@ import { PageListUsersComponent } from './pages/page-list-users/page-list-users.
 import { SharedModule } from '../shared/shared.module';
 import { UserFormComponent } from './userForm/user-form/user-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PageAddUserComponent,
     PageEditUserComponent,
     PageListUsersComponent,
-    UserFormComponent
+    UserFormComponent,
+    SearchComponent
   ],
   imports: [
     CommonModule,

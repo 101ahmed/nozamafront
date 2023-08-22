@@ -26,4 +26,11 @@ export class PageListOrdersComponent {
     this.orders$ = this.ordersService.getOrders();
   }
 
+   //search products
+   searchText: string = '';
+   onSearchTextEntered(searchValue: string){
+     this.searchText =  searchValue;
+     console.log(this.searchText)
+   }
+
 }
