@@ -35,6 +35,14 @@ export class PageListUsersComponent implements OnInit {
     .subscribe(() => {
       this.getData();
     })
+
   }
+
+   //search products
+   searchText: string = '';
+   onSearchTextEntered(searchValue: string){
+     this.searchText =  searchValue;
+     console.log(this.searchText)
+   }
 
 }
