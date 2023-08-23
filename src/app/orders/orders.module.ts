@@ -23,6 +23,8 @@ import { SearchComponent } from './search/search.component';
     PageAddOrderComponent,
     OrderFormComponent,
     PageCartComponent,
+    PagePaymentComponent,
+    SearchComponent
  
     
   ],
@@ -33,4 +35,7 @@ import { SearchComponent } from './search/search.component';
     SharedModule,
     FormsModule,
     NgxPayPalModule
+  ]
 })
+
+export class OrdersModule {}

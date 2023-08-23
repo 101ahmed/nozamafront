@@ -299,6 +299,16 @@
       "category": "Livres",
       "id": 11,
       "imageUrl": "https://ec56229aec51f1baff1d-185c3068e22352c56024573e929788ff.ssl.cf1.rackcdn.com/attachments/large/4/2/7/003531427.jpg"
+    },
+    {
+      "reference": "Meilleur porduit 2020",
+      "name": "XBOX",
+      "description": "Console de gaming ",
+      "quantityStock": 50,
+      "price": 350,
+      "category": "Jeux Vidéos",
+      "id": 15,
+      "imageUrl": "../assets/images/ps5.jpg"
     }
   ]
 }
