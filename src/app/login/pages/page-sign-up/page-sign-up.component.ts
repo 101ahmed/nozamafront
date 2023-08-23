@@ -26,12 +26,18 @@ export class PageSignUpComponent implements OnInit{
   ){}
 
   ngOnInit(): void{
+    const currentDate = new Date();
+    const gmtPlus2Date = new Date(currentDate.getTime() + 2 * 60 * 60 * 1000); // Ajoute 2 heures (en millisecondes)
+
+
     this.signUpForm = this.fb.group({
       firstname:['', Validators.required],
       lastname:['', Validators.required],
       mail:['', Validators.required],
-      password:['', Validators.required]
-    })
+      password:['', Validators.required],
+      signInDate: gmtPlus2Date
+    });
+    
   }
   onSignUp() {
     if (this.signUpForm.valid) {
