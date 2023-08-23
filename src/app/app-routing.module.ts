@@ -27,8 +27,9 @@ const routes: Routes = [
   {path: 'cart', component: PageCartComponent},
   {path: 'account', component: MyAccountComponent},
   {path: 'contact', component: ContactComponent},
+  { path: 'payment', component: PagePaymentComponent },
   {path: '**', component: PageNotFoundComponent},
-  { path: 'payment', component: PagePaymentComponent }
+
 
  
   
