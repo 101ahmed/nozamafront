@@ -1,47 +1,52 @@
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header headerPanier">
-      <h4 class="offcanvas-title " id="offcanvasRightLabel">Mon Panier</h4>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body" *ngIf="data | async as product; ">
-    <div class="container border border-secondary border-1"  *ngIf="product.length > 0;">
-            <div class="row mb-3" *ngFor="let productCart of product">
-                <div class="col">
-                    <img [src]="productCart.imageUrl" class="img-fluid" alt="Responsive image">
-                </div>
-                <div class="col border">
-                    <h5 class="row border ps-3">{{ productCart.name }}</h5>
-                    <strong class="row border ps-3">{{ productCart.price }}€</strong>
-                    <div class="row border justify-content-start">
-                        <div class="col border">
-                        <select name=“quantite”>
-                          <option selected value=“1”>1</option>
-                          <option value=“2”>2</option>
-                          <option value=“3”>3</option>
-                          <option value=“4”>4</option>
-                          <option value=“5”>5</option>
-                          <option value=“6”>6</option>
-                          <option value=“7”>7</option>
-                          <option value=“8”>8</option>
-                          <option value=“9”>9</option>
-                          <option value=“10”>10</option>
-                          <option value=“11”>11</option>
-                        </select>
-                        </div>
-                        <div class="col text-end border"  (click)="delete(productCart)"><i class="bi bi-trash3 h4"></i>
-                        </div>                       
-                    </div>
-                </div>
-        
-    </div>
-
-    </div>
-
-    <div class="h4 m-2">Total de la commande : {{total}} €</div>
-    <div>
-        <!-- Todo : lier le prix en fonction des différents articles commandés -->
-    </div>
-    <div class="container row d-grid gap-2 ">
-      <button class="col btn btn-warning shadow p-3 mt-2 mx-3 bg-warning rounded" [routerLink]="['/','cart']">Valider le panier</button>
-    
-    </div>
+	<div class="offcanvas-header bg-article">
+		<h4 class="offcanvas-title " id="offcanvasRightLabel">Mon Panier</h4>
+		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+	</div>
+	<div class="offcanvas-body bg-light" *ngIf="data | async as product; ">
+		<div class="container"  *ngIf="product.length > 0;">
+			<div class="row border border-1 my-2" *ngFor="let productCart of product">
+				<div class="col">
+					<img [src]="productCart.imageUrl" class="img-fluid" style=" height:100px" alt="Responsive image">
+				</div>
+				<div class="col ">
+					<h6 class="row text-center ps-3">
+						{{ productCart.name }}
+					</h6>
+					<div class="row  justify-content-start">
+						<div class="col">
+							<select [(ngModel)]="selectedValue[productCart.id]">
+								<option [value]=1>1</option>
+								<option [value]=2>2</option>
+								<option [value]=3>3</option>
+								<option [value]=4>4</option>
+								<option [value]=5>5</option>
+								<option [value]=6>6</option>
+								<option [value]=7>7</option>
+								<option [value]=8>8</option>
+								<option [value]=9>9</option>
+								<option [value]=10>10</option>
+								<option [value]=11>11</option>
+							</select>
+						</div>
+						
+            <div class="col text-end">
+            <div class=""><var>{{calculateResult(productCart.price, selectedValue[productCart.id] ) }}€</var></div>
+            </div>
+					</div>
+					<div class="col text-end my-2"  (click)="delete(productCart)">
+            <i class="bi bi-trash3 h5"></i>
+          </div>
+					<!-- Todo : lier le prix en fonction des différents articles commandés -->
+				</div>
+			</div>
+		</div>
+    <div class=" row h4 my-3 mx-2 text-center">
+			<div class="col text-start h5"><var>Sous total : </var></div>
+      <div class="col text-end h5">{{calculateTotal(product)}}€</div>
+		</div>
+  </div>
+		
+		<div class="headerPanier text-center  ">
+			<button class="btn btn-lg btn-outline shadow p-2 m-3 rounded form-submit-button" [routerLink]="['/','cart']">Valider le panier</button>
+		</div>

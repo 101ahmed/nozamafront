@@ -53,5 +53,7 @@ export class PageListProductsComponent implements OnInit{
     console.log(this.productCategory);
   }
 
+  
+
 }
 

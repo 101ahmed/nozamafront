@@ -10,12 +10,32 @@ import { ProductsService } from 'src/app/products/services/products.service';
 })
 export class OffCanvasCartComponent {
   data = new BehaviorSubject<Product[]>([]);
+  selectedValue: { [productId: number]: number } = {};
   total: number = 0;
+  products: Product[] = [];
 
-  constructor(
-    private productsService: ProductsService
-  ) {
+  calculateResult(price: number, quantity: number): number {
+    // Effectuer le calcul en utilisant la quantité sélectionnée
+    const result = price * quantity;
+    return result;
+  }
 
+calculateTotal(products : Product[]): number {
+    let total = 0;
+    for (const product of products) {
+      const quantity = this.selectedValue[product.id] || 1; // Utilisez 1 si la quantité n'est pas définie pour ce produit
+      total += product.price * quantity;
+    }
+    return total;
+  }
+  
+  constructor(private productsService: ProductsService) 
+  {
+    this.data.subscribe(products => {
+      for (const product of products) {
+        this.selectedValue[product.id] = 1;
+      }
+    });
   }
 
   delete(product: Product) {
@@ -39,6 +59,8 @@ export class OffCanvasCartComponent {
   // calculateTotal(){
   //   this.total = this.productsService.calculateTotal();
   // }
+
+  
 
 }
 

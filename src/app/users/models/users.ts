@@ -5,7 +5,7 @@ export interface User {
     gender: string;
     mobile: number;
     mail: string;
-    birthdate: number;
+    birthdate: string;
     password: string;
     signInDate: number;
 

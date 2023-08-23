@@ -1,37 +1,42 @@
-<div class="containar"> 
-    <h2 class="text-center">Créer un compte</h2>
+<div class="container-fluid"> 
     <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+      <h2 class="text-center">Créer un compte</h2>
       <form [formGroup]="signUpForm" class="p-5 border bg-light needs-validation rounded" novalidate>
-        <div class="form-group mb-2" [class.error]="signUpForm.controls['email'].dirty && signUpForm.hasError('required', 'lastName')">
-          <input type="text" class="form-control" placeholder="Nom" formControlName="lastName">
+        <div class="form-group mb-2 form-floating" [class.error]="signUpForm.controls['mail'].dirty && signUpForm.hasError('required', 'lastname')">
+          <input type="text" class="form-control " id="lastname" placeholder="Nom" formControlName="lastname">
+          <label for="lastname">Nom</label>
         </div>
-        <small *ngIf="signUpForm.controls['lastName'].dirty && signUpForm.hasError('required', 'lastName')" class="text-danger ">*Nom est requis</small>
+        <small *ngIf="signUpForm.controls['lastname'].dirty && signUpForm.hasError('required', 'lastname')" class="text-danger ">*Champ obligatoire</small>
 
-        <div class="form-group mt-4" [class.error]="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required', 'firstName')">         
-          <input type="text" class="form-control" placeholder="Prénom" formControlName="firstName" >        
+        <div class="form-group mt-4 form-floating" [class.error]="signUpForm.controls['firstname'].dirty && signUpForm.hasError('required', 'firstname')">         
+          <input type="text" class="form-control" id="firstname" placeholder="Prénom" formControlName="firstname" >  
+          <label for="firstname">Prénom</label>      
         </div>
-        <small *ngIf="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required', 'firstName')" class="text-danger ">*Prénom est requis</small>
+        <small *ngIf="signUpForm.controls['firstname'].dirty && signUpForm.hasError('required', 'firstname')" class="text-danger ">*Champ obligatoire</small>
 
-        <div class="form-group mt-4" [class.error]="signUpForm.controls['email'].dirty && signUpForm.hasError('required', 'email')">                                 
-            <input type="email" class="form-control" placeholder="Email"  aria-describedby="email" formControlName="email">            
+        <div class="form-group mt-4 form-floating" [class.error]="signUpForm.controls['mail'].dirty && signUpForm.hasError('required', 'mail')">                                 
+            <input type="mail" class="form-control" id="mail" placeholder="mail"  aria-describedby="mail" formControlName="mail">
+            <label for="mail">Mail</label>            
         </div>
-        <small *ngIf="signUpForm.controls['email'].dirty && signUpForm.hasError('required', 'email')" class="text-danger ">*Email est requis</small>
+        <small *ngIf="signUpForm.controls['mail'].dirty && signUpForm.hasError('required', 'mail')" class="text-danger ">*Champ obligatoire</small>
 
-        <div class="form-group mt-4" [class.error]="signUpForm.controls['password'].dirty && signUpForm.hasError('required', 'password')">            
-            <input type="password" class="form-control" placeholder="Password" formControlName="password" >            
+        <div class="form-group mt-4 form-floating" [class.error]="signUpForm.controls['password'].dirty && signUpForm.hasError('required', 'password')">            
+            <input type="password" class="form-control" id="password"placeholder="mot de passe" formControlName="password" > 
+            <label for="password">Mot de passe</label>           
         </div>
-        <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required', 'password')" class="text-danger ">*Password est requis</small>
+        <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required', 'password')" class="text-danger ">*Champ obligatoire</small>
 
-        <div class="form-group mt-4" [class.error]="signUpForm.controls['password'].dirty && signUpForm.hasError('required', 'password')">            
-            <input type="password" class="form-control" placeholder="Confirmer password" formControlName="password">            
+        <div class="form-group mt-4 form-floating" [class.error]="signUpForm.controls['password'].dirty && signUpForm.hasError('required', 'password')">            
+            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmer mot de passe" formControlName="password">
+            <label for="confirmPassword">Confirmez votre mot de passe</label>           
         </div>
-        <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required', 'password')" class="text-danger ">*Password est obligé</small>
+        <small *ngIf="signUpForm.controls['password'].dirty && signUpForm.hasError('required', 'password')" class="text-danger ">*Champ obligatoire</small>
 
-        <div class=" d-flex justify-content-center mt-2">      
-          <button (click)="onSignUp()" type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" >Valider </button>          
-        </div>   
-        <div class="form-group form-check">
-          <label class="form-check-label text-center pt-4 pe-3 ps-5" for="">Vous avez déjà un account <a  id="forget" [routerLink]="['/', 'sign-in']"> Connexion</a></label>
+        <div class=" d-flex justify-content-center mt-2 pt-3">                
+            <button (click)="onSignUp()" type="submit" class="btn btn-primary btn-lg btn-block rounded-pill" >Valider </button>          
+          </div>   
+        <div class="form-group form-check text-center">
+          <label class="form-check-label pt-3" for="">Vous avez déjà un compte ? <a  id="forget" [routerLink]="['/', 'sign-in']">Connexion</a></label>
         </div>  
       </form>
     </div>

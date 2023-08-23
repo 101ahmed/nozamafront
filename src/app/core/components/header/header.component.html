@@ -5,7 +5,7 @@
       <nav class="navbar navbar-expand-lg  row">
   
           <div class="col col-4">
-              <a class="navbar-brand mx-2" href=""><img src="../assets/images/nozama_logo_b.svg" width="125px" ></a>
+              <a class="navbar-brand mx-2" [routerLink]="['/', 'catalogue']"><img src="../assets/images/nozama_logo_b.svg" width="125px" ></a>
           </div>
         <!--========searchHomePage=============-->
           <div class="col col-4 nav-search" >
@@ -24,7 +24,7 @@
                 </form>
               </div>
         <!--============================-->
-              <div class="col border text-end align-self-center">
+              <div class="col  text-end align-self-center">
                 <div class="btn-group dropstart">
                   <a  class="text-sylvain dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"> <i class="bi bi-person mx-2 h4" ></i></a>
                   <!-- <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> -->
@@ -32,8 +32,6 @@
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" [routerLink]="['/', 'sign-in']">Connexion</a></li>
                     <li><a class="dropdown-item" [routerLink]="['/', 'sign-up']">Inscription</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Separated link</a></li>
                   </ul>
                 </div>
                 <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" class="text-sylvain"><i class="bi bi-bag mx-2 h5"></i></a>
@@ -84,28 +82,25 @@
                         
                        </div>
                     </li>
-  
-  
-                    <!-- <li class="nav-item">
-                      <a class="nav-link" href="#">CD</a>
+                    <li class="nav-item dropdown">
+                      <!-- [routerLink]="['/', 'products', 'list']" -->
+                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                        Admin
+                        </a>                    
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" [routerLink]="['/', 'products', 'list']">Produits</a></li>
+                          <li><a class="dropdown-item" [routerLink]="['/', 'orders', 'list']" >Commandes</a></li>
+                          <li><a class="dropdown-item" [routerLink]="['/', 'categories', 'list']" >Catégories</a></li>
+                          <li><a class="dropdown-item" [routerLink]="['/', 'users', 'list']" >Utilisateurs</a></li>
+                          <li><a class="dropdown-item" [routerLink]="['/', 'reset-password']" >Changement mot de passe</a></li>
+                          <li><a class="dropdown-item" [routerLink]="['/', 'catalogue']" >Catalogue</a></li>
+                        </ul>                
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Livres</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Jeux vidéos</a>
-                    </li> -->
-                   </ul>
+                  </ul>
               </div>
           </div>
       </nav>                              
     </header>
    </div>
-   <div class="collapse" id="collapseExample">
-    <div class="card card-body">
-      Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
-    </div>
-  </div> 
-      
 <app-off-canvas-cart></app-off-canvas-cart>
 
