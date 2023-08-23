@@ -1,61 +1,64 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { window } from 'rxjs';
-import { PaymentService } from 'src/app/payment.service';
-
+import { PaymentService } from '../../services/payment.service';
+import { IPayPalConfig } from 'ngx-paypal';
 
 @Component({
   selector: 'app-page-payment',
   templateUrl: './page-payment.component.html',
   styleUrls: ['./page-payment.component.scss']
 })
-export class PagePaymentComponent implements OnInit{
+export class PagePaymentComponent implements OnInit {
 
   title = '';
-  amount = 0;
-  @ViewChild('paymentRef', {static: true}) paymentRef!: ElementRef;
+  amount = 100;
+  @ViewChild('paymentRef', { static: true }) paymentRef!: ElementRef;
+
   constructor(private router: Router, private payment: PaymentService) { }
+
+  public payPalConfig ?: IPayPalConfig;
 
   ngOnInit(): void {
     this.amount = this.payment.totalAmount;
-    window.paypal.Buttons(
-      {
-        style: {
-          layout: 'horizontal',
-          color: 'blue',
-          shape: 'rect',
-          label: 'paypal',
-        },
-        createOrder: (data: any, actions: any) => {
-          return actions.order.create({
-            purchase_units: [
-              {
-                amount: {
-                  value: this.amount.toString(),
-                  currency_code: 'USD'
-                }
+    window.paypal.Buttons({
+      style: {
+        label: 'paypal',
+        layout: 'vertical',
+        size: 'small',
+        color: 'blue',
+        shape: 'rect',
+      },
+      createOrder: (data: any, actions: any) => {
+        return actions.order.create({
+          purchase_units: [
+            {
+              amount: {
+                value: this.amount.toString(),
+                currency_code: 'EUR'
               }
-            ]
-          });
-        },
-        onApprove: (data: any, actions: any) => {
-          return actions.order.capture().then((details: any) => {
-            if (details.status === 'COMPLETED') {
-              this.payment.transactionID = details.id;
-              this.router.navigate(['confirm']);
+              
             }
-          });
-        },
+          ]
+        });
+      },
+      onApprove: (data: any, actions: any) => {
+        return actions.order.capture().then((details: any) => {
+          if (details.status === 'COMPLETED') {
+            this.payment.transactionID = details.id;
+            this.router.navigate(['confirm']);
+          }
+        });
+      },
         onError: (error: any) => {
-          console.log(error);
-        }
+        console.log(error);
       }
-    ).render(this.paymentRef.nativeElement);
+    }).render(this.paymentRef.nativeElement);
   }
 
   cancel() {
     this.router.navigate(['cart']);
   }
+}
 
  // private initConfig(): void {
    // this.payPalConfig = {
@@ -67,6 +70,7 @@ export class PagePaymentComponent implements OnInit{
         //  amount: {
          //   currency_code: 'EUR',
            // value: '0.01',
+           
            // breakdown: {
            //   item_total: {
            //     currency_code: 'EUR',
@@ -119,5 +123,5 @@ export class PagePaymentComponent implements OnInit{
 
   
   
-  }
+  
 

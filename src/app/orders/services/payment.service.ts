@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class PaymentService {
 
-  totalAmount = 0;
-  transactionID = "";
-
+  totalAmount=0;
+  transactionID = ""; 
+  
   constructor() { }
 }

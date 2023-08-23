@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PaymentService } from 'src/app/payment.service';
+import { PaymentService } from '../../services/payment.service';
 
 @Component({
   selector: 'app-page-confirmation',

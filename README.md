@@ -194,7 +194,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 `ng g component orders/pages/PagePayment`
 
 # payment.service
-`ng g s orders/services/paymentService`
+`ng g s orders/services/payment`
 
 # environments pour payment
 
