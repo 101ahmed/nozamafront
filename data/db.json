@@ -291,14 +291,14 @@
   ],
   "productCart": [
     {
-      "reference": "Grammy 2020",
-      "name": "Jacky ta 4L",
-      "description": "Aucunes idées de ce que c'est",
-      "quantityStock": 456,
-      "price": 45,
-      "category": "CD",
-      "id": 9,
-      "imageUrl": "https://i.vimeocdn.com/video/672734020-4fe3ff81cfb06a2a4b92e3768dd5c154b1c3a9807d8c5608865cbeb78f83739b-d"
+      "reference": "Best seller 2021",
+      "name": "Short",
+      "description": "Petit short pépouze",
+      "quantityStock": 345,
+      "price": 34,
+      "category": "Livres",
+      "id": 11,
+      "imageUrl": "https://ec56229aec51f1baff1d-185c3068e22352c56024573e929788ff.ssl.cf1.rackcdn.com/attachments/large/4/2/7/003531427.jpg"
     },
     {
       "reference": "Meilleur porduit 2020",
@@ -306,7 +306,7 @@
       "description": "Console de gaming ",
       "quantityStock": 50,
       "price": 350,
-      "category": "games",
+      "category": "Jeux Vidéos",
       "id": 15,
       "imageUrl": "../assets/images/ps5.jpg"
     }
