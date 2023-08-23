@@ -9,6 +9,8 @@ import { AdminModule } from '../admin/admin.module';
 import { ContactModule } from '../contact/contact.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { UsersModule } from '../users/users.module';
+import { AccountModule } from '../account/account.module';
 
 
 
@@ -28,7 +30,8 @@ import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
     AdminModule,
     ContactModule,
     ReactiveFormsModule,
-    NgbRatingModule
+    NgbRatingModule,
+    AccountModule
  
     
    ]
