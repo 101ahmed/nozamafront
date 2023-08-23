@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../models/users';
 
 
@@ -10,7 +10,8 @@ interface UserForm {
   gender: FormControl<string | null>;
   mobile: FormControl<number | null>;
   mail: FormControl<string | null>;
-  birthdate: FormControl<number | null>;
+  password: FormControl<string | null>;
+  birthdate: FormControl<string | null>;
 
 }
 
@@ -32,9 +33,10 @@ export class UserFormComponent implements OnInit {
     lastname: this.fb.control<string | null>(null, [Validators.required]),
     firstname: this.fb.control<string | null>(null, [Validators.required]),
     gender: this.fb.control<string | null>(null, [Validators.required]),
-    mobile: this.fb.control<number | null>(null, [Validators.required, Validators.min(10)]),
-    mail: this.fb.control<string | null>(null, [Validators.required, Validators.min(0)]),
-    birthdate: this.fb.control<number | null>(null, [Validators.required]),
+    mobile: this.fb.control<number | null>(null, [Validators.required]),
+    mail: this.fb.control<string | null>(null, [Validators.required]),
+    password: this.fb.control<string | null>(null, [Validators.required]),
+    birthdate: this.fb.control<string | null>(null, [Validators.required]),
 
   })
 
@@ -67,7 +69,10 @@ submit() {
 cancelAction(){
   this.cancel.emit();
 }
+  
 }
+
+
 
 
 

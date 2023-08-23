@@ -18,7 +18,8 @@
               <p>Quantité</p>
             </div>
             <div class="row">
-              <!-- <form [formGroup]="quantityForm"> -->
+             <input type="number" [(ngModel)]="selectedValue[productCart.id]" (input)="calculate()">
+              <!-- <form [formGroup]="quantityForm"> 
                 <select  [(ngModel)]="selectedValue[productCart.id]">
                     <option [value]=1>1</option>
                     <option [value]=2>2</option>
@@ -31,7 +32,7 @@
                     <option [value]=9>9</option>
                     <option [value]=10>10</option>
                 </select>
-              <!-- </form> -->
+              </form> -->
             </div>
           </div>
           <div class="col-2  text-center">
@@ -57,17 +58,19 @@
                 <p>Total (TVA incluse)</p>
               </div> 
               <div class="col text-end  ">
-                <p>{{calculateCartTotal(product)}} €</p>
+                <p>{{ calculateCartTotal(product)}} €</p>
                 <p>8 €</p>
                 <p>{{(calculateCartTotal(product)*(0.20)).toFixed(2)}}</p>
-                <p>{{ (calculateCartTotal(product) + calculateCartTotal(product)*(0.20) + 8)}}€</p>
+                <p>{{(calculateCartTotal(product) + calculateCartTotal(product)*(0.20) + 8)}} €</p>
               </div>
-            </div>
-            <div class="row"><button type="button" class="btn btn-primary  btn-lg shadow p-3 mb-2" 
-              [routerLink]="['/','orders','payment']">Valider mon panier</button>
+            
             </div>
 
-          </div>
+            <div class="row payment-btn" (click)="goToPayment()">
+              <button type="button" class="btn btn-primary  btn-lg shadow p-3 mb-2" 
+             > Procéder au paiement</button></div>
+
+           </div>
         </div>
 
       </div>
@@ -75,7 +78,7 @@
 </div>
 <ng-template #noData>
     <div class="alert alert-danger" role="alert">
-        <p>Aucune order disponible!</p>
+        <p>Aucune commande disponible!</p>
     </div>
 </ng-template>  
 <ng-template #loading>

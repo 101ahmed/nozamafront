@@ -6,6 +6,7 @@ import { PageForgotPasswordComponent } from './login/pages/page-forgot-password/
 import { PageResetPasswordComponent } from './login/pages/page-reset-password/page-reset-password.component';
 import { SearchComponent } from './search/search.component';
 import { PageCartComponent } from './orders/pages/page-cart/page-cart.component';
+import { PagePaymentComponent } from './orders/pages/page-payment/page-payment.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'products',pathMatch:'full'},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'admin', loadChildren:() => import('./admin/admin.module').then(m => m.AdminModule)},
   {path: 'search/:query', component: SearchComponent},
   {path: 'cart', component: PageCartComponent},
+  { path: 'payment', component: PagePaymentComponent }
  
   
   
