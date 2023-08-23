@@ -6,6 +6,8 @@ import { PageEditOrderComponent } from './pages/page-edit-order/page-edit-order.
 import { PagePaymentComponent } from './pages/page-payment/page-payment.component';
 
 
+
+
 const routes: Routes = [
   {path:'', redirectTo:'list', pathMatch: 'full' },
   {path:'list', component: PageListOrdersComponent},

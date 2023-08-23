@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { User } from 'src/app/users/models/users';
+import { UsersService } from 'src/app/users/services/users.service';
 
 @Component({
   selector: 'app-page-sign-up',
@@ -8,34 +11,47 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class PageSignUpComponent implements OnInit{
 
+  @Input() user! : User;
+
   signUpForm!: FormGroup;
-  firstName!: string;
-  lastName!: string;
-  email!: string;
+  firstname!: string;
+  lastname!: string;
+  mail!: string;
   password!: string;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private userService: UsersService,
+    private router: Router
   ){}
 
   ngOnInit(): void{
-    this.signUpForm = this.fb.group({
-      firstName:['', Validators.required],
-      lastName:['', Validators.required],
-      email:['', Validators.required],
-      password:['', Validators.required]
-    })
-  }
-  onSignUp(){
-    if(this.signUpForm.valid){
-      console.log(this.signUpForm.value)
-    }else{
-      this.validateAllFormFields(this.signUpForm);
-      alert("Votre formulaire n'est pas validé");
-    }
+    const currentDate = new Date();
+    const gmtPlus2Date = new Date(currentDate.getTime() + 2 * 60 * 60 * 1000); // Ajoute 2 heures (en millisecondes)
 
+
+    this.signUpForm = this.fb.group({
+      firstname:['', Validators.required],
+      lastname:['', Validators.required],
+      mail:['', Validators.required],
+      password:['', Validators.required],
+      signInDate: gmtPlus2Date
+    });
     
   }
+  onSignUp() {
+    if (this.signUpForm.valid) {
+      const user: User = { ...this.signUpForm.value } as User;
+      
+      // Appel de la méthode createUser pour enregistrer l'utilisateur
+      this.createUser(user);
+    } else {
+      this.validateAllFormFields(this.signUpForm);
+      alert("Votre formulaire n'est pas complet");
+    }
+  }
+    
+  
   private validateAllFormFields(formGroup: FormGroup) {
     Object.keys(formGroup.controls).forEach(field =>{
       const control = formGroup.get(field);
@@ -46,5 +62,20 @@ export class PageSignUpComponent implements OnInit{
       }
     })
   }
+
+  createUser(user: User) {
+    this.userService.postUser(user)
+      .subscribe((res) => {
+        this.goToUserList();
+      });
+  }
+
+  goToUserList() {
+    this.router.navigate(['/', 'users', 'list']);
+  }
+  
+
+
+  
 }
 

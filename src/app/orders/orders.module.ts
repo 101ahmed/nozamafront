@@ -14,6 +14,8 @@ import { PagePaymentComponent } from './pages/page-payment/page-payment.componen
 import { SearchComponent } from './search/search.component';
 
 
+
+
 @NgModule({
   declarations: [
     PageListOrdersComponent,
@@ -23,6 +25,7 @@ import { SearchComponent } from './search/search.component';
     PageCartComponent,
     PagePaymentComponent,
     SearchComponent
+ 
     
   ],
   imports: [
@@ -34,4 +37,5 @@ import { SearchComponent } from './search/search.component';
     NgxPayPalModule
   ]
 })
-export class OrdersModule { }
+
+export class OrdersModule {}

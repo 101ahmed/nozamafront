@@ -9,6 +9,7 @@ import { PageCartComponent } from './orders/pages/page-cart/page-cart.component'
 import { PageNotFoundComponent } from './page-not-found/pages/page-not-found/page-not-found.component';
 import { ContactComponent } from './contact/components/contact/contact.component';
 import { MyAccountComponent } from './account/pages/my-account/my-account.component';
+import { PagePaymentComponent } from './orders/pages/page-payment/page-payment.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'products',pathMatch:'full'},
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'account', component: MyAccountComponent},
   {path: 'contact', component: ContactComponent},
   {path: '**', component: PageNotFoundComponent},
+  { path: 'payment', component: PagePaymentComponent }
 
  
   
