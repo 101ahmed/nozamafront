@@ -187,12 +187,16 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 # Search on home page 
-
 `ng g c search`
 
 
 # pade payment
 `ng g component orders/pages/PagePayment`
 
+# payment.service
+`ng g s orders/services/payment`
 
+# environments pour payment
 
+# confirmation de payment
+`ng g component orders/pages/PageConfirmation`
