@@ -47,7 +47,7 @@ export class PageSignUpComponent implements OnInit{
       this.createUser(user);
     } else {
       this.validateAllFormFields(this.signUpForm);
-      alert("Votre formulaire n'est pas validé");
+      alert("Votre formulaire n'est pas complet");
     }
   }
     
