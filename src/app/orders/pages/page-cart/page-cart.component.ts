@@ -46,10 +46,40 @@ export class PageCartComponent implements OnInit {
     this.total = this.subTotal + this.shipping;
   }
 
+//calculateSubTotal+tva
+
+calculateSubTotal(products: Product[]): number {
+  let subTotal = 0;
+  for (const product of products) {
+    const quantity = this.selectedValue[product.id] || 1;
+    subTotal += product.price * quantity;
+  }
+  return subTotal;
+}
+
+calculateTotal(subTotal: number, shipping: number): number {
+  return subTotal + shipping;
+}
+
+calculateTax(subTotal: number): number {
+  return subTotal * 0.20;
+}
+
+
+
+
   calculateResult(price: number, quantity: number): number {
     return price * quantity;
   }
 
+  calculateCartTotalWithTva(products: Product[]): number {
+    let total = 0;
+    for (const product of products) {
+      const quantity = this.selectedValue[product.id] || 1;
+      total += (product.price * quantity) + (product.price*(0.20)) + 8;
+    }
+    return total;
+  }
   calculateCartTotal(products: Product[]): number {
     let total = 0;
     for (const product of products) {
@@ -74,10 +104,11 @@ export class PageCartComponent implements OnInit {
         });
     }
   }
-
+  
   goToPayment() {
-    const total = this.calculateCartTotal(this.data.getValue());
+    const total = this.calculateCartTotalWithTva(this.data.getValue());
     this.payment.totalAmount = total;
     this.router.navigate(['payment']);
   }
 }
+

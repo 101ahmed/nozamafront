@@ -1,7 +1,20 @@
-<div class="paypal-container  container border p-4">
-  <div class="amount">Montant total à payer: {{amount}}€</div>
-  <div class="info">Veuillez ne pas actualiser le navigateur pendant le traitement de la transaction</div>
-  <div #paymentRef></div>
-<div class="back" (click)="cancel">Annuler</div>
 
+
+<div class="paypal-container">
+  <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5">
+     <div class="text-center mb-3">
+      <div class="text-center mb-3">
+        <h1>
+          <div class="amount"> Total à payer: {{amount}} €</div>
+        </h1>
+      </div>
+      <div class="">
+        <div class="info">Veuillez ne pas actualiser le navigateur pendant le traitement de la transaction</div>
+      </div>
+      <div class="payment d-flex justify-content-center">
+        <span #paymentRef></span>
+      </div>
+      <button class="back btn btn-primary" (click)="cancel()">Annuler</button>
+     </div>
+  </div>
 </div>

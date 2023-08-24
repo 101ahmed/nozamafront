@@ -30,6 +30,7 @@ const routes: Routes = [
   { path: 'payment', component: PagePaymentComponent },
   {path: '**', component: PageNotFoundComponent}
 
+
  
   
   
