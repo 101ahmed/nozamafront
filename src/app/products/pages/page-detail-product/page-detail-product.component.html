@@ -1,17 +1,10 @@
 
-
 <ng-container *ngIf="product$ | async as product">
 
 	<div class="container card mb-4 box-shadow mt-2 ">
 		<div class="row">
 			<div class="col-6">
-				<div id="carouselExampleIndicators" class="carousel slide">
-					<div class="carousel-indicators">
-					  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-					  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-					  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-					</div>
-
+				<div id="carouselIndicators" class="carousel slide">
 					<div class="carousel-inner">
 					  <div class="carousel-item active">
 						<img [src]="product.imageUrl" class="d-block w-100"  alt="{{ product.name }}">
@@ -23,7 +16,7 @@
 						<img [src]="product.imageUrl" class="d-block w-100"  alt="{{ product.name }}">
 					  </div>
 					</div>
-					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
 					  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					  <span class="visually-hidden">Previous</span>
 					</button>
@@ -38,24 +31,30 @@
 			<div class="col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
 				<div>
 				<h2 class="name">{{product.name}}</h2>
-				<small>Product by <a href="#">Nozama</a></small>
-				</div>   
+				<small>Product by <a [routerLink]="['/', 'catalogue']">Nozama</a></small>
+				</div>    
+        <!--===============rating==============-->   
 				<div class="certified">
-					<i class="bi bi-star-fill text-warning"></i>
-					<i class="bi bi-star-fill text-warning"></i>
-					<i class="bi bi-star-fill text-warning"></i>
-					<i class="bi bi-star-fill text-warning"></i>
-					<i class="bi bi-star-half text-warning"></i>
-					<span class="fa-2x"><h6>(100) notes</h6></span>
-					<a href="#">100 avis clients</a>
-	
-				</div>   
-					
+          <ngb-rating  [max]="5" [rate]="finalRating" [readonly]="true" [resettable]="false"  >
+            
+          </ngb-rating>
+				  <span class="fa-2x"><h6> {{finalRating}}</h6></span>
+				  <a href="#"> {{ratingCount}} votes des clients</a>
+				</div>  
+        <div class="remark">
+          <strong>Evaluation: </strong>
+          <div class="row">
+            <div class="col-sm-12">
+                <ngb-rating  [max]="5" (click)="getRating()" [formControl]="ratingControl">
+                  
+                </ngb-rating>
+            </div>
+          </div>
+          
+        </div> 					
 				
 				<hr />
-				<h3 class="price-container">{{product.price}}<span>€</span><small> * TVA non incluse</small></h3>
-				<br>
-
+				<h3 class="price-container">{{product.price}}<span> €</span><small> *includes tva</small></h3>
 				<br>
 				<div class="description description-tabs">
 					<div id="myTab" class="nav nav-pills">
@@ -89,26 +88,18 @@
               </ng-container>
             </div>
 					</div>
-
 				</div>
         
 				<br>
 				<br>
 				<div class="row">
 					<div class="col-sm-12 col-md-6 col-lg-6">
-						<a href="#" class="btn btn-primary btn-lg" [routerLink]="['/','cart']">Ajouter au panier</a>
+						<button  class="btn btn-primary btn-lg" type="button"  (click)="addToCart(product)">Ajouter au panier</button>
 					</div>
-					<div class="col-sm-12 col-md-6 col-lg-6">
-						<div class="btn-group pull-right">
-							<button class="btn btn-white btn-default"><i class="fa fa-star text-primary"></i> Ajouter aux favoris</button>
-							<button class="btn btn-white btn-default"><i class="fa fa-envelope text-primary"></i> Contact du vendeur</button>
-						</div>
-
+				</div>
 			</div>
 		</div> 
 	</div>
-   </div>
-	</div>
-
 </ng-container>
+
 
