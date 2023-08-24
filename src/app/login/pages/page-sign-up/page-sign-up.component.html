@@ -1,6 +1,7 @@
 <div class="container-fluid"> 
     <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
       <h2 class="text-center">Créer un compte</h2>
+
       <form [formGroup]="signUpForm" class="p-5 border bg-light needs-validation rounded" novalidate>
         <div class="form-group mb-2 form-floating" [class.error]="signUpForm.controls['email'].dirty && signUpForm.hasError('required', 'lastName')">
           <input type="text" class="form-control " id="lastname" placeholder="Nom" formControlName="lastName">
