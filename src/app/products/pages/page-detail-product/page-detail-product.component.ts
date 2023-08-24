@@ -27,6 +27,7 @@ export class PageDetailProductComponent implements OnInit {
     private router: Router,
     private productsService: ProductsService,
     private fb: FormBuilder,
+    
     ){
     this.id = this.route.snapshot.paramMap.get("id")
     console.log(this.id)

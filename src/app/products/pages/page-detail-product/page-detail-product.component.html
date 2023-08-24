@@ -1,4 +1,5 @@
 
+
 <ng-container *ngIf="product$ | async as product">
 
 	<div class="container card mb-4 box-shadow mt-2 ">
@@ -10,6 +11,7 @@
 					  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
 					  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
 					</div>
+
 					<div class="carousel-inner">
 					  <div class="carousel-item active">
 						<img [src]="product.imageUrl" class="d-block w-100"  alt="{{ product.name }}">
@@ -21,7 +23,7 @@
 						<img [src]="product.imageUrl" class="d-block w-100"  alt="{{ product.name }}">
 					  </div>
 					</div>
-					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
 					  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					  <span class="visually-hidden">Previous</span>
 					</button>
@@ -37,22 +39,23 @@
 				<div>
 				<h2 class="name">{{product.name}}</h2>
 				<small>Product by <a href="#">Nozama</a></small>
-				</div>       
+				</div>   
 				<div class="certified">
-				<i class="bi bi-star-fill text-warning"></i>
-				<i class="bi bi-star-fill text-warning"></i>
-				<i class="bi bi-star-fill text-warning"></i>
-				<i class="bi bi-star-fill text-warning"></i>
-				<i class="bi bi-star-half text-warning"></i>
-				<span class="fa-2x"><h6>(100) Votes</h6></span>
-				<a href="#">100 customer reviews</a>
+					<i class="bi bi-star-fill text-warning"></i>
+					<i class="bi bi-star-fill text-warning"></i>
+					<i class="bi bi-star-fill text-warning"></i>
+					<i class="bi bi-star-fill text-warning"></i>
+					<i class="bi bi-star-half text-warning"></i>
+					<span class="fa-2x"><h6>(100) notes</h6></span>
+					<a href="#">100 avis clients</a>
 	
 				</div>   
 					
 				
 				<hr />
-				<h3 class="price-container">{{product.price}}<span>€</span><small>*includes tva</small></h3>
+				<h3 class="price-container">{{product.price}}<span>€</span><small> * TVA non incluse</small></h3>
 				<br>
+
 				<br>
 				<div class="description description-tabs">
 					<ul id="myTab" class="nav nav-pills">
@@ -101,22 +104,25 @@
 							</form>
 						</div>
 					</div>
+
 				</div>
 				<br>
 				<br>
 				<div class="row">
 					<div class="col-sm-12 col-md-6 col-lg-6">
-						<a href="#" class="btn btn-primary btn-lg">Ajouter au panier</a>
+						<a href="#" class="btn btn-primary btn-lg" [routerLink]="['/','cart']">Ajouter au panier</a>
 					</div>
 					<div class="col-sm-12 col-md-6 col-lg-6">
 						<div class="btn-group pull-right">
-							<button class="btn btn-white btn-default"><i class="fa fa-star text-primary"></i> Add to wishlist</button>
-							<button class="btn btn-white btn-default"><i class="fa fa-envelope text-primary"></i> Contact Seller</button>
+							<button class="btn btn-white btn-default"><i class="fa fa-star text-primary"></i> Ajouter aux favoris</button>
+							<button class="btn btn-white btn-default"><i class="fa fa-envelope text-primary"></i> Contact du vendeur</button>
 						</div>
-					</div>
-				</div>
+
 			</div>
 		</div> 
 	</div>
+   </div>
+	</div>
+
 </ng-container>
 
