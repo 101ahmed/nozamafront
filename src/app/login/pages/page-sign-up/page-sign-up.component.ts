@@ -74,7 +74,7 @@ export class PageSignUpComponent implements OnInit{
     this.router.navigate(['/', 'users', 'list']);
   }
   
-
+  
 
   
 }
