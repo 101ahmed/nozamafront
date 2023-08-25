@@ -25,9 +25,10 @@ const routes: Routes = [
   {path: 'admin', loadChildren:() => import('./admin/admin.module').then(m => m.AdminModule)},
   {path: 'search/:query', component: SearchComponent},
   {path: 'cart', component: PageCartComponent},
-  {path: 'account', component: MyAccountComponent},
+  {path: 'my-account', component: MyAccountComponent },
+  {path: 'my-account', loadChildren:() => import('./account/account.module').then(m => m.AccountModule)},
   {path: 'contact', component: ContactComponent},
-  { path: 'payment', component: PagePaymentComponent },
+  {path: 'payment', component: PagePaymentComponent },
   {path: '**', component: PageNotFoundComponent},
 
 
