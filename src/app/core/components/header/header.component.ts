@@ -17,7 +17,20 @@ export class HeaderComponent implements OnInit {
   ){}
 
   ngOnInit(): void { 
+   
   }
+
+
+
+  // searchProductsByCategory(category: string){
+  //   this.product.searchProductsByCategory(category).subscribe((result) => {
+  //       if (result.length > 5) {
+  //         result.length = 5; // Limiter les résultats à 5 pour l'exemple
+  //       }
+  //       this.searchResult = result;
+  //     }
+  //   )
+  // }
 
   searchProduct(query: KeyboardEvent){
     if(query){

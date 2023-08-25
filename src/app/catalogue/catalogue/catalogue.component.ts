@@ -2,7 +2,7 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 import { HttpClient } from '@angular/common/http';
 import { Product } from 'src/app/products/models/product';
 import { ProductsService } from 'src/app/products/services/products.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-catalogue',
@@ -20,16 +20,29 @@ export class CatalogueComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private productsService: ProductsService,
-    private router: Router
-    ) { }
+    private router: Router,
+    private route : ActivatedRoute,
+    
+
+    ) { 
+      route.params.subscribe(val => {
+        ///  your NgOnit code
+        this.ngOnInit() 
+      })
+  }
 
   ngOnInit() {
     this.http.get<any[]>('http://localhost:3000/products').subscribe((data) => {
-      this.products = data;
-      this.applyFilters();
-    });
+    this.products = data;
+    this.getCategory();
+    this.applyFilters();
+  });
+}
+  getCategory(){
+   if ( String(this.route.snapshot)!== "Route(url:'', path:'')") 
+   { this.selectedCategory= String(this.route.snapshot.paramMap.get("category"));
+    } 
   }
-
   applyFilters() {
     this.filteredProducts = this.products.filter((product) => {
       const categoryMatch = this.selectedCategory === 'all' || product.category === this.selectedCategory;
@@ -92,7 +105,13 @@ export class CatalogueComponent implements OnInit {
     }
 
   goToCatalogue(){
-    this.router.navigate(['/','catalogue']);
+    this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/catalogue']);
+    }); 
+
   }
+
+
+
 
 }

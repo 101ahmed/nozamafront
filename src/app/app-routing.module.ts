@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/components/contact/contact.component
 import { MyAccountComponent } from './account/pages/my-account/my-account.component';
 import { PagePaymentComponent } from './orders/pages/page-payment/page-payment.component';
 
+
 const routes: Routes = [
   {path: '', redirectTo:'catalogue',pathMatch:'full'},
   {path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)},
@@ -33,7 +34,6 @@ const routes: Routes = [
 
  
   
-  
  
 ];
 
@@ -42,8 +42,10 @@ const routes: Routes = [
     routes,
     {
       preloadingStrategy: PreloadAllModules,
-      bindToComponentInputs: true
+      bindToComponentInputs: true,
+      onSameUrlNavigation: 'reload'
     }),
+    
   ],
   exports: [RouterModule]
 })

@@ -69,21 +69,25 @@
                      </li>
                      <li class="nav-item dropdown">
                       <!-- [routerLink]="['/', 'products', 'list']" -->
-                        <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                        <!-- <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                         Boutique
                         </a>                    
                         <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" [routerLink]="[]">CD</a></li>
-                          <li><a class="dropdown-item" [routerLink]="[]" >Livres</a></li>
-                          <li><a class="dropdown-item" [routerLink]="[]" >Jeux vidéos</a></li>
-                        </ul>                
+                          <li><a class="dropdown-item" [routerLink]="['/', 'CD']">CD</a></li>
+                          <li><a class="dropdown-item" [routerLink]="['/', 'livres']" >Livres</a></li>
+                          <li><a class="dropdown-item" [routerLink]="['/', 'jeux-videos']" >Jeux vidéos</a></li>
+                        </ul>                 -->
                     </li>
-                    <li class="nav-item">
-                      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <a class="nav-link  justify-content-md-end" [routerLink]="['/', 'contact']"> Contactez-nous </a>
-                        
-                       </div>
-                    </li>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                      <a class="nav-link justify-content-md-end" aria-current="page" [routerLink]="['/', 'catalogue','cd']" > CD </a>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                      <a class="nav-link  justify-content-md-end" [routerLink]="['/', 'catalogue','books']"> Livres</a>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                      <a class="nav-link  justify-content-md-end" [routerLink]="['/', 'catalogue','games']"> Jeux vidéos</a>
+                    </div>
+                   
                     <li class="nav-item dropdown">
                       <!-- [routerLink]="['/', 'products', 'list']" -->
                         <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false" >
