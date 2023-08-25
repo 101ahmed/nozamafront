@@ -1,18 +1,36 @@
 .paypal-container {
     padding: 150px;
+    padding-top: 100px;
+    background-color: var(--app-greyArticle);
+    
+
     .amount {
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       text-align: center;
-      margin-bottom: 30px;
+      
     }
     .info {
-      font-size: 30px;
+      font-size: 15px;
       font-weight: 300px;
       text-align: center;
       margin-bottom: 50px;
+      font-style: italic;
+      color: red;
     }
     .back {
       margin-top: 40px;
       text-align: center;
       cursor: pointer;
+      font-size: 15px;
     }
-  }
+    }
+.payment {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+.modal{
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+
+}
+
+
