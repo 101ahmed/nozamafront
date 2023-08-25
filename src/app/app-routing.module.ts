@@ -7,6 +7,7 @@ import { PageResetPasswordComponent } from './login/pages/page-reset-password/pa
 import { SearchComponent } from './search/search.component';
 import { PageCartComponent } from './orders/pages/page-cart/page-cart.component';
 
+
 const routes: Routes = [
   {path: '', redirectTo:'products',pathMatch:'full'},
   {path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)},
@@ -23,7 +24,6 @@ const routes: Routes = [
   {path: 'cart', component: PageCartComponent},
  
   
-  
  
 ];
 
@@ -32,8 +32,10 @@ const routes: Routes = [
     routes,
     {
       preloadingStrategy: PreloadAllModules,
-      bindToComponentInputs: true
+      bindToComponentInputs: true,
+      onSameUrlNavigation: 'reload'
     }),
+    
   ],
   exports: [RouterModule]
 })
