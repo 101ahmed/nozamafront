@@ -1,12 +1,12 @@
 {
   "products": [
     {
-      "reference": "Meilleur porduit 2020",
+      "reference": "Meilleur produit 2020",
       "name": "XBOX",
       "description": "Console de gaming ",
       "quantityStock": 50,
       "price": 350,
-      "category": "Jeux Vidéos",
+      "category": "games",
       "id": 15,
       "imageUrl": "../assets/images/ps5.jpg"
     },
