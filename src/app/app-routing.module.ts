@@ -12,7 +12,7 @@ import { MyAccountComponent } from './account/pages/my-account/my-account.compon
 import { PagePaymentComponent } from './orders/pages/page-payment/page-payment.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'products',pathMatch:'full'},
+  {path: '', redirectTo:'catalogue',pathMatch:'full'},
   {path: 'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)},
   {path: 'orders', loadChildren:() => import('./orders/orders.module').then(m => m.OrdersModule )},
   {path: 'categories', loadChildren:() => import('./categories/categories.module').then(m => m.CategoriesModule )},
