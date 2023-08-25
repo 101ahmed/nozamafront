@@ -2,7 +2,7 @@
 
 
     <ng-container *ngIf="user$ | async as user">
-        <h2 class="text-center">Modifier le produit {{user.id}}</h2>
+        <h2 class="text-center">Modifier l'utilisateur {{user.id}}</h2>
 
         <app-user-form [user]="user" (cancel)="goToUsersList()" (validate)="updateUser($event)">
         </app-user-form>
