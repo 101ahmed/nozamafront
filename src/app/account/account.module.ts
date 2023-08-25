@@ -9,6 +9,7 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
 import { MyAddressesComponent } from './pages/my-addresses/my-addresses.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
+import { AddAdresseComponent } from './pages/add-adresse/add-adresse.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HomeComponent } from './pages/home/home.component';
     MyInformationsComponent,
     ChangePasswordComponent,
     MyAddressesComponent,
-    HomeComponent
+    HomeComponent,
+    AddAdresseComponent
   ],
   imports: [
     CommonModule,

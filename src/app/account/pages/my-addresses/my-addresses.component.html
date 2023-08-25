@@ -1,1 +1,39 @@
-<p>my-addresses works!</p>
+<app-home>
+    <div class="col col-lg-9 col-md-8 col-sm-12 ps-2">
+        <div class="row bg-article py-4 ps-5 mb-2">
+            <h1>Mon carnet d'adresse</h1>
+            <div>
+                <button class="btn btn-light border border-dark-subtle border-1  py-3" type="button" [routerLink]="['/', 'my-account','add-adresse']"><strong>AJOUTER UNE NOUVELLE ADRESSE</strong></button>
+            </div>
+        </div>
+        
+
+        <div class="row bg-article py-4 ps-5 mb-2">
+            <div class="col">
+            <p class="p-0 m-0">27 Rue Jean Jaures</p>
+            <p class="p-0 m-0">35000 </p>
+            <p class="p-0 m-0"> Montgermont</p>
+            <p class="p-0 m-0">0620102010</p>
+            </div>
+            <div class="col text-end px-4">
+                <div class="font-text-ed m-2">
+                    <strong>EDITER </strong>
+                    <i class="bi bi-pencil-fill h3"></i>
+                </div>
+                <div class="font-text m-2">
+                    <strong>SUPPRIMER </strong>
+                    <i class="bi bi-trash3 h3"></i>
+                </div>
+            </div>
+            <div class="py-3">
+            <p class="text-secondary py-1 my-1">
+                Ceci est mon adresse de livraison par défaut
+            </p>
+            <p class="text-secondary py-1 my-1">
+                Ceci est mon adresse de facturation par défaut
+            </p>
+            </div>
+        </div>
+    </div>
+</app-home>
+
