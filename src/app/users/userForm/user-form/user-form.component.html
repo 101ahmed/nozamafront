@@ -12,7 +12,8 @@
   </div> 
 
     <div class="col">
-        <select class="form-select" id="gender"  aria-label="Floating label select example" formControlName="gender">
+        <select class="form-select" id="gender" aria-placeholder="gender"  aria-label="Floating label select example" formControlName="gender">
+          
           <option value="1">M</option>
           <option value="2">F</option>
           <option value="3">Non spécifié</option>
@@ -33,8 +34,8 @@
       <label for="password">Mot de passe</label>
     </div>
 
-    <input class="form-control" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" formControlName="birthdate"
-        placeholder="Date de naissance" value="" aria-label="input birthdate">
+    <input class="form-control" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" formControlName="birthday"
+        placeholder="Date de naissance" value="" aria-label="input birthday">
 
     <div class="d-flex flex-row gap-1 justify-content-end">
     <button type="button" class="btn btn-secondary"

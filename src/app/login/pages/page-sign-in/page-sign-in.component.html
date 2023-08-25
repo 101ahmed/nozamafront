@@ -1,7 +1,7 @@
 <div class="container-fluid"> 
   <div class="col-lg-5 col-md-7 offset-lg-4 offset-md-3">
     <h2 class="text-center">S'identifier</h2>
-    <form [formGroup]="loginForm" class="p-5 border bg-light needs-validation rounded" >        
+    <form [formGroup]="loginForm"     class="p-5 border bg-light needs-validation rounded" >        
       <div class="form-group mb-2 form-floating" [class.error]="loginForm.controls['email'].dirty && loginForm.hasError('required', 'email')">                    
           <input type="email" class="form-control" id="email" placeholder="Email"  aria-describedby="emailHelp" formControlName="email">
           <label for="email">Email</label>

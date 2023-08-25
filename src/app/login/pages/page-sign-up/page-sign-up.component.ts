@@ -42,9 +42,11 @@ export class PageSignUpComponent implements OnInit{
   onSignUp() {
     if (this.signUpForm.valid) {
       const user: User = { ...this.signUpForm.value } as User;
-      
+      console.log(this.signUpForm.value);
       // Appel de la méthode createUser pour enregistrer l'utilisateur
-      this.createUser(user);
+       this.createUser(user);
+
+      
     } else {
       this.validateAllFormFields(this.signUpForm);
       alert("Votre formulaire n'est pas complet");

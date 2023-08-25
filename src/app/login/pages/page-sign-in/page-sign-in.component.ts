@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
 
+
 @Component({
   selector: 'app-page-sign-in',
   templateUrl: './page-sign-in.component.html',
@@ -16,7 +17,8 @@ export class PageSignInComponent implements OnInit{
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router : Router
+    private router : Router,
+    
 
   ){}
 
@@ -27,46 +29,25 @@ export class PageSignInComponent implements OnInit{
     });
   }
 
-  // onSubmit() {
-  //   if (this.loginForm.valid) {
-  //     const { email, password } = this.loginForm.value;
-
-  //     this.authService.login(email, password).subscribe(
-  //       response => {
-  //         if (response.success) {
-  //           this.router.navigate(['/catalogue']);
-  //         }
-  //         // Redirige vers une page sécurisée si la connexion réussit
-  //       },
-  //       error => {
-  //         // Gère les erreurs d'authentification ici
-  //         console.error(error);
-  //       }
-  //     );
-  //   } else {
-  //     this.validateAllFormFields(this.loginForm);
-  //     alert("Le formulaire n'est pas validé");
-  //   }
-  // }
-
-
-  //Test de la fonctionnalité.
+  
   onSubmit() {
     if (this.loginForm.valid) {
-      const { email, password } = this.loginForm.value;
+      console.log(this.loginForm.value);
+      
+      // const { email, password } = this.loginForm.value;
   
-      this.authService.simulateLogin(email, password).subscribe(
-        response => {
-          if (response.success) {
-            this.router.navigate(['/catalogue']);
-          } else {
-            console.log(response.message);
-          }
-        },
-        error => {
-          console.error(error);
-        }
-      );
+      // this.authService.simulateLogin(email, password).subscribe(
+      //   response => {
+      //     if (response.success) {
+      //       this.router.navigate(['/catalogue']);
+      //     } else {
+      //       console.log(response.message);
+      //     }
+      //   },
+      //   error => {
+      //     console.error(error);
+      //   }
+      // );
     } else {
       this.validateAllFormFields(this.loginForm);
       alert("Le formulaire n'est pas validé");

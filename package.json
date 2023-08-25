@@ -9,6 +9,7 @@
     "test": "ng test",
     "json-server": "json-server --watch data/db.json",
     "json-cat-server": "json-server --watch data/db-cat.json"
+    
   },
   "private": true,
   "dependencies": {
