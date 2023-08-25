@@ -6,7 +6,7 @@
     </div>
     <ng-container *ngIf="data | async as product; else loading">
       <div *ngIf="product.length > 0; else noData">
-        <div class="row bg-article p-3 mb-1 text-dark align-items-center" *ngFor="let productCart of product">
+        <div class="row bg-article p-3 mb-2 text-dark align-items-center" *ngFor="let productCart of product">
           <div class="col-3" >
             <img class="img-fluid" style=" width: 100px;" [src]="productCart.imageUrl" [alt]="productCart.description">
           </div>
@@ -58,17 +58,17 @@
                 <p>Total (TVA incluse)</p>
               </div> 
               <div class="col text-end  ">
-                <p>{{ calculateCartTotal(product)}} €</p>
+                <p>{{calculateCartTotal(product)}} €</p>
                 <p>8 €</p>
                 <p>{{(calculateCartTotal(product)*(0.20)).toFixed(2)}}</p>
-                <p>{{(calculateCartTotal(product) + calculateCartTotal(product)*(0.20) + 8)}} €</p>
+                <p>{{calculateCartTotalWithTva(product)}}€</p>
               </div>
             
             </div>
-
+          
             <div class="row payment-btn" (click)="goToPayment()">
-              <button type="button" class="btn btn-primary  btn-lg shadow p-3 mb-2" 
-             > Procéder au paiement</button></div>
+                <button type="button" class="btn btn-primary  btn-lg shadow p-3 mb-2">
+                 Procéder au paiement</button></div>
 
            </div>
         </div>

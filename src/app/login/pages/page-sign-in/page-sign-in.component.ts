@@ -33,21 +33,9 @@ export class PageSignInComponent implements OnInit{
   onSubmit() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
+      this.router.navigate(['/catalogue']);
       
-      // const { email, password } = this.loginForm.value;
-  
-      // this.authService.simulateLogin(email, password).subscribe(
-      //   response => {
-      //     if (response.success) {
-      //       this.router.navigate(['/catalogue']);
-      //     } else {
-      //       console.log(response.message);
-      //     }
-      //   },
-      //   error => {
-      //     console.error(error);
-      //   }
-      // );
+      
     } else {
       this.validateAllFormFields(this.loginForm);
       alert("Le formulaire n'est pas validé");

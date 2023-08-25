@@ -1,0 +1,38 @@
+<div class="mt-2 container">
+    <h2>Mon compte</h2>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2">
+        <div class="col col-lg-3 col-md-4 col-sm-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th><img src="../../../../assets/images/homme.png"></th>
+                        <td class="navAccount">Bonjour <strong>Sylvain</strong></td>
+                    </tr>
+                </thead>
+                <tbody>                   
+                    <tr class="linkHover">
+                        <td><i class="h4 bi bi-box2"></i></td>
+                        <td class="navAccount" [routerLink]="['/','my-account','my-orders']">Mes commandes</td>
+                    </tr>
+                    <tr class="linkHover">
+                        <td><i class="h4 bi bi-person-vcard"></i></td>
+                        <td class="navAccount" [routerLink]="['/','my-account','my-informations']" >Mes informations</td>
+                    </tr>
+                    <tr class="linkHover">
+                        <td><i class="h3 bi bi-lock"></i></td> 
+                        <td class="navAccount" [routerLink]="['/','my-account','change-password']">Changer le mot de passe</td>
+                    </tr>
+                    <tr class="linkHover">
+                        <td ><i class="h4 bi bi-house-door"></i></td>
+                        <td class="navAccount">Carnet d'adresses</td>
+                    </tr>
+                    <tr class="linkHover">
+                        <td><i class="h4 bi bi-box-arrow-left"></i></td>
+                        <td class="navAccount">Déconnexion</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>       
+            <ng-content></ng-content>
+    </div>
+</div>
