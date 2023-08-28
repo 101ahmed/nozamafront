@@ -114,8 +114,11 @@
       "id": 3
     },
     {
-      "email": "duchesne.thomas@hotmail.fr",
+      "firstname": "Thomas",
+      "lastname": "Duchesne",
+      "mail": "duchesne.thomas@hotmail.fr",
       "password": "womp",
+      "signInDate": "2023-08-28T10:18:52.450Z",
       "id": 4
     }
     
