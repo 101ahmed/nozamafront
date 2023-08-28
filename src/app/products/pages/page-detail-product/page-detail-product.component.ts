@@ -82,4 +82,31 @@ export class PageDetailProductComponent implements OnInit {
     this.finalRating= (this.totalRating/this.ratingCount).toFixed(1);
     
   }
+ 
+   name!: String;
+   summary!: String;
+   comment!: String
+
+  onSubmit(){
+
+    console.log('Votre nom:', this.name);
+    console.log('Nom:', this.summary);
+    console.log('Message:', this.comment);
+
+    this.resetComment();
+  }
+
+  resetComment() {
+    this.name = '';
+    this.summary = '';
+    this.comment = '';
+
+    const contactFormElement: HTMLFormElement | null = document.querySelector('#contactForm');
+    if (contactFormElement) {
+      contactFormElement.reset();
+
+    
+  }
+ 
+  }
 }
