@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ReturnsRoutingModule } from './returns-routing.module';
 import { PageReturnsComponent } from './pages/page-returns/page-returns.component';
+import { ReturnsRoutingModule } from './returns-routing.module';
+import { SharedModule } from '../shared/shared.module';
+
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { PageReturnsComponent } from './pages/page-returns/page-returns.componen
   ],
   imports: [
     CommonModule,
-    ReturnsRoutingModule
+    ReturnsRoutingModule,
+    
   ]
 })
 export class ReturnsModule { }
