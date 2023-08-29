@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { UsersModule } from '../users/users.module';
 import { AccountModule } from '../account/account.module';
+import { ReturnsModule } from '../returns/returns.module';
 
 
 
@@ -31,7 +32,8 @@ import { AccountModule } from '../account/account.module';
     ContactModule,
     ReactiveFormsModule,
     NgbRatingModule,
-    AccountModule
+    AccountModule,
+    ReturnsModule
  
     
    ]
