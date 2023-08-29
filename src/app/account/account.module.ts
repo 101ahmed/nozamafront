@@ -10,6 +10,7 @@ import { MyAddressesComponent } from './pages/my-addresses/my-addresses.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { AddAdresseComponent } from './pages/add-adresse/add-adresse.component';
+import { OrderDetailsComponent } from './pages/order-details/order-details.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AddAdresseComponent } from './pages/add-adresse/add-adresse.component';
     ChangePasswordComponent,
     MyAddressesComponent,
     HomeComponent,
-    AddAdresseComponent
+    AddAdresseComponent,
+    OrderDetailsComponent
   ],
   imports: [
     CommonModule,

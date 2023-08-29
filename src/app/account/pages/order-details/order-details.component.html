@@ -1,0 +1,185 @@
+<app-home>
+    <div class="col col-lg-9 col-md-8 col-sm-12">
+        <div class="row bg-article py-4 ps-5 mb-4">
+            <h1>Détails de la commande</h1>
+            <p>Merci pour votre commande! Vérifier les informations ci-dessous.</p>
+        </div>
+
+        <div class="row bg-article py-4 px-5 mb-3">
+            <div class="row p-0 m-0">
+                <div class="col ">
+                    <div class="row ">
+                        <i class="h5 bi bi-box2 fontSizeLittleTitle"><span> N° de commande :</span></i>
+                    </div>
+                    <div class="row mt-2">
+                        <i class="h5 bi bi-calendar fontSizeLittleTitle"><span> Date de la commande :</span></i>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row pt-1">
+                        452546366<!-- TODO : Récupérer les infos de la commande en question -->
+                    </div>
+                    <div class="row  mt-3">
+                        11 janv. 2023
+                    </div>                   
+                </div>
+            </div>
+            <div class="row border-top p-0 m-0 mt-4 pt-4">
+                <div class="col">
+                    <a [routerLink]="['/','return']"><h3>Information sur les retours</h3></a>
+                </div>
+                <div class="col">
+
+                </div>
+            </div>
+        </div>
+        <div class="row bg-article py-4 px-5 mb-3">
+            <div class="row border-bottom pb-3">
+                    <h3>Adresse de livraison :</h3>
+            </div>
+            <div class="row pt-4">
+                <p>Sylvain Théou</p>
+                <p>5 avenue des prairies</p>
+                <p>Orgères, 35230</p>
+                <p>France</p>
+                <p>0612345849</p>
+            </div>
+        </div>
+        <div class="row bg-article py-4 px-5 mb-3">
+            <p class="text-secondary p-0 m-0">Statut de la commande :</p>
+            <h4 class="p-0 ">Commande en cours de livraison</h4> 
+            <p class="p-0 ">LIVRAISON PRÉVUE LE 30 AOÛT 2023</p>         
+                <div class="progress m-0 p-0 mb-3" role="progressbar" aria-label="Success example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-success" style="width: 75%"></div>
+                </div>
+                
+            <div class="row m-0 p-0"> 
+                <div class="col bg-white me-2 border border-2 "> <!-- TODO : ngfor  -->
+                    <div class="row">
+                        <a [routerLink]="['/','products','detail','14']">
+                            <img class="img-fluid" src="../../../../assets/images/FF16.jpg" alt="image final fantaisy 16">
+                            <p>Final Fantaisy XVI -Playstation 5</p>
+                        </a>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col ">
+                            <h4>48.00 €</h4>
+                        </div>
+                        <div class="col ">
+                            <h4 class="barré">58.00 €</h4>
+                        </div>  
+                        <div class="col col-3 "> </div>    
+                    </div>
+                </div>
+                <div class="col bg-white border border-2 me-2">
+                    <div class="row">
+                        <a [routerLink]="['/','products','detail','12']">
+                            <img class="img-fluid" src="../../../../assets/images/GTA.jpg" alt="image GTA 5">
+                            <p>Jeu PS5 ROCKSTAR GAMES GTA V</p>
+                        </a>
+                    </div>
+                    <div class="row py-3">
+                        <h4>34.00 €</h4>
+                    </div>                    
+                </div>
+                <div class="col bg-white border border-2">
+                    <div class="row">
+                        <a [routerLink]="['/','products','detail','13']">
+                            <img class="img-fluid" src="../../../../assets/images/NB2K24.jpg" alt="image 2K24">
+                            <p>NBA 2K24 - Playstation 5</p>
+                        </a>
+                    </div>
+                    <div class="row py-3">
+                        <h4>69.99 €</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col pt-3">
+                    <div class="row fontSizeLittleTitle">
+                        <span>Mode de livraison :</span>
+                    </div>
+                    <div class="row mt-2 fontSizeLittleTitle">
+                        <span>Date d'expédition :</span>
+                    </div>
+                    <div class="row mt-2 fontSizeLittleTitle">
+                        <span>Envoyé(e)(s) avec :</span>
+                    </div>
+                </div>
+                <div class="col pt-3">
+                    <div class="row pt-1 ">
+                        Livraison standard avec Colissimo<!-- TODO : Récupérer les infos de la commande en question -->
+                    </div>
+                    <div class="row  mt-3">
+                        Jeudi 12 janvier 2023
+                    </div>
+                    <div class="row  mt-3">
+                        Colissimo
+                    </div>                     
+                </div>
+                <a class="pt-4" target="_blank" href="https://www.laposte.fr/colissimo"><h4>SUIVRE LE COLIS</h4></a>
+            </div>
+
+   
+        </div>
+        <div class="row bg-article py-4 px-5 mb-3">
+            <div class="row border-bottom pb-3">
+                    <h3>Informations de paiement :</h3>
+            </div>
+            <div class="row pt-4">
+               <!-- PayPal Logo --><a href="https://www.paypal.com/c2/webapps/mpp/home?locale.x=en_C2" title="PayPal" onclick="javascript:window.open('https://www.paypal.com/c2/webapps/mpp/home?locale.x=en_C2','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" border="0" alt="PayPal Logo"></a><!-- PayPal Logo -->
+            </div>
+        </div>
+        <div class="row bg-article py-4 px-5 mb-3">
+            <div class="row border-bottom pb-3">
+                    <h3>Total commande</h3>
+            </div>
+            <div class="row pt-4">
+                <div class="col">
+                    <div class="row fontSizeLittleTitle">
+                        <span>Sous-Total :</span>
+                    </div>
+                    <div class="row mt-2 fontSizeLittleTitle">
+                        <span>Remise :</span>
+                    </div>
+                    <div class="row mt-2 fontSizeLittleTitle">
+                        <span>Livraison :</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row fontSizeLittleTitle">
+                        <span class="text-end">151.99 €</span>
+                    </div>
+                    <div class="row mt-2 fontSizeLittleTitle">
+                        <span class="text-end">-10 €</span>
+                    </div>
+                    <div class="row mt-2 fontSizeLittleTitle">
+                        <span class="text-end">Gratuit</span>
+                    </div>                     
+                </div>
+            </div>
+            <div class="row border-top mt-3 pt-3">
+                <div class="col">
+                    <h3>Total :</h3>
+                </div>                
+                <div class="col">
+                    <h3 class="text-end">161.99 €</h3>
+                </div>
+        </div>
+        </div>
+        <div class="row bg-article py-4 px-5 mb-3">
+            <div class="row border-bottom pb-3">
+                    <h3>Besoin d'aide ?</h3>
+            </div>
+            <div class="row pt-4">
+                <div class="col pt-2 ">
+                    <a class="hoverFAQ" target="_blank" href="https://www.asos.com/fr/service-client/un-probleme-avec-votre-commande/"><h6>FAQ sur les problèmes concernant la commande</h6></a>
+                </div>
+                <div class="col text-end ">
+                    <a target="_blank" href="https://www.asos.com/fr/service-client/un-probleme-avec-votre-commande/" ><i   class="h5 bi bi-box-arrow-up-right "></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-home>
+

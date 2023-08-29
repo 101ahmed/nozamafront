@@ -12,6 +12,7 @@ import { PageCartComponent } from './pages/page-cart/page-cart.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { PagePaymentComponent } from './pages/page-payment/page-payment.component';
 import { SearchComponent } from './search/search.component';
+import { PageOrderDetailsComponent } from './pages/page-order-details/page-order-details.component';
 
 
 
@@ -24,7 +25,8 @@ import { SearchComponent } from './search/search.component';
     OrderFormComponent,
     PageCartComponent,
     PagePaymentComponent,
-    SearchComponent
+    SearchComponent,
+    PageOrderDetailsComponent
  
     
   ],
