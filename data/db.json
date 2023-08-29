@@ -39,7 +39,39 @@
       "category": "books",
       "id": 11,
       "imageUrl": "https://ec56229aec51f1baff1d-185c3068e22352c56024573e929788ff.ssl.cf1.rackcdn.com/attachments/large/4/2/7/003531427.jpg"
+    },
+    {
+      "reference": "Best seller 2021",
+      "name": "GTA V",
+      "description": "Jeu PS5 ROCKSTAR GAME GTA V",
+      "quantityStock": 345,
+      "price": 34,
+      "category": "games",
+      "id": 12,
+      "imageUrl": "../assets/images/GTA.jpg"
+    },
+    {
+      "reference": "Best seller 2024",
+      "name": "NBA2K24",
+      "description": "Jeu PS5 NBA 2K24",
+      "quantityStock": 345,
+      "price": 69.99,
+      "category": "games",
+      "id": 13,
+      "imageUrl": "../assets/images/NB2K24.jpg"
+    },
+    {
+      "reference": "Best seller 2023",
+      "name": "Final Fantaisy XVI",
+      "description": "Jeu PS5 SQUARE ENIX Final Fantaisy XVI",
+      "quantityStock": 345,
+      "price": 48,
+      "category": "games",
+      "id": 14,
+      "imageUrl": "../assets/images/FF16.jpg"
     }
+    
+
   ],
   "orders": [
     {

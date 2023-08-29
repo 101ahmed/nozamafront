@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { AddAdresseComponent } from './pages/add-adresse/add-adresse.component';
 import { AdressFormComponent } from './adress-form/adress-form.component';
+import { OrderDetailsComponent } from './pages/order-details/order-details.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AdressFormComponent } from './adress-form/adress-form.component';
     MyAddressesComponent,
     HomeComponent,
     AddAdresseComponent,
-    AdressFormComponent
+    AdressFormComponent,
+    OrderDetailsComponent
   ],
   imports: [
     CommonModule,

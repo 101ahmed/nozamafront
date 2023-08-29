@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/pages/page-not-found/pag
 import { ContactComponent } from './contact/components/contact/contact.component';
 import { MyAccountComponent } from './account/pages/my-account/my-account.component';
 import { PagePaymentComponent } from './orders/pages/page-payment/page-payment.component';
+import { PageReturnsComponent } from './returns/pages/page-returns/page-returns.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path: 'my-account', component: MyAccountComponent },
   {path: 'my-account', loadChildren:() => import('./account/account.module').then(m => m.AccountModule)},
   {path: 'contact', component: ContactComponent},
-  { path: 'payment', component: PagePaymentComponent },
+  {path: 'payment', component: PagePaymentComponent },
+  {path: 'return', component: PageReturnsComponent },
   {path: '**', component: PageNotFoundComponent}
 
 

@@ -6,6 +6,7 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
 import { MyInformationsComponent } from './pages/my-informations/my-informations.component';
 import { MyAddressesComponent } from './pages/my-addresses/my-addresses.component';
 import { AddAdresseComponent } from './pages/add-adresse/add-adresse.component';
+import { OrderDetailsComponent } from './pages/order-details/order-details.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'my-account', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'my-informations', component: MyInformationsComponent },
   {path: 'my-addresses', component: MyAddressesComponent },
   {path: 'add-adresse', component: AddAdresseComponent },
+  {path: 'order-details', component: OrderDetailsComponent },
 
   
 
