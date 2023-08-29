@@ -1,5 +1,5 @@
 <div class="mt-2 container-fluid">
-    <h2 class="text-center">Modifier un order</h2>
+    <h2 class="text-center">Modifier une commande</h2>
  
     <ng-container *ngIf = "order$ | async as order; else loading">
      <app-order-form 
@@ -17,6 +17,6 @@
  
  <ng-template #loading>
      <div class="alert alert-info" role="alert">
-         Chargement du order ...
+         Chargement de la commande ...
      </div>
  </ng-template>
