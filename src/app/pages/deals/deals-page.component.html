@@ -1,0 +1,19 @@
+<div class="browse-page">
+  <div class="page-inner">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <a routerLink="/">Home</a>
+      <span class="sep" aria-hidden="true">›</span>
+      <span class="current">Today's Deals</span>
+    </nav>
+
+    <section class="panel catalog">
+      <div class="catalog-head">
+        <h1>Today's Deals</h1>
+        <p class="result-count">{{ deals.length }} deals</p>
+      </div>
+      <div class="product-row">
+        <app-product-card *ngFor="let p of deals" [product]="p"></app-product-card>
+      </div>
+    </section>
+  </div>
+</div>

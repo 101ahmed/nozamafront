@@ -2,11 +2,11 @@
   <div class="top-bar">
     <span class="top-bar-msg">Deliver to <strong>Egypt</strong></span>
     <nav class="top-links" aria-label="Quick links">
-      <a href="#">Today's Deals</a>
-      <a href="#">Customer Service</a>
-      <a href="#">Registry</a>
-      <a href="#">Gift Cards</a>
-      <a href="#">Sell</a>
+      <a routerLink="/deals" routerLinkActive="active">Today's Deals</a>
+      <a routerLink="/customer-service" routerLinkActive="active">Customer Service</a>
+      <a routerLink="/registry" routerLinkActive="active">Registry</a>
+      <a routerLink="/gift-cards" routerLinkActive="active">Gift Cards</a>
+      <a routerLink="/sell" routerLinkActive="active">Sell</a>
     </nav>
   </div>
 
@@ -38,15 +38,15 @@
     </form>
 
     <div class="main-bar-actions">
-      <a href="#" class="nav-block">
+      <a routerLink="/sign-in" class="nav-block">
         <span class="nav-small">Hello, sign in</span>
         <span class="nav-strong">Account & Lists</span>
       </a>
-      <a href="#" class="nav-block">
+      <a routerLink="/orders" class="nav-block">
         <span class="nav-small">Returns</span>
         <span class="nav-strong">& Orders</span>
       </a>
-      <a routerLink="/" class="cart" aria-label="Shopping cart">
+      <a routerLink="/cart" class="cart" aria-label="Shopping cart">
         <span class="cart-icon-wrap">
           <svg width="38" height="26" viewBox="0 0 48 36" aria-hidden="true">
             <path
@@ -62,20 +62,20 @@
   </div>
 
   <nav class="sub-bar" aria-label="Categories">
-    <button type="button" class="all-menu" aria-expanded="false">
+    <a routerLink="/departments" class="all-menu" routerLinkActive="active" aria-label="All departments">
       <span class="all-icon">≡</span>
       All
-    </button>
-    <a href="#">Today's Deals</a>
-    <a href="#">Customer Service</a>
-    <a href="#">Registry</a>
-    <a href="#">Gift Cards</a>
-    <a href="#">Sell</a>
-    <a href="#">Electronics</a>
-    <a href="#">Books</a>
-    <a href="#">Fashion</a>
-    <a href="#">Home & Kitchen</a>
-    <a href="#">Sports</a>
-    <a href="#">Automotive</a>
+    </a>
+    <a routerLink="/deals" routerLinkActive="active">Today's Deals</a>
+    <a routerLink="/customer-service" routerLinkActive="active">Customer Service</a>
+    <a routerLink="/registry" routerLinkActive="active">Registry</a>
+    <a routerLink="/gift-cards" routerLinkActive="active">Gift Cards</a>
+    <a routerLink="/sell" routerLinkActive="active">Sell</a>
+    <a routerLink="/category/electronics" routerLinkActive="active">Electronics</a>
+    <a routerLink="/category/books" routerLinkActive="active">Books</a>
+    <a routerLink="/category/fashion" routerLinkActive="active">Fashion</a>
+    <a routerLink="/category/home-kitchen" routerLinkActive="active">Home & Kitchen</a>
+    <a routerLink="/category/sports" routerLinkActive="active">Sports</a>
+    <a routerLink="/category/automotive" routerLinkActive="active">Automotive</a>
   </nav>
 </header>

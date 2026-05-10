@@ -1,0 +1,38 @@
+<div class="category-page">
+  <ng-container *ngIf="vm$ | async as vm">
+    <div class="page-inner">
+      <div *ngIf="!vm.category" class="panel not-found">
+        <h1>We couldn’t find this category</h1>
+        <p>The link may be outdated or the category does not exist.</p>
+        <a routerLink="/" class="btn-home">Continue shopping</a>
+      </div>
+
+      <ng-container *ngIf="vm.category">
+        <nav class="crumb" aria-label="Breadcrumb">
+          <a routerLink="/">Home</a>
+          <span class="sep" aria-hidden="true">›</span>
+          <span class="current">{{ vm.category.label }}</span>
+        </nav>
+
+        <section class="panel catalog">
+          <div class="catalog-head">
+            <h1>{{ vm.category.label }}</h1>
+            <p class="result-count">{{ vm.products.length }} items</p>
+          </div>
+
+          <div *ngIf="vm.products.length === 0" class="empty-cat">
+            <p>No products in this category yet.</p>
+            <a routerLink="/">Browse all departments</a>
+          </div>
+
+          <div class="product-row" *ngIf="vm.products.length > 0">
+            <app-product-card
+              *ngFor="let p of vm.products; trackBy: trackById"
+              [product]="p"
+            ></app-product-card>
+          </div>
+        </section>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>

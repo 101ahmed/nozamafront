@@ -1,0 +1,63 @@
+<div class="cart-page">
+  <ng-container *ngIf="lines$ | async as lines">
+    <div class="cart-empty" *ngIf="lines.length === 0">
+      <h1>Your Nozama Cart is empty</h1>
+      <p>Add items from the homepage to see them here.</p>
+      <a routerLink="/" class="btn-shop">Continue shopping</a>
+    </div>
+
+    <div class="cart-layout" *ngIf="lines.length > 0">
+      <div class="cart-main">
+        <div class="cart-toolbar">
+          <h1 class="cart-title">Shopping Cart</h1>
+          <button type="button" class="link-btn" (click)="clear()">Clear cart</button>
+        </div>
+
+        <ul class="cart-list">
+          <li *ngFor="let line of lines; trackBy: trackByProductId" class="cart-row">
+            <a routerLink="/" class="thumb" [attr.aria-label]="'View ' + line.product.title">
+              <img [src]="line.product.imageUrl" [alt]="line.product.title" width="96" height="96" loading="lazy" />
+            </a>
+
+            <div class="row-body">
+              <a routerLink="/" class="item-title">{{ line.product.title }}</a>
+              <span class="prime" *ngIf="line.product.prime">Prime eligible</span>
+              <button type="button" class="remove-btn" (click)="remove(line.product.id)">Delete</button>
+            </div>
+
+            <div class="qty" role="group" [attr.aria-label]="'Quantity for ' + line.product.title">
+              <button type="button" (click)="decrement(line)" aria-label="Decrease quantity">−</button>
+              <span class="qty-val">{{ line.quantity }}</span>
+              <button type="button" (click)="increment(line)" aria-label="Increase quantity">+</button>
+            </div>
+
+            <div class="line-price">
+              <span class="currency">{{ line.product.currency }}</span>
+              <span class="amount">{{ line.product.price * line.quantity | number : '1.2-2' }}</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <aside class="cart-summary" aria-labelledby="summary-heading">
+        <div class="summary-card">
+          <h2 id="summary-heading">Subtotal</h2>
+          <p class="summary-note">
+            {{ lines[0].product.currency }}
+            {{ subtotal(lines) | number : '1.2-2' }}
+          </p>
+          <p class="summary-meta">
+            {{ totalItems(lines) }}
+            <span *ngIf="totalItems(lines) === 1">item</span>
+            <span *ngIf="totalItems(lines) !== 1">items</span>
+            · {{ lines.length }} product<span *ngIf="lines.length !== 1">s</span>
+          </p>
+          <button type="button" class="checkout-btn" disabled title="Checkout is not wired in this demo">
+            Proceed to checkout
+          </button>
+          <a routerLink="/" class="continue-link">Continue shopping</a>
+        </div>
+      </aside>
+    </div>
+  </ng-container>
+</div>

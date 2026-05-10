@@ -7,4 +7,6 @@ export interface Product {
   rating: number;
   reviewCount: number;
   prime?: boolean;
+  /** Matches `ShopCategory.slug` */
+  categorySlug: string;
 }

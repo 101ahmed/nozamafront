@@ -41,6 +41,11 @@
   text-decoration: underline;
 }
 
+.top-links a.active {
+  color: #fff;
+  font-weight: 700;
+}
+
 .main-bar {
   display: grid;
   grid-template-columns: auto auto 1fr auto;
@@ -248,6 +253,7 @@
   cursor: pointer;
   padding: 0.15rem 0.35rem;
   margin-right: 0.35rem;
+  text-decoration: none;
 }
 
 .all-menu:hover {
@@ -270,6 +276,12 @@
 .sub-bar a:hover {
   outline: 1px solid #fff;
   outline-offset: 2px;
+}
+
+.sub-bar a.active {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 .sr-only {

@@ -1,0 +1,24 @@
+<div class="browse-page">
+  <div class="page-inner">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <a routerLink="/">Home</a>
+      <span class="sep" aria-hidden="true">›</span>
+      <span class="current">All departments</span>
+    </nav>
+
+    <section class="panel">
+      <h1 class="page-title">Shop by department</h1>
+      <p class="lede">Choose a department to browse products.</p>
+      <div class="dept-grid">
+        <a
+          *ngFor="let c of categories"
+          [routerLink]="['/category', c.slug]"
+          class="dept-card"
+        >
+          <img [src]="c.imageUrl" [alt]="c.label" width="200" height="200" loading="lazy" />
+          <span>{{ c.label }}</span>
+        </a>
+      </div>
+    </section>
+  </div>
+</div>

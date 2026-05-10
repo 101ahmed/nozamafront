@@ -14,7 +14,11 @@
     <section class="panel categories" aria-labelledby="cat-heading">
       <h2 id="cat-heading">Shop by category</h2>
       <div class="category-grid">
-        <a *ngFor="let c of categories" href="#" class="category-card">
+        <a
+          *ngFor="let c of categories"
+          [routerLink]="['/category', c.slug]"
+          class="category-card"
+        >
           <img [src]="c.imageUrl" [alt]="c.label" width="200" height="200" loading="lazy" />
           <span>{{ c.label }}</span>
         </a>
@@ -27,27 +31,7 @@
         <a href="#" class="panel-link">See all deals</a>
       </div>
       <div class="product-row">
-        <article *ngFor="let p of deals" class="product-card">
-          <a href="#" class="thumb-wrap">
-            <img [src]="p.imageUrl" [alt]="p.title" width="320" height="320" loading="lazy" />
-          </a>
-          <div class="card-body">
-            <a href="#" class="title">{{ p.title }}</a>
-            <div class="rating" [attr.aria-label]="'Rating ' + p.rating + ' out of 5'">
-              <span class="stars" aria-hidden="true">
-                <span class="star on" *ngFor="let _ of filledStars(p.rating)">★</span>
-                <span class="star" *ngFor="let _ of emptyStars(p.rating)">★</span>
-              </span>
-              <span class="reviews">{{ p.reviewCount | number }}</span>
-            </div>
-            <div class="price-row">
-              <span class="currency">{{ p.currency }}</span>
-              <span class="price">{{ p.price | number : '1.2-2' }}</span>
-            </div>
-            <span class="prime" *ngIf="p.prime">Prime eligible</span>
-            <button type="button" class="add-btn" (click)="addToCart(p)">Add to Cart</button>
-          </div>
-        </article>
+        <app-product-card *ngFor="let p of deals" [product]="p"></app-product-card>
       </div>
     </section>
 
@@ -57,27 +41,7 @@
         <a href="#" class="panel-link">Browse more</a>
       </div>
       <div class="product-row">
-        <article *ngFor="let p of featured" class="product-card">
-          <a href="#" class="thumb-wrap">
-            <img [src]="p.imageUrl" [alt]="p.title" width="320" height="320" loading="lazy" />
-          </a>
-          <div class="card-body">
-            <a href="#" class="title">{{ p.title }}</a>
-            <div class="rating" [attr.aria-label]="'Rating ' + p.rating + ' out of 5'">
-              <span class="stars" aria-hidden="true">
-                <span class="star on" *ngFor="let _ of filledStars(p.rating)">★</span>
-                <span class="star" *ngFor="let _ of emptyStars(p.rating)">★</span>
-              </span>
-              <span class="reviews">{{ p.reviewCount | number }}</span>
-            </div>
-            <div class="price-row">
-              <span class="currency">{{ p.currency }}</span>
-              <span class="price">{{ p.price | number : '1.2-2' }}</span>
-            </div>
-            <span class="prime" *ngIf="p.prime">Prime eligible</span>
-            <button type="button" class="add-btn" (click)="addToCart(p)">Add to Cart</button>
-          </div>
-        </article>
+        <app-product-card *ngFor="let p of featured" [product]="p"></app-product-card>
       </div>
     </section>
   </div>

@@ -1,0 +1,21 @@
+<article class="product-card">
+  <a href="#" class="thumb-wrap" (click)="$event.preventDefault()">
+    <img [src]="product.imageUrl" [alt]="product.title" width="320" height="320" loading="lazy" />
+  </a>
+  <div class="card-body">
+    <a href="#" class="title" (click)="$event.preventDefault()">{{ product.title }}</a>
+    <div class="rating" [attr.aria-label]="'Rating ' + product.rating + ' out of 5'">
+      <span class="stars" aria-hidden="true">
+        <span class="star on" *ngFor="let _ of filledStars(product.rating)">★</span>
+        <span class="star" *ngFor="let _ of emptyStars(product.rating)">★</span>
+      </span>
+      <span class="reviews">{{ product.reviewCount | number }}</span>
+    </div>
+    <div class="price-row">
+      <span class="currency">{{ product.currency }}</span>
+      <span class="price">{{ product.price | number : '1.2-2' }}</span>
+    </div>
+    <span class="prime" *ngIf="product.prime">Prime eligible</span>
+    <button type="button" class="add-btn" (click)="addToCart()">Add to Cart</button>
+  </div>
+</article>

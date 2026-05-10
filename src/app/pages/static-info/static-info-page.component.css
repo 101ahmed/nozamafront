@@ -1,0 +1,63 @@
+.static-info {
+  background: var(--nz-bg);
+  padding-bottom: 2rem;
+}
+
+.page-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.crumb {
+  font-size: 0.85rem;
+  color: #565959;
+  margin-bottom: 0.75rem;
+}
+
+.crumb a {
+  color: var(--nz-link);
+  text-decoration: none;
+}
+
+.crumb a:hover {
+  text-decoration: underline;
+}
+
+.sep {
+  margin: 0 0.35rem;
+}
+
+.current {
+  color: var(--nz-text);
+  font-weight: 600;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 4px;
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(15, 17, 17, 0.08);
+}
+
+.panel h1 {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+}
+
+.panel p {
+  margin: 0 0 1.25rem;
+  color: #565959;
+  line-height: 1.5;
+}
+
+.back-link {
+  font-weight: 700;
+  color: var(--nz-link);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: var(--nz-link-hover);
+  text-decoration: underline;
+}

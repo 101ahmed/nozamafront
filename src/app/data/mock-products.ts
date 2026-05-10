@@ -1,6 +1,42 @@
+import { ShopCategory } from '../models/category';
 import { Product } from '../models/product';
 
-export const DEAL_PRODUCTS: Product[] = [
+/** Categories shown on the homepage grid */
+export const SHOP_CATEGORIES: ShopCategory[] = [
+  {
+    slug: 'electronics',
+    label: 'Electronics',
+    imageUrl: 'https://picsum.photos/seed/cat-el/200/200',
+  },
+  {
+    slug: 'home-kitchen',
+    label: 'Home & Kitchen',
+    imageUrl: 'https://picsum.photos/seed/cat-home/200/200',
+  },
+  {
+    slug: 'fashion',
+    label: 'Fashion',
+    imageUrl: 'https://picsum.photos/seed/cat-fashion/200/200',
+  },
+  {
+    slug: 'books',
+    label: 'Books',
+    imageUrl: 'https://picsum.photos/seed/cat-books/200/200',
+  },
+  {
+    slug: 'sports',
+    label: 'Sports',
+    imageUrl: 'https://picsum.photos/seed/cat-sports/200/200',
+  },
+  {
+    slug: 'automotive',
+    label: 'Automotive',
+    imageUrl: 'https://picsum.photos/seed/cat-auto/200/200',
+  },
+];
+
+/** Master catalog — single source of truth */
+export const ALL_PRODUCTS: Product[] = [
   {
     id: '1',
     title: 'Wireless noise‑cancelling headphones',
@@ -10,6 +46,7 @@ export const DEAL_PRODUCTS: Product[] = [
     rating: 4.5,
     reviewCount: 12403,
     prime: true,
+    categorySlug: 'electronics',
   },
   {
     id: '2',
@@ -20,6 +57,7 @@ export const DEAL_PRODUCTS: Product[] = [
     rating: 4.7,
     reviewCount: 8921,
     prime: true,
+    categorySlug: 'home-kitchen',
   },
   {
     id: '3',
@@ -30,6 +68,7 @@ export const DEAL_PRODUCTS: Product[] = [
     rating: 4.3,
     reviewCount: 3412,
     prime: false,
+    categorySlug: 'electronics',
   },
   {
     id: '4',
@@ -40,10 +79,8 @@ export const DEAL_PRODUCTS: Product[] = [
     rating: 4.6,
     reviewCount: 6722,
     prime: true,
+    categorySlug: 'electronics',
   },
-];
-
-export const FEATURED_PRODUCTS: Product[] = [
   {
     id: '5',
     title: '4K monitor 27" — HDR ready',
@@ -53,6 +90,7 @@ export const FEATURED_PRODUCTS: Product[] = [
     rating: 4.4,
     reviewCount: 2103,
     prime: true,
+    categorySlug: 'electronics',
   },
   {
     id: '6',
@@ -63,6 +101,7 @@ export const FEATURED_PRODUCTS: Product[] = [
     rating: 4.2,
     reviewCount: 5591,
     prime: false,
+    categorySlug: 'home-kitchen',
   },
   {
     id: '7',
@@ -73,6 +112,7 @@ export const FEATURED_PRODUCTS: Product[] = [
     rating: 4.5,
     reviewCount: 9876,
     prime: true,
+    categorySlug: 'electronics',
   },
   {
     id: '8',
@@ -83,12 +123,153 @@ export const FEATURED_PRODUCTS: Product[] = [
     rating: 4.8,
     reviewCount: 445,
     prime: true,
+    categorySlug: 'electronics',
+  },
+  {
+    id: '9',
+    title: 'Air fryer — 5.8 QT digital touchscreen',
+    price: 99.0,
+    currency: 'USD',
+    imageUrl: 'https://picsum.photos/seed/nozama-fryer/320/320',
+    rating: 4.6,
+    reviewCount: 15223,
+    prime: true,
+    categorySlug: 'home-kitchen',
+  },
+  {
+    id: '10',
+    title: 'Ceramic nonstick cookware set — 10 piece',
+    price: 149.99,
+    currency: 'USD',
+    imageUrl: 'https://picsum.photos/seed/nozama-cook/320/320',
+    rating: 4.4,
+    reviewCount: 3310,
+    prime: false,
+    categorySlug: 'home-kitchen',
+  },
+  {
+    id: '11',
+    title: 'Running shoes — lightweight cushioned',
+    price: 69.95,
+    currency: 'USD',
+    imageUrl: 'https://picsum.photos/seed/nozama-shoes/320/320',
+    rating: 4.3,
+    reviewCount: 8844,
+    prime: true,
+    categorySlug: 'fashion',
+  },
+  {
+    id: '12',
+    title: 'Canvas backpack — laptop compartment',
+    price: 42.0,
+    currency: 'USD',
+    imageUrl: 'https://picsum.photos/seed/nozama-bag/320/320',
+    rating: 4.5,
+    reviewCount: 2199,
+    prime: true,
+    categorySlug: 'fashion',
+  },
+  {
+    id: '13',
+    title: 'Learning TypeScript — practical guide',
+    price: 39.99,
+    currency: 'USD',
+    imageUrl: 'https://picsum.photos/seed/nozama-tsbook/320/320',
+    rating: 4.7,
+    reviewCount: 612,
+    prime: false,
+    categorySlug: 'books',
+  },
+  {
+    id: '14',
+    title: 'Cookbook essentials — weeknight dinners',
+    price: 29.5,
+    currency: 'USD',
+    imageUrl: 'https://picsum.photos/seed/nozama-cbook/320/320',
+    rating: 4.6,
+    reviewCount: 4201,
+    prime: true,
+    categorySlug: 'books',
+  },
+  {
+    id: '15',
+    title: 'Wireless ergonomic mouse — silent clicks',
+    price: 34.99,
+    currency: 'USD',
+    imageUrl: 'https://picsum.photos/seed/nozama-mouse/320/320',
+    rating: 4.5,
+    reviewCount: 9033,
+    prime: true,
+    categorySlug: 'electronics',
+  },
+  {
+    id: '16',
+    title: 'Polarized sunglasses — UV400',
+    price: 28.0,
+    currency: 'USD',
+    imageUrl: 'https://picsum.photos/seed/nozama-sun/320/320',
+    rating: 4.2,
+    reviewCount: 1566,
+    prime: false,
+    categorySlug: 'fashion',
+  },
+  {
+    id: '17',
+    title: 'Yoga mat — extra thick non-slip',
+    price: 32.99,
+    currency: 'USD',
+    imageUrl: 'https://picsum.photos/seed/nozama-yoga/320/320',
+    rating: 4.6,
+    reviewCount: 7402,
+    prime: true,
+    categorySlug: 'sports',
+  },
+  {
+    id: '18',
+    title: 'Adjustable dumbbells — pair 20 lb',
+    price: 129.0,
+    currency: 'USD',
+    imageUrl: 'https://picsum.photos/seed/nozama-dumb/320/320',
+    rating: 4.4,
+    reviewCount: 1888,
+    prime: false,
+    categorySlug: 'sports',
+  },
+  {
+    id: '19',
+    title: 'Portable tire inflator — 12V',
+    price: 59.99,
+    currency: 'USD',
+    imageUrl: 'https://picsum.photos/seed/nozama-tire/320/320',
+    rating: 4.5,
+    reviewCount: 5234,
+    prime: true,
+    categorySlug: 'automotive',
+  },
+  {
+    id: '20',
+    title: 'Microfiber wash mitt kit — 5 pieces',
+    price: 19.99,
+    currency: 'USD',
+    imageUrl: 'https://picsum.photos/seed/nozama-wash/320/320',
+    rating: 4.7,
+    reviewCount: 990,
+    prime: true,
+    categorySlug: 'automotive',
   },
 ];
 
-export const CATEGORY_TILES: { label: string; imageUrl: string }[] = [
-  { label: 'Electronics', imageUrl: 'https://picsum.photos/seed/cat-el/200/200' },
-  { label: 'Home & Kitchen', imageUrl: 'https://picsum.photos/seed/cat-home/200/200' },
-  { label: 'Fashion', imageUrl: 'https://picsum.photos/seed/cat-fashion/200/200' },
-  { label: 'Books', imageUrl: 'https://picsum.photos/seed/cat-books/200/200' },
-];
+const dealIds = new Set(['1', '2', '3', '4']);
+const featuredIds = new Set(['5', '6', '7', '8']);
+
+export const DEAL_PRODUCTS: Product[] = ALL_PRODUCTS.filter((p) => dealIds.has(p.id));
+
+export const FEATURED_PRODUCTS: Product[] = ALL_PRODUCTS.filter((p) => featuredIds.has(p.id));
+
+export function categoryBySlug(slug: string): ShopCategory | undefined {
+  return SHOP_CATEGORIES.find((c) => c.slug === slug);
+}
+
+export function productsByCategorySlug(slug: string): Product[] {
+  return ALL_PRODUCTS.filter((p) => p.categorySlug === slug);
+}
