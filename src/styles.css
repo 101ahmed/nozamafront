@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --nz-dark: #131921;
+  --nz-dark-2: #232f3e;
+  --nz-nav: #232f3e;
+  --nz-accent: #febd69;
+  --nz-bg: #eaeded;
+  --nz-text: #0f1111;
+  --nz-link: #007185;
+  --nz-link-hover: #c7511f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  color: var(--nz-text);
+  background: var(--nz-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}

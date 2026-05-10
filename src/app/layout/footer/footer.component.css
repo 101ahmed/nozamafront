@@ -1,0 +1,79 @@
+.site-footer {
+  margin-top: 2rem;
+  background: var(--nz-nav);
+  color: #ddd;
+}
+
+.back-top {
+  width: 100%;
+  padding: 0.85rem;
+  background: #37475a;
+  border: none;
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.back-top:hover {
+  background: #485769;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 2rem;
+  padding: 2.5rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.col h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.col li {
+  margin-bottom: 0.5rem;
+}
+
+.col a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.col a:hover {
+  text-decoration: underline;
+}
+
+.footer-brand {
+  border-top: 1px solid #3a4553;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer-brand .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo-dot {
+  color: var(--nz-accent);
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #999;
+  padding: 0 1rem 2rem;
+  margin: 0;
+}

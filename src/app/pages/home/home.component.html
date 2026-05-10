@@ -1,0 +1,84 @@
+<div class="home">
+  <section class="hero" aria-label="Promotions">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="hero-kicker">Spring savings event</p>
+        <h1>Deals on electronics &amp; more</h1>
+        <p class="hero-sub">Free delivery on your first eligible order. Demo storefront — not a real store.</p>
+        <a class="hero-cta" href="#">Shop all deals</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-inner">
+    <section class="panel categories" aria-labelledby="cat-heading">
+      <h2 id="cat-heading">Shop by category</h2>
+      <div class="category-grid">
+        <a *ngFor="let c of categories" href="#" class="category-card">
+          <img [src]="c.imageUrl" [alt]="c.label" width="200" height="200" loading="lazy" />
+          <span>{{ c.label }}</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="panel deals" aria-labelledby="deals-heading">
+      <div class="panel-head">
+        <h2 id="deals-heading">Today's Deals</h2>
+        <a href="#" class="panel-link">See all deals</a>
+      </div>
+      <div class="product-row">
+        <article *ngFor="let p of deals" class="product-card">
+          <a href="#" class="thumb-wrap">
+            <img [src]="p.imageUrl" [alt]="p.title" width="320" height="320" loading="lazy" />
+          </a>
+          <div class="card-body">
+            <a href="#" class="title">{{ p.title }}</a>
+            <div class="rating" [attr.aria-label]="'Rating ' + p.rating + ' out of 5'">
+              <span class="stars" aria-hidden="true">
+                <span class="star on" *ngFor="let _ of filledStars(p.rating)">★</span>
+                <span class="star" *ngFor="let _ of emptyStars(p.rating)">★</span>
+              </span>
+              <span class="reviews">{{ p.reviewCount | number }}</span>
+            </div>
+            <div class="price-row">
+              <span class="currency">{{ p.currency }}</span>
+              <span class="price">{{ p.price | number : '1.2-2' }}</span>
+            </div>
+            <span class="prime" *ngIf="p.prime">Prime eligible</span>
+            <button type="button" class="add-btn" (click)="addToCart(p)">Add to Cart</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel featured" aria-labelledby="feat-heading">
+      <div class="panel-head">
+        <h2 id="feat-heading">Recommended for you</h2>
+        <a href="#" class="panel-link">Browse more</a>
+      </div>
+      <div class="product-row">
+        <article *ngFor="let p of featured" class="product-card">
+          <a href="#" class="thumb-wrap">
+            <img [src]="p.imageUrl" [alt]="p.title" width="320" height="320" loading="lazy" />
+          </a>
+          <div class="card-body">
+            <a href="#" class="title">{{ p.title }}</a>
+            <div class="rating" [attr.aria-label]="'Rating ' + p.rating + ' out of 5'">
+              <span class="stars" aria-hidden="true">
+                <span class="star on" *ngFor="let _ of filledStars(p.rating)">★</span>
+                <span class="star" *ngFor="let _ of emptyStars(p.rating)">★</span>
+              </span>
+              <span class="reviews">{{ p.reviewCount | number }}</span>
+            </div>
+            <div class="price-row">
+              <span class="currency">{{ p.currency }}</span>
+              <span class="price">{{ p.price | number : '1.2-2' }}</span>
+            </div>
+            <span class="prime" *ngIf="p.prime">Prime eligible</span>
+            <button type="button" class="add-btn" (click)="addToCart(p)">Add to Cart</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</div>
